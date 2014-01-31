@@ -1,0 +1,130 @@
+# WeBWorK problem written by Carl Yao, 2013
+# Portland Community College
+#
+# Write an one-variable linear equation to solve mixture word problems.
+#
+# Last updated: Jordan 8/29/13; Yao, 6/26/13
+# ENDDESCRIPTION
+
+## DBsubject('Algebra')
+## DBchapter('Basic Algebra')
+## DBsection('Problem Solving with Equations')
+## KEYWORDS('equation','solve','word problem','mixture')
+## DBCCSS('7.EE.3','8.EE.7','A-CED.1')
+## TitleText1('')
+## EditionText1('')
+## AuthorText1('')
+## Section1('')
+## Problem1('')
+## Author('Carl Yao')
+## Institution('PCC')
+ 
+##############################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "contextCurrency.pl",
+  "unionTables.pl",
+  "PGML.pl",
+  "PGcourse.pl",
+);
+
+##############################################
+
+Context("LimitedNumeric");
+
+do {
+
+$s1 = random(1000,3000,200);
+$p1 = 2*list_random((1,2,3,4));
+$dp1 = $p1/100;
+$pure1 = $s1*$dp1;
+
+$s2 = random(4000,6000,200);
+$p2 = 2*list_random((1,2,3,4));
+while ($p2==$p1) {$p2 = 2*list_random((1,2,3,4));}
+$dp2 = $p2/100;
+$pure2 = $s2*$dp2;
+
+$s3 = $s1+$s2;
+$pure3 = $pure1+$pure2;
+$dp3 = $pure3/$s3;
+$p3 = $dp3*100;
+
+} while (int($dp3*10000)!=($dp3*10000));
+
+$ethnicity = list_random("Asians", "native Americans", "African Americans", "Hispanics", "whites");
+
+##############################################
+TEXT(beginproblem());
+
+BEGIN_PGML
+
+Town A and Town B are located closed to each other, and recently merged into one city. Town A used to have [`[$s1]`] residents, with [`[$p1]`][$PERCENT] [$ethnicity]. Town B used to have [`[$p2]`][$PERCENT] [$ethnicity]. After the merge, the new city has [`[$p3]`][$PERCENT] [$ethnicity]. How many residents does the new city have now?
+
+    The new city has [__________]{$s3} residents. 
+
+
+
+END_PGML
+
+
+##############################################
+$showPartialCorrectAnswers=1;
+
+$step1 = $dp2*$s1;
+$step2 = $pure1-$step1;
+$step3 = $dp3-$dp2;
+
+BEGIN_SOLUTION
+$PAR
+Let's let \(x\) represent the number of residents in the new city. Since Town A used to have \($s1\) residents, Town B used to have \(x-$s1\) residents.
+$PAR
+Town A used to have \($dp1($s1)\) $ethnicity.
+$PAR
+Town B used to have \($dp2 (x-$s1 )\) $ethnicity.
+$PAR
+The merged city has \($dp3 (x)\) $ethnicity.
+
+$PAR
+We can organize this information into a table:
+$PAR
+\{ 
+BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+
+AlignedRow(["","Percent of $ethnicity","\(\times\)","Total Number of Residents","\(=\)","Number of $ethnicity"], separation=>0).
+
+AlignedRow(["Town A","\($p1\)$PERCENT","$SPACE","\($s1\)","$SPACE","\($pure1\)"], separation=>0).
+
+AlignedRow(["Town B","\($p2\)$PERCENT","$SPACE","\(x-$s1 \)","$SPACE","\($dp2 (x-$s1)\)"], separation=>0).
+
+AlignedRow(["Merged City","\($p3\)$PERCENT","$SPACE","\(x\)","$SPACE","\($dp3 (x)\)"], separation=>0).
+
+EndTable()
+\}
+$PAR
+
+Since the two towns merged to make the new city, the number of $ethnicity in the new city should be equal to the sum of the numbers of $ethnicity from the two towns. So we can write an equation and then solve it:
+$PAR
+
+\[
+\begin{aligned}
+   $dp3  x &= $pure1 +$dp2 (x-$s1 ) \\
+   $dp3  x &= $pure1 +$dp2 x-$dp2  \cdot $s1  \\
+   $dp3  x &= $pure1 +$dp2 x-$step1  \\
+   $dp3  x &= $step2 +$dp2 x \\
+   $dp3  x \mathbf{{}-$dp2 x} &= $step2 +$dp2 x \mathbf{{}-$dp2 x} \\
+   $step3 x &= $step2  \\
+   \frac{$step3 x}{$step3 } &= \frac{$step2 }{$step3 } \\
+              x       &= $s3 
+\end{aligned}
+\]
+$PAR
+So the merged city has \($s3\) residents.
+
+END_SOLUTION
+
+ENDDOCUMENT();

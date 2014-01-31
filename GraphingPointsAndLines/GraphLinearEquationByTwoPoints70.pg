@@ -1,0 +1,445 @@
+# WeBWorK problem written by Carl Yao
+# Portland Community College
+#
+# Given a line's equation, graph the line by finding two points on it.
+# The line's equation looks like y= (2/3)x+B. 
+# Numerator is smaller than denominator. B is a positive or negative integer.
+#
+# ENDDESCRIPTION
+
+## DBsubject('Algebra')
+## DBchapter('Basic Algebra')
+## DBsection('Lines')
+## KEYWORDS('coordinate','line','linear','equation','graph','fraction')
+## DBCCSS('8.EE.6','8.F.3','F-IF.7.a')
+## TitleText1('')
+## EditionText1('')
+## AuthorText1('')
+## Section1('')
+## Problem1('')
+## Author('Carl Yao')
+## Institution('PCC')
+
+##############################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGgraphmacros.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGML.pl",
+  "parserRadioButtons.pl",
+  "unionTables.pl",
+  "contextFraction.pl",
+  "PCCgraphMacros.pl",
+  "PGcourse.pl",
+);
+
+##############################################
+TEXT(beginproblem());
+Context("Fraction");
+$refreshCachedImages=1;
+
+$num = 2;
+$den = 1;
+while($num>$den or gcd($num,$den)!=1)
+{
+      $num = random(2,6,1);
+      $den = random(2,9,1);
+}
+$m= Fraction($num,$den);
+$b= non_zero_random(-5,5,1);
+@ar_mb = ([$m,$b],[Compute($m+1/$den),$b],[Compute($m-1/$den),$b],[Fraction(1,$den),$b],[$m,$b]);
+
+#Create a hash and its inverse that randomizes the order of the four graphs.
+%scramble = ();
+%inverse = ();
+for my $i (0..3) {
+  do {$temp = list_random(0..3)} until !(grep(/^$temp$/,values %scramble) );
+  $scramble{$i} = $temp;
+  $inverse{$temp} = $i;
+};
+
+$scramble{4} = 4;
+$inverse{4} = 4;
+
+
+($min[0], $max[0], $min[1], $max[1], $ticknum[0], $ticknum[1], $xticks_ref, $yticks_ref, $marksep[0], $marksep[1]) = NiceGraphParameters([0,$den],[0,1.5*$b],centerOrigin=>1);
+
+@xticks = @$xticks_ref;
+@yticks = @$yticks_ref;
+
+# points to be used in ALT tags
+$x1 = 0;
+$y1 = $num/$den*$x1+$b;
+$x2 = $den;
+$y2 = $num/$den*$x2+$b;
+
+for my $i (0..4) {
+  $gr[$i] = init_graph($min[0],$min[1],$max[0],$max[1],
+   axes=>[0,0],
+   grid=>[$ticknum[0],$ticknum[1]],
+   size=>[xPixels(),yPixels()]
+  );
+  $gr[$i]->lb('reset');
+  for my $j (@xticks) {
+    if (abs($j)<10**(-10)) {next;}
+    $gr[$i]->lb( new Label($j, -$marksep[1]/8, $j,'black','center','top'));
+  }
+
+  for my $j (@yticks) {
+    if (Real($j) == 0) {next;}
+    $gr[$i]->lb( new Label($marksep[0]/8, $j, $j,'black','left','middle'));
+  }
+   $gr[$i]->lb( new Label($min[0]+$marksep[0]/8, $max[1]-$marksep[1]/8, $ALPHABET[$inverse{$i}], 'black', 'left', 'top')) unless ($i==4);
+   add_functions($gr[$i], "$ar_mb[$i][0]*x+$ar_mb[$i][1] for x in <$min[0],$max[0]> using color:blue and weight:1");
+
+   # y points for ALT tags
+   #push(@ypoints,$ar_mb[$i][0]*$x2+$ar_mb[$i][1]);
+   $ypoint = $ar_mb[$i][0]*$x2+$ar_mb[$i][1];
+   push(@ALTtags,"Graph $ALPHABET[$inverse{$i}]: graph of a line passing through ($x1,$y1) and ($x2, $ypoint)");
+}
+
+$radio = RadioButtons(
+  ["A","B","C","D"],
+  $ALPHABET[$inverse{0}], # correct answer
+  order => ["A","B","C","D"],
+);
+
+
+##############################################
+
+BEGIN_PGML
+
+Choose the graph of the equation [` y= [$m] x+[$b]`] in the coordinate system. You may like to complete the following table 
+to help you to find two points on the line; choose _any_ two values of [`x`] and find the corresponding values of [`y`].
+
+END_PGML
+
+BEGIN_TEXT
+$PAR
+$BCENTER
+\{ 
+BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+
+AlignedRow(["\(x\)-value","\(y\)-value","ordered pair"], separation=>0).
+
+AlignedRow(["$SPACE","$SPACE", "$SPACE"], separation=>0).
+
+AlignedRow(["$SPACE","$SPACE", "$SPACE"], separation=>0).
+
+EndTable()
+\}
+$ECENTER
+$PAR
+END_TEXT
+
+BEGIN_PGML
+    The correct graph is graph    
+    [@$radio->buttons()@]*
+
+[@EnlargeImageStatementPGML@]**
+END_PGML
+
+BEGIN_TEXT
+$BCENTER
+\{ 
+BeginTable(border=>0, tex_border=>"0pt", spacing=>0, padding=>20, center=>0).
+
+AlignedRow([
+image( insertGraph($gr[$scramble{0}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{0}]" title = "$ALTtags[$scramble{0}]"'  ), 
+
+image( insertGraph($gr[$scramble{1}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{1}]" title = "$ALTtags[$scramble{1}]"'  ),
+], separation=>0).
+
+
+AlignedRow([
+image( insertGraph($gr[$scramble{2}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{2}]" title = "$ALTtags[$scramble{2}]"'  ), 
+
+image( insertGraph($gr[$scramble{3}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{3}]" title = "$ALTtags[$scramble{3}]"'  ),
+], separation=>0).
+
+EndTable()
+\}
+$ECENTER
+$PAR
+
+END_TEXT
+
+Context()->normalStrings;
+
+##############################################
+
+ANS( $radio->cmp() );
+
+Context("Point");
+Context()->parens->set("[" => {type => "Interval", close => "]"});
+Context()->parens->set("{" => {type => "Set", close => "}"});
+Context()->parens->set("<" => {type => "Vector", close => ">"});
+$pt1=Compute("($x1,$y1)");
+$pt2=Compute("($x2,$y2)");
+
+
+if ($m > 0) 
+{$p1vert = 'bottom';
+ $p2vert = 'bottom';
+ $p1hor = 'right';
+ $p2hor = 'right';}
+else {$p1vert = 'top';
+      $p2vert = 'bottom';
+      $p1hor = 'right';
+      $p2hor = 'left';};
+
+$gr[4]->stamps( closed_circle($x1,$y1,'red') );
+$gr[4]->lb( new Label($x1,$y1,"$pt1",'red',$p1hor,$p1vert));
+$gr[4]->stamps( closed_circle($x2,$y2,'red') );
+$gr[4]->lb( new Label($x2,$y2,"$pt2",'red',$p2hor,$p2vert));
+
+Context()->texStrings;
+BEGIN_SOLUTION
+
+We need two points to graph a line. In this problem, the equation is given in slope-intercept form, so it's easy to substitute values in for \(x\). Here we will try \( x=0 \) and \( x=$x2 \). Note that there are infinitely many choices of \(x\) that you can make- choosing \(0\) is generally a good choice, as it makes computation very easy. Choosing \(x=$den\) is also a good choice
+as it will prevent fractions in the calculation.
+
+$PAR
+$BCENTER
+\{ 
+BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+
+AlignedRow(["\(x\)-value","\(y\)-value","ordered pair"], separation=>0).
+
+AlignedRow(["\($x1\)","\($y1\)", "\($pt1\)"], separation=>0).
+
+AlignedRow(["\($x2\)","\($y2\)", "\($pt2\)"], separation=>0).
+
+EndTable()
+\}
+$ECENTER
+$PAR
+
+Locating these two points in the coordinate system, we can see the correct answer is \{ $radio->correct_ans() \}.
+$PAR
+$BCENTER
+\{ image( insertGraph($gr[4]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "graph of a line passing through ($x1,$y1) and ($x2,$y2)" title = "graph of a line passing through ($x1,$y1) and ($x2,$y2)"'  ) \}
+$ECENTER
+
+END_SOLUTION
+Context()->normalStrings;
+
+ENDDOCUMENT();
+
+
+# OLD
+# OLD
+# OLD
+# WeBWorK problem written by Carl Yao
+# Portland Community College
+#
+# Given a line's equation, graph the line by finding two points on it.
+# The line's equation looks like y= (2/3)x+B. 
+# Numerator is smaller than denominator. B is a positive or negative integer.
+#
+# ENDDESCRIPTION
+
+## DBsubject('Algebra')
+## DBchapter('Basic Algebra')
+## DBsection('Lines')
+## KEYWORDS('coordinate','line','linear','equation','graph','fraction')
+## DBCCSS('8.EE.6','8.F.3','F-IF.7.a')
+## TitleText1('')
+## EditionText1('')
+## AuthorText1('')
+## Section1('')
+## Problem1('')
+## Author('Carl Yao')
+## Institution('PCC')
+
+##############################################
+
+DOCUMENT();
+
+loadMacros(
+  "PGgraphmacros.pl",
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGML.pl",
+  "parserRadioButtons.pl",
+  "unionTables.pl",
+  "contextFraction.pl"
+);
+
+##############################################
+
+Context("Fraction");
+$refreshCachedImages=1;
+
+$num = random(2,6,1);
+do {$den = random($num+1,9,1);} until (gcd($num,$den)==1);
+$m= Fraction($num,$den);
+$b= non_zero_random(-5,5,1);
+@ar_mb = ([$m,$b],[Compute($m+1/$den),$b],[Compute($m-1/$den),$b+1],[Fraction(1,$den),$b]);
+
+$xmin = -10;
+$xmax = 10;
+$ymin = -10;
+$ymax = 10;
+$sizex = 800;
+$sizey = 800;
+
+#These two variables decide how many labels are on each axis.
+$xmark = 1;
+$ymark = 1;
+
+@gr=();
+
+for ($i=0;$i<=3;$i++) {
+   $gr[$i] = init_graph($xmin,$ymin,$xmax,$ymax,
+   axes=>[0,0],
+   grid=>[$xmax-$xmin,$ymax-$ymin],
+   size=>[$sizex,$sizey]
+   );
+   $gr[$i]->lb('reset');
+   for ($j=-$xmax+$xmark;$j<$xmax;$j=$j+$xmark) {
+      $gr[$i]->lb( new Label($j,  -0.1, $j,'black','center','top'));
+   }
+   for ($j=-$ymax+$ymark;$j<$ymax;$j=$j+$ymark) {
+      if (Real($j) == 0) {next;}
+      $gr[$i]->lb( new Label(0,  $j,' '.$j,'black','left','middle'));
+   }
+   add_functions($gr[$i], "$ar_mb[$i][0]*x+$ar_mb[$i][1] for x in <$xmin,$xmax> using color:blue and weight:2");
+}
+
+#randomize choices
+$j=5;
+$p=random(1,3,1);
+do {$q=random(1,3,1);} until ($p!=$q);
+$gr[$j]=$gr[$p];
+$gr[$p]=$gr[$q];
+$gr[$q]=$gr[$j];
+
+@ar_choice = ("A","B","C","D");
+$correct = random(0,3,1);
+$gr[$j]=$gr[$correct];
+$gr[$correct]=$gr[0];
+$gr[0]=$gr[$j];
+
+$radio = RadioButtons(
+  ["A","B","C","D"],
+  "$ar_choice[$correct]", # correct answer
+  order => ["A","B","C","D"],
+);
+
+##############################################
+
+Context()->texStrings;
+
+BEGIN_TEXT
+
+$PAR
+Choose the graph showing \( y= $m x +$b\) in the coordinate system. Use the table to find two points on the line.
+$PAR
+\{ 
+BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>0).
+
+AlignedRow(["\(x\)-value","\(y\)-value","points"], separation=>0).
+
+AlignedRow(["$SPACE","$SPACE", "$SPACE"], separation=>0).
+
+AlignedRow(["$SPACE","$SPACE", "$SPACE"], separation=>0).
+
+EndTable()
+\}
+$PAR
+
+Click on a graph and then enlarge the new window to see a bigger graph.
+$PAR
+
+A. \{ image( insertGraph($gr[0]), width=>600, height=>600, tex_size=>800, 
+   extra_html_tags=>'title="Graph of a coordinate system with a linear function." alt="Graph of a coordinate system with with a linear function."'  ) \}
+$PAR
+B. \{ image( insertGraph($gr[1]), width=>600, height=>600, tex_size=>800, 
+   extra_html_tags=>'title="Graph of a coordinate system with a linear function." alt="Graph of a coordinate system with with a linear function."'  ) \}
+$PAR
+C. \{ image( insertGraph($gr[2]), width=>600, height=>600, tex_size=>800, 
+   extra_html_tags=>'title="Graph of a coordinate system with a linear function." alt="Graph of a coordinate system with with a linear function."'  ) \}
+$PAR
+D. \{ image( insertGraph($gr[3]), width=>600, height=>600, tex_size=>800, 
+   extra_html_tags=>'title="Graph of a coordinate system with a linear function." alt="Graph of a coordinate system with with a linear function."'  ) \}
+
+$BR
+$BR
+\{ $radio->buttons() \}
+
+
+
+END_TEXT
+
+Context()->normalStrings;
+
+##############################################
+
+ANS( $radio->cmp() );
+
+$x1 = 0;
+$y1 = $m*$x1+$b;
+$x2 = $den;
+$y2 = $m*$x2+$b;
+
+Context("Point");
+Context()->parens->set("[" => {type => "Interval", close => "]"});
+Context()->parens->set("{" => {type => "Set", close => "}"});
+Context()->parens->set("<" => {type => "Vector", close => ">"});
+$pt1=Compute("($x1,$y1)");
+$pt2=Compute("($x2,$y2)");
+
+$grCorrect = init_graph($xmin,$ymin,$xmax,$ymax,
+axes=>[0,0],
+grid=>[$xmax-$xmin,$ymax-$ymin],
+size=>[$sizex,$sizey]
+);
+$grCorrect->lb('reset');
+for ($j=-$xmax+$xmark;$j<$xmax;$j=$j+$xmark) {
+   $grCorrect->lb( new Label($j,  -0.1, $j,'black','center','top'));
+}
+for ($j=-$ymax+$ymark;$j<$ymax;$j=$j+$ymark) {
+   if (Real($j) == 0) {next;}
+   $grCorrect->lb( new Label(0,  $j,' '.$j,'black','left','middle'));
+}
+add_functions($grCorrect, "$ar_mb[0][0]*x+$ar_mb[0][1] for x in <$xmin,$xmax> using color:blue and weight:2");
+$grCorrect->stamps( closed_circle($x1,$y1,'red') );
+$grCorrect->lb( new Label($x1+0.8,$y1+0.2,"$pt1",'red','center','middle'));
+$grCorrect->stamps( closed_circle($x2,$y2,'red') );
+$grCorrect->lb( new Label($x2+1,$y2,"$pt2",'red','center','middle'));
+
+Context()->texStrings;
+BEGIN_SOLUTION
+
+We need two points to graph a line. In this problem, the equation is given in slope-intercept form, so it's easier to substitute \( x=0 \) and \( x=$den \) into the equation to find two points.
+$PAR
+Note that we don't substitute \( x=1 \), so we can avoid having a fractional \(y\) value. It's easier to substitute an \(x\) value the same as the denominator of a fractional slope.
+$PAR
+
+\{ 
+BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>0).
+
+AlignedRow(["\(x\)","\(y = $m x +$b\)","\(\text{points}\)"], separation=>0).
+
+AlignedRow(["\($x1\)","\( y= $m \cdot $x1 +$b = $y1 \)", "\( ($x1,$y1) \)"], separation=>0).
+
+AlignedRow(["\($x2\)","\( y= $m \cdot $x2 +$b = $y2 \)", "\( ($x2,$y2) \)"], separation=>0).
+
+EndTable()
+\}
+
+$PAR
+Locating these two points in the coordinate system, we can see the correct answer is \{ $radio->correct_ans() \}.
+$PAR
+
+\{ image( insertGraph($grCorrect), width=>600, height=>600, tex_size=>800, 
+   extra_html_tags=>'title="Graph of a coordinate system with a linear function." alt="Graph of a coordinate system with with a linear function."'  ) \}
+
+END_SOLUTION
+Context()->normalStrings;
+
+ENDDOCUMENT();
