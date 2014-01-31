@@ -64,7 +64,6 @@ $m = random(2,20,1);
 $n=$m;
 $n = random(2,20,1) while($n==$m);
 
-Context()->variables->set($var1=>{limits=>[0.25,0.4]},$var2=>{limits=>[0.25,0.4]});
 $ans = Formula("1/($var2^$n*$var1^$m)");
 
 ##############################################
@@ -87,6 +86,7 @@ END_PGML
 ANS($ans -> cmp(
    checker=>sub{
       my ( $correct, $student, $ansHash ) = @_;
+      Context()->flags->set(limits=>[0.95,1.05]);
       return 0 if $ansHash->{isPreview} || $correct != $student;
       $student = $ansHash->{student_formula};
       $correct = $correct->{original_formula} if defined $correct->{original_formula};
@@ -94,6 +94,7 @@ ANS($ans -> cmp(
       return 0 unless ($correct == $student);
       Context()->flags->set(bizarroDiv=>1,bizarroMul=>1,limits=>[2,10]);
       delete $correct->{test_values}, $student->{test_values};
+      Context()->flags->set(limits=>[0.25,0.4]);
       Value->Error("Your answer is correct, but please simplify it further") unless (($correct == $student) or ($student == $correct));
       Context()->flags->set(bizarroDiv=>0,bizarroMul=>0);
       return 1;

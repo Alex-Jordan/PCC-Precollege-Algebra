@@ -45,7 +45,7 @@ $a = non_zero_random(2,10,1);
 $b = non_zero_random(1,10,1);
 
 $index = random(0,1,1);
-@operations = ('increased by','decreased by');
+@operations = ('more than','less than');
 $operation = $operations[$index];
 
 
@@ -59,7 +59,7 @@ BEGIN_PGML
 
 Translate the following phrase into a math expression. Use [`x`] to represent the unknown number.
 
-    [@numberWord($a)@] times a number [$operation] [@numberWord($b)@]
+    [@numberWord($a)@] times [@numberWord($b)@] [$operation] a number
 
     [_______]{$ans} 
 
@@ -71,10 +71,16 @@ END_PGML
 @solnwords = ('addition','subtraction');
 $solnword = $solnwords[$index];
 
+@plusMinus = ('+','-');
+$sign = $plusMinus[$index];
 
 BEGIN_PGML_SOLUTION
 
-The lack of a comma in this phrase implies that the phrase should be read as '[@numberWord($a)@] times (a number [$operation] [@numberWord($b)@])'. So the answer is [` [$ans] `].
+The lack of a comma in this phrase implies that the phrase should be read as '[@numberWord($a)@] times ([@numberWord($b)@] [$operation] a number)'. So the answer is [` [$ans] `].
+
+Note that it's wrong to answer [`[$a]x[$sign][$b]`]. Without the parentheses, we have to do multiplication first, and the corresponding sentence would be:
+
+[`[$b]`] [$operation] [@numberWord($a)@] times a number.
 
 END_PGML_SOLUTION
 

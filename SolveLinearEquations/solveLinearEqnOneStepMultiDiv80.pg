@@ -87,9 +87,9 @@ BEGIN_PGML_SOLUTION
     [``
 \begin{aligned}
                 \frac{[$num]}{[$den]} [$var]  & = [$right] \\
- [$den] \cdot   \frac{[$num]}{[$den]} [$var]  & = [$den] \cdot [$product] \\
-                                [$num][$var]  & = [$den*$product]  \\
-                \frac{[$num][$var]}{[$num]}   & = \frac{[$den*$product]}{[$num]} \\
+ [$den] \cdot   \frac{[$num]}{[$den]} [$var]  & = [$den] \cdot [$right] \\
+                                [$num][$var]  & = [$den*$right]  \\
+                \frac{[$num][$var]}{[$num]}   & = \frac{[$den*$right]}{[$num]} \\
                                       [$var]  & = [$ans]
 \end{aligned}
     ``]

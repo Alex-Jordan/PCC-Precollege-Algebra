@@ -72,7 +72,6 @@ Context()->{error}{msg}{"A variable can appear only once in each term of a polyn
 # quick reduction check (if $m or $n is 1)
 $myvar1 = Formula("$myvar^$m/$a")->reduce;
 $myvar2 = Formula("$myvar^$n/$b")->reduce;
-Context()->variables->set($myvar=>{limits=> [0.25,0.4]});
 $total = $m+$n;
 $coeff = $a*$b;
 $ans = Formula("$myvar^($total)/$coeff")->reduce;
@@ -81,7 +80,7 @@ TEXT(beginproblem());
 BEGIN_PGML
 Use the properties of exponents to simplify the following
    
-    [`\left([$myvar1]\right) \cdot \left([$myvar2]\right)`]
+    [``\left([$myvar1]\right) \cdot \left([$myvar2]\right)``]
 
     [____________]
 
@@ -91,6 +90,7 @@ $wrong=$m*$n;
 ANS($ans -> cmp(
    checker=>sub{
       my ( $correct, $student, $ansHash ) = @_;
+      Context()->flags->set(limits=>[0.95,1.05]);
       return 0 if $ansHash->{isPreview} || $correct != $student;
       $student = $ansHash->{student_formula};
       $correct = $correct->{original_formula} if defined $correct->{original_formula};
@@ -98,6 +98,7 @@ ANS($ans -> cmp(
       return 0 unless ($correct == $student);
       Context()->flags->set(bizarroDiv=>1);
       delete $correct->{test_values}, $student->{test_values};
+      Context()->flags->set(limits=>[0.25,0.4]);
       Value->Error("Your answer is correct, but please simplify it further") unless (($correct == $student) or ($student == $correct));
       Context()->flags->set(bizarroDiv=>0);
       return 1;

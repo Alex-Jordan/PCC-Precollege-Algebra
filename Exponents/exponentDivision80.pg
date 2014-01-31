@@ -65,7 +65,7 @@ $var1 = 'x';
 $var2 = 'y';
 $var3 = 'z';
 Context()->variables->are($var1=>'Real',$var2=>'Real',$var3=>'Real');
-Context()->variables->set($var1=>{limits=>[0.25,0.4]},$var2=>{limits=>[0.25,0.4]},$var3=>{limits=>[0.25,0.4]});
+
 $a = random(2,3,2);
 $m = random(2,10,1);
 $n=$m;
@@ -97,6 +97,7 @@ END_PGML
 ANS($ans -> cmp(
    checker=>sub{
       my ( $correct, $student, $ansHash ) = @_;
+      Context()->flags->set(limits=>[0.95,1.05]);
       return 0 if $ansHash->{isPreview} || $correct != $student;
       $student = $ansHash->{student_formula};
       $correct = $correct->{original_formula} if defined $correct->{original_formula};
@@ -104,6 +105,7 @@ ANS($ans -> cmp(
       return 0 unless ($correct == $student);
       Context()->flags->set(bizarroDiv=>1,bizarroMul=>1);
       delete $correct->{test_values}, $student->{test_values};
+      Context()->flags->set(limits=>[0.25,0.4]);
       Value->Error("Your answer is correct, but please simplify it further") unless (($correct == $student) or ($student == $correct));
       Context()->flags->set(bizarroDiv=>0,bizarroMul=>0);
       return 1;

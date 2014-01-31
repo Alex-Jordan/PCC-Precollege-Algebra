@@ -125,7 +125,7 @@ BEGIN_PGML_SOLUTION
 a)   [``
 \begin{aligned}[t]
  -[$var1]  +[$a]   & = [$a] \\
- -[$var1]  +[$a]\mathbf{{}+[$a]}   & = [$a]\mathbf{{}+[$a]} \\
+ -[$var1]  +[$a]\mathbf{{}-[$a]}   & = [$a]\mathbf{{}-[$a]} \\
  -[$var1]  &  =  0 \\
  (-1) \cdot (-[$var1]) &= (-1) \cdot 0 \\
  [$var1]   &= [$ans1]
@@ -138,7 +138,7 @@ a)   [``
 b)     [``
 \begin{aligned}[t]
  -[$var2]  +[$a]   &= -[$a] \\
- -[$var2]  +[$a]\mathbf{{}+[$a]}   &= -[$a]\mathbf{{}+[$a]} \\
+ -[$var2]  +[$a]\mathbf{{}-[$a]}   &= -[$a]\mathbf{{}-[$a]} \\
  -[$var2]  & = -[$b] \\
  (-1) \cdot (-[$var2]) &=  (-1) \cdot (-[$b]) \\
  [$var2]   & = [$ans2]
