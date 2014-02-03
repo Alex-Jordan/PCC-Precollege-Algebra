@@ -66,7 +66,7 @@ Context()->operators->set(
 # exponents
 $m = random(3,12,1);
 $p = random(2,3,1);
-$n = random($m*$p,40,1);
+$n = random($m*$p+1,40,1);
 
 # total exponent
 $total = (($m)*($p)-$n)*(-1);

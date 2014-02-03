@@ -69,7 +69,7 @@ Context()->operators->set(
 $m = random(3,10,1);
 $n = random(2,4,1);
 $p = 1; $k = 1;
-while(($m*$n)>($p*$k))
+while(($m*$n)>=($p*$k))
 {
   $p = random(3,15,1); 
   $k = random(2,5,1);
