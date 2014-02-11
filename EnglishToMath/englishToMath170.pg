@@ -69,7 +69,7 @@ BEGIN_PGML
 
 Translate the following phrase into a math expression. Use [`x`] to represent the unknown number.
 
-    A number [$opPhrase] by [@numberWord($a/$b,denominator=>$b)@] is [@numberWord($c/$d,denominator=>$d)@] of that number.
+    A number [$opPhrase] [@numberWord($a/$b,denominator=>$b)@] is [@numberWord($c/$d,denominator=>$d)@] of that number.
 
     [______________]{ImplicitPlane($ans)->cmp(cmp_class=>'a linear equation',correct_ans=>$ans)} 
 
@@ -82,7 +82,7 @@ BEGIN_PGML_SOLUTION
 
 The word 'is' implies equality, so we have
 
-    A number [$opPhrase] by [@numberWord($a/$b,denominator=>$b)@] [`=`] [@numberWord($c/$d,denominator=>$d)@] of that number.
+    A number [$opPhrase] [@numberWord($a/$b,denominator=>$b)@] [`=`] [@numberWord($c/$d,denominator=>$d)@] of that number.
 
 When a fraction precedes the word 'of', it implies that the fraction should be multiplied by what follows. Also the phrase '[$opPhrase]' implies that we should use the [`[$toMath]`] symbol and leave the order of the numbers in place. So the answer is [` [$ans] `].
 

@@ -126,11 +126,11 @@ if (($leftOpen==1) && ($rightOpen==1)) {
    add_functions($gr[0], "$m*x+$b for x in ($domainLowX,$domainHighX) using color:blue and weight:2");
 } elsif (($leftOpen==0) && ($rightOpen==1)) {
    $intDomain = Compute("[$domainLowX,$domainHighX)");
-   $intRange = Compute("[$rangeLowY,$rangeHighY)");
+   $intRange = $m>0 ? Compute("[$rangeLowY,$rangeHighY)") : Compute("($rangeLowY,$rangeHighY]");
    add_functions($gr[0], "$m*x+$b for x in [$domainLowX,$domainHighX) using color:blue and weight:2");
 } elsif (($leftOpen==1) && ($rightOpen==0)) {
    $intDomain = Compute("($domainLowX,$domainHighX]");
-   $intRange = Compute("($rangeLowY,$rangeHighY]");
+   $intRange = $m>0 ? Compute("($rangeLowY,$rangeHighY]") : Compute("[$rangeLowY,$rangeHighY)");
    add_functions($gr[0], "$m*x+$b for x in ($domainLowX,$domainHighX] using color:blue and weight:2");
 } else {
    $intDomain = Compute("[$domainLowX,$domainHighX]");

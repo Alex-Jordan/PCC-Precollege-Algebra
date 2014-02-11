@@ -40,7 +40,7 @@ Context("LimitedNumeric");
 $loss = random(20,30,1);
 $dif = random(10,20,1);
 $factor = list_random(3,4,5);
-$win = $factor*$loss-$dif;
+$win = $factor*$loss+$dif;
 $total = $win+$loss;
 
 ##############################################

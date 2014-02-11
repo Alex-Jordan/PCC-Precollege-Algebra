@@ -84,7 +84,7 @@ BEGIN_PGML_SOLUTION
  (-[$a]+[$c])-[$b][$var] &= (-1-[$f])[$var]+[$e] \\
  (-[$a]+[$c])-[$b][$var] &= (-1-[$f])[$var]+[$e] \\
   -[$s1]     -[$b][$var] &= -[$b][$var]+[$e] \\
-  -[$s1]     -[$b][$var]\mathbf{{}+[$s1]+[$b][$var]} &= -[$b]z+[$e]\mathbf{{}+[$s1]+[$b][$var]} \\
+  -[$s1]     -[$b][$var]\mathbf{{}+[$s1]+[$b][$var]} &= -[$b][$var]+[$e]\mathbf{{}+[$s1]+[$b][$var]} \\
   0                 &= [$s2]
 \end{aligned}
     ``]

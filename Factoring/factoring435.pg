@@ -60,7 +60,7 @@ Context()->noreduce('(-x)-y', '(-x)+y');
 $a = random(1,10,1);
 $b = $a;
 $b = random(1,10,1)while(abs($a)==abs($b));
-$question = Formula("($varA+$varB)$var^2+($varA+$varB)($a+$b)$var+($varA+$varB)$a*$b")->reduce;
+$question = Formula("($varA+$varB)$var^2+($varA+$varB)($a+$b)$var+$a*$b*($varA+$varB)")->reduce->reduce;
 $ans = Formula("($varA+$varB)($var+$a)*($var+$b)")->reduce;
 ##############################################
 TEXT(beginproblem());

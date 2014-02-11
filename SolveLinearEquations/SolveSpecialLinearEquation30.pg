@@ -77,10 +77,10 @@ BEGIN_PGML_SOLUTION
 
     [``
 \begin{aligned}
-  [$a]y-[$b]-[$c][$var]  &= -[$d]-[$var]+[$f] \\
+  [$a][$var]-[$b]-[$c][$var]  &= -[$d]-[$var]+[$f] \\
   ([$a]-[$c])[$var]-[$b] &= (-[$d]+[$f])-[$var] \\
   -[$var]        -[$b]   &= -[$b]-[$var] \\
-  -[$var]        -[$b] \mathbf{{}+[$var] +[$b]}  &= -[$b]-y\mathbf{{}+[$var] +[$b]} \\
+  -[$var]        -[$b] \mathbf{{}+[$var] +[$b]}  &= -[$b]-[$var]\mathbf{{}+[$var] +[$b]} \\
                 0   &= 0
 \end{aligned}
     ``]
