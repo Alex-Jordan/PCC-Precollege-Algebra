@@ -82,7 +82,7 @@ Context()->noreduce("(-x)-y","(-x)+y");
 $x[2]=non_zero_random(-5,5,1);
 $y[2]=non_zero_random(-5,5,1);
 do {$b[2][0]=random(-9,9,1);} until ($b[2][0]!=$y[2]);
-do {$b[2][1]=random(-9,9,1);} until (abs($b[2][1]-$b[2][0])>2 && ($b[2][1]!=$y[2]));
+do {$b[2][1]=random(-9,9,1);} until (abs($b[2][1]-$b[2][0])>2 && ($b[2][1]!=$y[2]) && ($b[2][1]!=$$b[2][0]));
 $m[2][0] = Fraction($y[2]-$b[2][0],$x[2])->reduce;
 $m[2][1] = Fraction($y[2]-$b[2][1],$x[2])->reduce;
 
