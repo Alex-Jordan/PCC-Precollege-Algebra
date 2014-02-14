@@ -53,7 +53,7 @@ TEXT(beginproblem());
 
 BEGIN_PGML
 
-A rectangular prism's volume is [`[$volumeU]`]. Its base is a rectangle, with a base of [`[$base1U]`] and a height of [`[$base2U]`].
+A rectangular prism's volume is [`[$volumeU]`]. The prism's base is a rectangle. The rectangle's base is [`[$base1U]`] and the rectangle's height is [`[$base2U]`].
 
     This prism's height is [_____________]{$heightU}. 
 
@@ -75,7 +75,7 @@ Since this is a rectangular prism, the base is a rectangle. A rectangle's area f
 
     [`` \text{rectangle area} = \text{base} \cdot \text{height} ``]
 
-Let [`a`] represent the base's base, [`b`] represent the base's height, [`h`] represent the prism's height, and [`V`] represent the prism's volume, we have:
+Let [`a`] represent the rectangle's base, [`b`] represent the rectangle's height, [`h`] represent the prism's height, and [`V`] represent the prism's volume, we have:
 
     [`` V=abh ``]
 
