@@ -139,12 +139,12 @@ BEGIN_PGML_SOLUTION
 
 To find the area of a rectangle, we find the product of the base and height. A rectangle's area formula is:
 
-    [`` \text{rectangle area} = \text{base} \cdot \text{base} ``]
+    [`` \text{rectangle area} = \text{base} \cdot \text{height} ``]
 
 For the given rectangle, we have:
 
 [``\begin{aligned}
-       \text{rectangle perimeter}
+       \text{rectangle area}
        & = \text{base} \cdot \text{height} \\
        & = [$base] \cdot [$height] \\
        & = \frac{[$num1m]}{[$den1]} \cdot \frac{[$num2m]}{[$den2]} \\

@@ -103,13 +103,13 @@ BEGIN_TEXT
 Find the area of the triangle.$PAR
 
 $BCENTER
-\{ image(insertGraph( $picture  ), tex_size=>400, height=>400, width=>400, extra_html_tags => 'alt = "a triangle with one side parallel to the ground; this side is $base ft long; the left side is $leftSide ft long; the right side is $rightSide ft long; the height is $height ft" title = "a triangle with its dimensions given"') \}
+\{ image(insertGraph( $picture  ), tex_size=>400, height=>400, width=>400, extra_html_tags => 'alt = "a triangle with one side parallel to the ground; this side is $base ft long; the height is $height ft long" title = "a triangle with one side parallel to the ground; this side is $base ft long; the height is $height ft long" ') \}
 $ECENTER
 $PAR
 
 END_TEXT
 BEGIN_PGML
-    Its area is [_____________]{$area} square feet. (Use fraction in your answer.)
+    The triangle's area is [_____________]{$area} square feet. (Use fraction in your answer.)
 
 END_PGML
 
@@ -119,12 +119,12 @@ BEGIN_PGML_SOLUTION
 
 To find the area of a triangle, we use its area formula:
 
-    [`` \text{rectangle area} = \frac{1}{2} \cdot \text{base} \cdot \text{base} ``]
+    [`` \text{triangle area} = \frac{1}{2} \cdot \text{base} \cdot \text{height} ``]
 
 For the given triangle, we have:
 
 [``\begin{aligned}
-       \text{rectangle perimeter}
+       \text{triangle area}
        & = \frac{1}{2} \cdot \text{base} \cdot \text{height} \\
        & = \frac{1}{2} \cdot [$base] \cdot [$height] \\
        & = \frac{1 \cdot [$num1] \cdot [$num2]}{2 \cdot [$den1] \cdot [$den2]} \\
@@ -134,7 +134,7 @@ For the given triangle, we have:
 
 Don't forget the length unit [`\textrm{ft}^{2}`].  
 
-*Solution:* The rectangle's area is [`[$area]`] square meters, or [`[$area] \textrm{ ft}^{2}`].
+*Solution:* The triangle's area is [`[$area]`] square feet, or [`[$area] \textrm{ ft}^{2}`].
 
 END_PGML_SOLUTION
 
