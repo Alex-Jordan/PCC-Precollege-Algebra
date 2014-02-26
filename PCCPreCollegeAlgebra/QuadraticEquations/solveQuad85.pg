@@ -65,8 +65,9 @@ $var = "x";
 # b needs to be even
 $b = random(2,10,2);
 
-# c can be either odd or even
-$c = random(3,12,1);
+# c can be either odd or even, but can't be equal to $b
+$c = $b;
+$c = random(3,12,1) while($c==$b);
 
 # choose a based on c being odd or even
 if(2*round($c/2)==$c)

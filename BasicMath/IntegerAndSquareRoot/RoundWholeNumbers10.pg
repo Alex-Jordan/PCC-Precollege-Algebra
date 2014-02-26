@@ -36,10 +36,10 @@ loadMacros(
 ##############################################
 
 Context("Numeric");
-Context()->flags->set(
-  tolerance => 0.1,
-  tolType => "absolute",
-);
+#Context()->flags->set(
+#  tolerance => 0.1,
+#  tolType => "absolute",
+#);
 
 $numDigits = 7;
 
@@ -57,6 +57,10 @@ $roundToDigit = $digits{$roundToWord};
 
 $rightDigit = log($roundToDigit)/log(10)-1;
 $leftDigit = $numDigits - $rightDigit - 1;
+
+BEGIN_TEXT
+$rightDigit,$leftDigit
+END_TEXT
 
 $left = random(10**($leftDigit-2),10**$leftDigit-1,1);
 $middle1 = random(0,4,1);

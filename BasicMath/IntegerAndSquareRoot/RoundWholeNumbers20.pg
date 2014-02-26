@@ -36,11 +36,24 @@ loadMacros(
 
 ##############################################
 
+#This subroutine rounds numbers like 1.9999 to 2. This subroutine deals with
+# Perl's inaccuracy in exponent calculation.
+sub roundPerl {
+   my $num = shift;
+   if ($num>int($num)) {
+      return int($num)+1;
+   } else {
+      return int($num);
+   }
+}
+
+##############################################
+
 Context("Numeric");
-Context()->flags->set(
-  tolerance => 0.1,
-  tolType => "absolute",
-);
+#Context()->flags->set(
+#  tolerance => 0.1,
+#  tolType => "absolute",
+#);
 
 $numDigits = 7;
 
@@ -62,12 +75,12 @@ $leftDigit = $numDigits - $rightDigit - 1;
 $left = random(10**($leftDigit-3),10**($leftDigit-1)-1,1)*10+9;
 $middle1 = random(0,4,1);
 $right = $roundToDigit==10 ? 0 : random(1,$roundToDigit/10-1,1);
-$num1 = $left*10**($rightDigit+1)+$middle1*10**$rightDigit+$right;
-$ans1 = $left*10**($rightDigit+1);
+$num1 = roundPerl($left*10**($rightDigit+1)+$middle1*10**$rightDigit+$right);
+$ans1 = roundPerl($left*10**($rightDigit+1));
 
 $middle2 = random(5,9,1);
-$num2 = $left*10**($rightDigit+1)+$middle2*10**$rightDigit+$right;
-$ans2 = ($left+1)*10**($rightDigit+1);
+$num2 = roundPerl($left*10**($rightDigit+1)+$middle2*10**$rightDigit+$right);
+$ans2 = roundPerl(($left+1)*10**($rightDigit+1));
 
 #Randomize questions
 if (random(0,1,1)==1) {
@@ -120,13 +133,13 @@ ANS( Compute($ans2)->cmp(correct_ans_latex_string=>$correctAns2,correct_ans=>$co
 
 $num1Left = $left;
 $num2Left = $left;
-$num1Right = $middle1*10**$rightDigit+$right;
-$num2Right = $middle2*10**$rightDigit+$right;
+$num1Right = roundPerl($middle1*10**$rightDigit+$right);
+$num2Right = roundPerl($middle2*10**$rightDigit+$right);
 $place = $left-int($left/10)*10;
-$upper = ($left+1)*10**($rightDigit+1);
-$lower = $left*10**($rightDigit+1);
+$upper = roundPerl(($left+1)*10**($rightDigit+1));
+$lower = roundPerl($left*10**($rightDigit+1));
 
-if ($ans1>$num1) {
+if (($correctAns1+0)>$num1) {
    $biggerOrSmaller1 = "greater than 4";
    $roundUpOrNot1 = "";
    $biggerOrSmaller2 = "smaller than 5";

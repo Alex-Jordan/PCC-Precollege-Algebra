@@ -75,7 +75,7 @@ TEXT(beginproblem());
 
 BEGIN_PGML
 
-[$name] loves sports. Every week, [$pronoun] practices [`[$minBasketball]`] minutes of basketball, [`[$minFootball]`] of volleyball, and [`[$minSoccer]`] minutes of soccer.
+[$name] loves sports. Every week, [$pronoun] practices [`[$minBasketball]`] minutes of basketball, [`[$minFootball]`] minutes of volleyball, and [`[$minSoccer]`] minutes of soccer.
 
 In total, how many minutes of [$event] will [$name] play in [`[$weeks]`] weeks?
 

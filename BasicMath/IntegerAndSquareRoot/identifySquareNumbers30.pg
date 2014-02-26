@@ -45,18 +45,12 @@ $num1=splice(@squareNums,random(0,$#squareNums,1),1);
 do {$index = random(0,$#squareNums,1);} until ((gcd($squareNums[$index],$num1)==1) && ($squareNums[$index]!=1));
 $num2=splice(@squareNums,$index,1);
 
-$num3=splice(@squareNums,random(0,$#squareNums,1),1);
-do {$index = random(0,$#squareNums,1);} until ((gcd($squareNums[$index],$num3)==1) && ($squareNums[$index]!=1));
-$num4=splice(@squareNums,$index,1);
-
 $num5=splice(@squareNums,random(0,$#squareNums,1),1);
 do {$index = random(0,$#squareNums,1);} until ((gcd($squareNums[$index],$num5)==1) && ($squareNums[$index]!=1));
 $num6=splice(@squareNums,$index,1);
 
 $frac1 = Fraction($num1,$num2);
 $ans1 = sqrt($frac1);
-$frac2 = Fraction($num3,$num4);
-$ans2 = sqrt($frac2);
 $frac3 = -Fraction($num5,$num6);
 $ans3 = Compute("DNE");
 
@@ -69,8 +63,6 @@ Find the square root of the following numbers. Don't use mixed numbers. When nee
 If a problem cannot be computed, enter *DNE* (does not exist).
 
     [`` \sqrt{[$frac1]} ``] = [_____________]{$ans1}
-
-    [`` \sqrt{[$frac2]} ``] = [_____________]{$ans2}
 
     [`` \sqrt{[$frac3]} ``] = [_____________]{$ans3}
 
@@ -89,7 +81,6 @@ The answers are:
     [``
 \begin{aligned}[t]
    \sqrt{[$frac1]} &= [$ans1] \\
-   \sqrt{[$frac2]} &= [$ans2] \\
    \sqrt{[$frac3]} &\text{does not exist} \\
 \end{aligned}
     ``]

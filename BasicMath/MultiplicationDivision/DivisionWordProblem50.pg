@@ -73,7 +73,7 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 
-Division is used when we need to find the rate of change. In this problem, the rate of change is the number of miles per hour, so we divide the total number of miles by the number of hours:
+Division is used when we need to find speed. In this problem, the speed is the number of miles per hour, so we divide the total number of miles by the number of hours:
 
     [`` [$total] \div [$hours] = [$speed] ``]
 

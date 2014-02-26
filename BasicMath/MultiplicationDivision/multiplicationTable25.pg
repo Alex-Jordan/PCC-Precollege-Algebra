@@ -1,7 +1,7 @@
 # WeBWorK problem written by Carl Yao
 # Portland Community College
 #
-# Practice multiplication facts by doing division problems. Numbers range from 2 to 9.
+# Practice multiplication facts by doing division problems. Numbers range from 2 to 12.
 #
 # Last edited: Carl Yao 9/25/13
 #
@@ -41,8 +41,8 @@ Context("LimitedNumeric");
 @products = ();
 
 for my $i (0..9) {
-  $num1[$i] = random(2,9,1);
-  $num2[$i] = random(2,9,1);
+  $num1[$i] = random(2,12,1);
+  $num2[$i] = random(2,12,1);
   $products[$i] = $num1[$i]*$num2[$i];
 }
 
