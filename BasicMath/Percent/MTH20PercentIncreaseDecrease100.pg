@@ -39,7 +39,7 @@ Context()->currency->addSymbol("dollars","dollar");
 Context()->flags->set(trimTrailingZeros=>1);
 Context()->operators->undefine('+','-');
 
-$r = random(1,5,1);
+$r = random(2,5,1);
 $s = random(30000,50000,1000);
 $ans1 = $s+$r*$s/100;
 $ans2 = $ans1-$ans1*$r/100;

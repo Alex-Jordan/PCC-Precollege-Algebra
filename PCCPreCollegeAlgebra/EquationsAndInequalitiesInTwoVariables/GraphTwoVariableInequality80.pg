@@ -61,7 +61,7 @@ $c=lcm(abs($a),abs($d))*non_zero_random(-2,2,1);
 
 $m=-$a/$d;
 $b=$c/$d;
-@ar_mb = ([$m,$b,''],[$m,$b,'dashed'],[$m,-$b,'dashed'],[-$a/$d,$b,''],[$m,$b,'']);
+@ar_mb = ([$m,$b,''],[$m,$b,'dashed'],[$m,-$b,'dashed'],[1/$m,$b,''],[$m,$b,'']);
 
 #This subroutine is used later to see which side to shade
 sub testPoint {

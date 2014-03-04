@@ -37,7 +37,7 @@ TEXT(beginproblem());
 
 Context("LimitedNumeric");
 
-@squareNums = (1,4,9,16,25,36,49,64,81,100,121,144);
+@squareNums = (4,9,16,25,36,49,64,81,100,121,144);
 
 $num1=$squareNums[random(0,$#squareNums,1)];
 

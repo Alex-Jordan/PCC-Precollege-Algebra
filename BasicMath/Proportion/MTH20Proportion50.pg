@@ -58,7 +58,7 @@ $possessive = ($sex eq 'male') ? 'his' : 'her';
 
 BEGIN_PGML
 
-[$name] collected a total of [`[$total]`] stamps over the past [`[$years]`] years. At this rate, how many stamps would [$pronoun] collect in [`[$years1]`]?
+[$name] collected a total of [`[$total]`] stamps over the past [`[$years]`] years. At this rate, how many stamps would [$pronoun] collect in [`[$years1]`] years?
 
 *Solution:* At this rate, [$name] would collect [_________]{$total1} stamps in [`[$years1]`] years.
 

@@ -36,8 +36,11 @@ loadMacros(
 
 Context("Numeric");
 
-$original=random(5001,9999,1);
-do {$decrease = random(int($original*0.9)+1,$original-1,1);} until (int($decrease/$original*100)!=$decrease/$original*100);
+do {
+   $original=random(5001,9999,1);
+   $decrease = random(int($original*0.9)+1,$original-1,1);
+} until (int($decrease/$original*100)!=$decrease/$original*100);
+
 $new = $original-$decrease;
 $decNotRounded = $decrease/$original;
 $dec = sprintf("%.2f",$decNotRounded);

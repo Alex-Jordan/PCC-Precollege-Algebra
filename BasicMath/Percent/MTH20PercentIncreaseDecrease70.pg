@@ -38,8 +38,8 @@ loadMacros(
 
 Context("Numeric");
 
-$original = random(500,800,10);
 do {
+   $original = random(500,800,10);
    $new = random(int($original*0.991),int($original*0.999),1);
    $decrease = $original - $new;
 } until (int($decrease/$original*1000)!=$decrease/$original*1000);

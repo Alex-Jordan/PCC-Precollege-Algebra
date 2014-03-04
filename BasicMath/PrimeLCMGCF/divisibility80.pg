@@ -76,7 +76,7 @@ Context("Numeric");
 #Create the number. Make sure at least 2 factors go into the number.
 do {
    $flag = 0;
-   $num = random(100,999,1);
+   $num = random(100,900,100)+random(10,90,10)+random(1,9,1);
    foreach my $item (@factors) {
       if ($num%$item==0) {$flag++;}
    }

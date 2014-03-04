@@ -36,8 +36,11 @@ loadMacros(
 
 Context("LimitedNumeric");
 
-$original = random(10,80,1);
-do {$inc = random(5,20,1);} until (int($inc/$original*10000)!=$inc/$original*10000);
+do {
+   $original = random(10,80,1);
+   $inc = random(5,20,1);
+} until (int($inc/$original*10000)!=$inc/$original*10000);
+
 $new = $original+$inc;
 $decIncNotRounded = $inc/$original;
 $decInc = sprintf("%.4f",$decIncNotRounded);

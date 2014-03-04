@@ -1,7 +1,7 @@
 # WeBWorK problem written by Carl Yao
 # Portland Community College
 #
-# Find the LCM of three numbers. Numbers are in the range [2,20]
+# Find the LCM of three numbers. Numbers are in the range [2,15]
 #
 # Last edited: Yao 9/26/13
 #
@@ -94,10 +94,10 @@ sub isPrime {
 Context("Numeric");
 
 do {
-   $num1 = random(2,20,1);
-   do {$num2 = random(2,20,1);} until ($num2!=$num1);
-   do {$num3 = random(2,20,1);} until (($num3!=num1)&&($num3!=$num2));
-} until ( (!(isPrime($num1))) && (!(isPrime($num2))));
+   $num1 = random(2,15,1);
+   do {$num2 = random(2,15,1);} until ($num2!=$num1);
+   do {$num3 = random(2,15,1);} until (($num3!=num1)&&($num3!=$num2));
+} until ( (!(isPrime($num1))) && (!(isPrime($num2))) & (!(isPrime($num3))) );
 
 $ans = lcm(lcm($num1,$num2),$num3);
 

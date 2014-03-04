@@ -40,7 +40,6 @@ loadMacros(
 
 Context("LimitedNumeric");
 
-$startPrice = 1+random(-1,1,2)*random(1,50,1)/100;
 $numPoints = 5;
 $maxLimit = 2;
 
@@ -48,8 +47,9 @@ $maxLimit = 2;
 @price = (0,0,0,0,0);
 @priceC = ();
 
-$price[0] = $startPrice;
 do {
+   $startPrice = 1+random(-1,1,2)*random(1,50,1)/100;
+   $price[0] = $startPrice;
    for my $i (1..$numPoints-1) {
       $price[$i] = $price[$i-1]+random(-1,1,2)*random(1,50,1)/100;
    }

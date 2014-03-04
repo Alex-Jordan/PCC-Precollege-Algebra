@@ -61,7 +61,7 @@ do {
          $nums[$i] = $outlier;
       }
       $sum = $sum + $nums[$i];
-      $listComma = $listComma.'$'."$nums[$i],\;\;";
+      $listComma = $listComma.'\$'."$nums[$i],\;\;";
       $listAdd = $listAdd."$nums[$i]+";
    }
 

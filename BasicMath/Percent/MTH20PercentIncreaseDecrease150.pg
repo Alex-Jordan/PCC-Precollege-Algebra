@@ -37,7 +37,7 @@ loadMacros(
 Context("LimitedNumeric");
 
 $ans = random(100,990,100);
-$per = random(10,90,10);
+$per = random(15,55,10);
 $dec = $per/100;
 $new = $ans*(1+$per/100);
 

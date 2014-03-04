@@ -38,8 +38,11 @@ loadMacros(
 
 Context("LimitedNumeric");
 
-$whole = random(20,50,1);
-do {$part = random(int($whole*0.1),int($whole*0.25),0.5);} until (int($part/$whole*10000)!=$part/$whole*10000);
+do {
+   $whole = random(20,50,1);
+   $part = random(int($whole*0.1),int($whole*0.25),0.5);
+} until (int($part/$whole*10000)!=$part/$whole*10000);
+
 $decNotRounded = $part/$whole;
 $dec = sprintf("%.2f",$decNotRounded);
 $per = $dec*100;

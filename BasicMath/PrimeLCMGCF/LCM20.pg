@@ -96,7 +96,7 @@ Context("Numeric");
 do {
    $num1 = random(10,20,1);
    $num2 = random(10,20,1);
-} until ( ($num1!=$num2) && (!(isPrime($num1))));
+} until ( ($num1!=$num2) && (!(isPrime($num1))) && (!(isPrime($num2))) && (gcd($num1,$num2)!=1) );
 
 $ans = lcm($num1,$num2);
 

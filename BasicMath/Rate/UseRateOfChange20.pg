@@ -44,7 +44,7 @@ TEXT(beginproblem());
 
 Context("LimitedNumeric");
 
-$rateSB = random(1,6,1)+random(0,9,1)/10+random(1,9,1)/100;
+$rateSB = random(2,6,1)+random(0,9,1)/10+random(1,9,1)/100;
 $stock1 = random(110,990,10);
 $bond1 = $stock1*$rateSB;
 do {$stock2 = random(110,990,10);} until ($stock1!=$stock2);
