@@ -53,14 +53,14 @@ $lineNSI = Compute("$m*x+$b")->reduce;
 Context()->texStrings;
 $absX1 = abs($x1);
 $absY1 = abs($y1);
-if (($x1>0) && ($y1>0)) {
-   $ansPSstringTeX = "y-$y1=$m(x-$x1)"; 
-} elsif (($x1<0) && ($y1>0)) {
-   $ansPSstringTeX = "y-$y1=$m(x+$absX1)"; 
-} elsif (($x1>0) && ($y1<0)) {
-   $ansPSstringTeX = "y+$absY1=$m(x-$x1)"; 
+if (($x1>0) && ($y1>=0)) {
+   $ansPSstringTeX = $y1==0 ? "y=$m(x-$x1)" : "y-$y1=$m(x-$x1)"; 
+} elsif (($x1<0) && ($y1>=0)) {
+   $ansPSstringTeX = $y1==0 ? "y=$m(x+$absX1)" : "y-$y1=$m(x+$absX1)"; 
+} elsif (($x1>0) && ($y1<=0)) {
+   $ansPSstringTeX = $y1==0 ? "y=$m(x-$x1)" : "y+$absY1=$m(x-$x1)"; 
 } else {
-   $ansPSstringTeX = "y+$absY1=$m(x+$absX1)"; 
+   $ansPSstringTeX = $y1==0 ? "y=$m(x+$absX1)" : "y+$absY1=$m(x+$absX1)"; 
 }
 $ansSIstringTeX = "y=$lineNSI";
 Context()->normalStrings;
@@ -69,6 +69,7 @@ Context()->normalStrings;
 $ansPS = ImplicitPlane($ansPSstringTeX);
 
 Context("Numeric");
+Context()->flags->set(showExtraParens=>0);
 Context()->variables->are(x=>'Real', y=>'Real');
 Context()->noreduce('(-x)-y','(-x)+y','(-x)*y','x*(-y)','-n');
 parser::Assignment->Allow;
@@ -118,12 +119,39 @@ ANS(ImplicitPlane($ansPS)->cmp(correct_ans_latex_string => $ansPSstringTeX
 $s1 = $m*$x1;
 
 $negX1 = -$x1;
-$x1Output = $negX1>0 ? "$negX1" : "(-$negX1)";
+$x1Output = $negX1>0 ? "$negX1" : "(-$x1)";
 if ($m>0) {
-   $output1 = "$lineNPSLeft &= $m x+$m \cdot $x1Output \\";
+   $output1 = "$m x+$m \cdot $x1Output \\";
 } else {
-   $output1 = "$lineNPSLeft &= ($m) x+($m) \cdot $x1Output \\";
+   $output1 = "($m) x+($m) \cdot $x1Output \\";
 }
+
+$absY1 = abs($y1);
+Context()->texStrings;
+$right1 = Compute("$m*x-$s1")->reduce;
+$left1 = $y1>0 ? "+$y1" : "-$absY1";
+
+$s2 = $s1-$y1;
+$absS2 = abs($s2);
+if ($s2>0) {
+   $right2 = "-$s2";
+} elsif ($s2<0) {
+   $right2 = "+$absS2";
+} else {
+   $right2 = "";
+}
+
+
+if ($y1!=0) {
+   $output2 = "$lineNPSLeft \mathbf{{} $left1} &= $right1 \mathbf{{} $left1}\\";
+   $output3 = "y &= $m x $right2 \\";
+} else {
+   $output2 = "";
+   $output3 = "";
+}
+Context()->normalStrings;
+
+#####################################
 
 BEGIN_PGML_SOLUTION
 
@@ -152,10 +180,10 @@ The slope-intercept form of a line equation looks like [`y=mx+b`], where [`m`] i
     [`
 \begin{aligned}
    [$lineNPSLeft] &= [$lineNPSRight]\\
-   [$output1]
+   [$lineNPSLeft] &= [$output1]
    [$lineNPSLeft] &= [$m]x-[$s1]\\
-   [$lineNPSLeft] \mathbf{{}+[$y1]} &= [$m]x-[$s1]\mathbf{{}+[$y1]}\\
-   y &= [$m]x-[$s1-$y1]\\
+   [$output2]
+   [$output3]
 \end{aligned}
 `]
 
