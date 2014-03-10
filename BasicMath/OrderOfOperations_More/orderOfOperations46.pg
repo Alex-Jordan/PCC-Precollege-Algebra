@@ -76,7 +76,7 @@ Since there is no operation symbol between [`[$b]`] and [`([$c])`], and between 
               \end{aligned}
         ``]
 
-In the second step, we needed to add in a multiplication symbol (a dot) between [`[$b*$c]`] and [`[$d]`]. This was needed to avoid confusion.
+In the second step, we wrote in a multiplication symbol (a dot) between [`[$b*$c]`] and [`[$d]`]. This was needed to avoid confusion.
 
 END_PGML_SOLUTION
 

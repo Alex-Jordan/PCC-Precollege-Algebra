@@ -70,7 +70,7 @@ BEGIN_PGML_SOLUTION
 
     [``
 \begin{aligned}[t]
-   &\phantom{{}=} [$a]+[$b]([$c]-[$d]\cdot[$e]^{[$f]}) \\
+   &\phantom{={}} [$a]+[$b]([$c]-[$d]\cdot[$e]^{[$f]}) \\
    &= [$a]+[$b]([$c]-[$d]\cdot[$s1]) \\
    &= [$a]+[$b]([$c]-[$d*$s1]) \\
    &= [$a]+[$b]([$s2]) \\

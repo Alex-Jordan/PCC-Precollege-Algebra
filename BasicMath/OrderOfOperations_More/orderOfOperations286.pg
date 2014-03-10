@@ -77,27 +77,25 @@ BEGIN_PGML_SOLUTION
 
 Notice the difference in the position of the negative symbol.
 
-a)   [``
+a.   [``
 \begin{aligned}[t]
    \left( -[$frac1] \right) ^{3} 
    & = \left( -[$frac1] \right) \cdot \left( -[$frac1] \right) \cdot \left( -[$frac1] \right) \\
    & = \frac{[$num1*$num1]}{[$den1*$den1]} \cdot \left( -[$frac1] \right) \\
    & = [$ans1] 
-\end{aligned}``]
+\end{aligned}``]  
+In Part a, parentheses have higher priority than exponents.
 
-    In Part 1), parentheses override exponent.
-
-b)   [``
+a.   [``
 \begin{aligned}[t]
    -\left( [$frac1] \right) ^{3} 
    & = -\left( [$frac1] \right) \cdot \left( [$frac1] \right) \cdot \left( [$frac1] \right) \\
    & = -\frac{[$num1*$num1]}{[$den1*$den1]} \cdot \left( [$frac1] \right) \\
    & = [$ans2] 
-\end{aligned}``]
+\end{aligned}``]  
+In Part b, exponents have higher priority than the negative symbol (which is, in essence, multiplication).
 
-    In Part 2), exponent overrides the negative symbol (which is, in essence, multiplication).
-
-c)   [``
+a.   [``
 \begin{aligned}[t]
    -\left( -[$frac1] \right) ^{3} 
    & = -\left( -[$frac1] \right) \cdot \left( -[$frac1] \right) \cdot \left( -[$frac1] \right) \\

@@ -40,11 +40,18 @@ Context("LimitedNumeric");
 @num2 = ();
 @products = ();
 
-for my $i (0..9) {
+do
+{for my $i (0..9) {
   $num1[$i] = random(2,12,1);
   $num2[$i] = random(2,12,1);
   $products[$i] = $num1[$i]*$num2[$i];
-}
+  }
+
+my %seen = ();
+@duplicates = ();
+@duplicates = map { 1==$seen{$_}++ ? $_ : () } @products;
+
+} until (@duplicates == 0);
 
 ##############################################
 

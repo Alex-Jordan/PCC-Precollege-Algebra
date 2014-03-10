@@ -74,44 +74,44 @@ Let's observe a pattern first. Recall that multiplication and division are inver
 
     [``
 \begin{aligned}[t]
-   \frac{12}{3}=4 && 3 \cdot 4 = 12 \\
-   \frac{20}{2}=10 &&  2 \cdot 10 = 20 \\
-   \frac{20}{4}=5 && 4 \cdot 5 = 20 \\
-   ...
+   \frac{12}{3}&=4 & 3 \cdot 4 &= 12 \\
+   \frac{20}{2}&=10 &  2 \cdot 10 &= 20 \\
+   \frac{20}{4}&=5 & 4 \cdot 5 &= 20 \\
+   &\vdots&&\vdots
 \end{aligned}
     ``]
 
 ###[`0`] in numerator  
 
-Now let's think about [`0`]. Assume [` \frac{0}{[$a]} = x `], by the pattern we observed, we have:
+Now let's think about [`0`]. Assume that [` \frac{0}{[$a]} = x `]. By the pattern we observed, we would have:
 
     [``
 \begin{aligned}[t]
-   \frac{0}{[$a]}=x &&  [$a] \cdot x = 0 \\
+   \frac{0}{[$a]}&=x &  [$a] \cdot x &= 0 \\
 \end{aligned}
     ``]
 
-Any number will make [`[$a] \cdot x = 0`] work? Yes! When [`x=0`], we have [`[$a] \cdot 0 = 0`]. This is why [`\frac{0}{[$a]}=0 `]. We can write:
+Is there any number for [`x`] that will make [`[$a] \cdot x = 0`] work? Yes! When [`x=0`], we have [`[$a] \cdot 0 = 0`]. This is why [`\frac{0}{[$a]}=0 `]. We can write:
 
     [``
 \begin{aligned}[t]
-   \frac{0}{[$a]}=0 &&  [$a] \cdot 0 = 0 \\
+   \frac{0}{[$a]}&=0 &  [$a] \cdot 0 &= 0 \\
 \end{aligned}
     ``]
 
 ###[`0`] in denominator  
 
-Assume [` \frac{[$a]}{0} = x `], by the pattern we observed, we have:
+Assume that [` \frac{[$a]}{0} = x `]. Then by the pattern we observed, we would have:
 
     [``
 \begin{aligned}[t]
-   \frac{[$a]}{0}=x &&  0 \cdot x = [$a] \\
+   \frac{[$a]}{0}&=x &  0 \cdot x &= [$a] \\
 \end{aligned}
     ``]
 
-Any number will make [`0 \cdot x = [$a]`] work? No! This is because the product of [`0`] and any number is [`0`], and would never be [`[$a]`]. This is why we say [` \frac{[$a]}{0} `] is *undefined*.
+Is there any number for [`x`] that will make [`0 \cdot x = [$a]`] work? No! This is because the product of [`0`] and any number is [`0`], and would never be [`[$a]`]. This is why we say [` \frac{[$a]}{0} `] is *undefined*.
 
-####Solutions:  
+####Answers:  
 
     [`` \frac{0}{[$a]}=0 \text{ and } \frac{[$a]}{0} \text{ is undefined.} ``]
 

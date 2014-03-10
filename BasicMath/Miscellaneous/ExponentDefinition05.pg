@@ -62,7 +62,7 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 
-The solutions are:
+The answers can be computed as follows:
 
 a)    [` 
          \begin{aligned}[t]

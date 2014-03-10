@@ -79,6 +79,7 @@ $perimeter = 2*($base+$height);
 $area = $base*$height;
 $ansP = NumberWithUnits("$perimeter cm");
 $ansA = NumberWithUnits("$area cm^2");
+$baseWithUnit = NumberWithUnits("$base cm");
 
 
 
@@ -109,31 +110,31 @@ BEGIN_PGML_SOLUTION
 
 We usually use the following formulas for squares:
 
-    [` \text{square perimeter} = 4 \cdot \text{base} `]
+    [` \text{square perimeter} = 4 \cdot \text{(side length)} `]
 
-    [` \text{square area} = \text{base}^{2} `]
+    [` \text{square area} = \text{(side length)}^{2} `]
 
 ----
 For the given square, we have:
 
-[``\begin{aligned}
+    [``\begin{aligned}
        \text{square perimeter}
-       & = 4 \cdot \text{base} \\
-       & = 4 \cdot [$base] \\
+       & = 4 \cdot \text{(side length)} \\
+       & = 4 \cdot [$baseWithUnit] \\
        & = [$ansP]
      \end{aligned}``]
 
 Don't forget the length unit [`\textrm{cm}`].  
 ----
 Also,  
-[``\begin{aligned}
+    [``\begin{aligned}
        \text{square area}
-       & = \text{base}^{2} \\
-       & = [$base]^{2} \\
+       & = \text{(side length)}^{2} \\
+       & = ([$baseWithUnit])^{2} \\
        & = [$ansA]
      \end{aligned}``]
 
-    Don't forget the area unit [`\textrm{cm}^{2}`].
+Don't forget the area unit [`\textrm{cm}^{2}`].
 
 END_PGML_SOLUTION
 

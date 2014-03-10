@@ -47,7 +47,7 @@ TEXT(beginproblem());
 
 BEGIN_PGML
 
-In a class, the teacher will hand out [`[$product]`] marbles to all his [`[$numStudents]`] students evenly. How many marbles will each student receive?
+In a class, the teacher will hand out a total of [`[$product]`] marbles to all his [`[$numStudents]`] students evenly. How many marbles will each student receive?
 
 Solution: Each student will receive [_______]{$each} marbles.
 

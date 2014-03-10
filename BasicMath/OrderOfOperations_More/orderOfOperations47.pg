@@ -56,8 +56,8 @@ BEGIN_PGML
 
 Evaluate these expressions:
 
-a)   [`` [$a]-[$b] =  ``]  [________]{$ans1}
-b)   [`` [$a](-[$b]) =  ``]  [________]{$ans2}
+a.   [`` [$a]-[$b] =  ``]  [________]{$ans1}
+a.   [`` [$a](-[$b]) =  ``]  [________]{$ans2}
 
 
 END_PGML
@@ -66,24 +66,19 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 
-a.
-This problem is a straightforward subtraction:
-
-        [``
-         \begin{aligned}[t]
-              [$a]-[$b]  & =  [$ans1] 
-          \end{aligned}
-        ``]
-
-b.
-Notice the difference from Part a). Since there is no operation symbol between [`[$a]`] and [`(-[$b])`], it implies multiplication.
-
-       [``
-            \begin{aligned}[t]
-           [$a](-[$b])& = [$a] \cdot (-[$b]) \\
-                          & = [$ans2] 
-              \end{aligned}
-        ``]
+a.  This problem is a straightforward subtraction:  
+[``
+  \begin{aligned}[t]
+  [$a]-[$b]  & =  [$ans1] 
+  \end{aligned}
+  ``]
+a. Notice the difference from Part a. Since there is no operation symbol between [`[$a]`] and [`(-[$b])`], it implies multiplication.  
+[``
+  \begin{aligned}[t]
+  [$a](-[$b])& = [$a] \cdot (-[$b]) \\
+  & = [$ans2] 
+  \end{aligned}
+  ``]
 
 END_PGML_SOLUTION
 

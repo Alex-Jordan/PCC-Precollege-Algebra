@@ -79,7 +79,7 @@ Context()->texStrings;
 $mc = new_checkbox_multiple_choice();
 
 $mc -> qa (
-"Check all numbers which $factor goes into.$BR",
+"Mark all numbers which $factor divides into.$BR",
 "\($given[0]\) $BR",
 "\($given[1]\) $BR",
 );
@@ -123,17 +123,19 @@ ANS( checkbox_cmp( $mc->correct_ans() ) );
 
 BEGIN_PGML_SOLUTION
 
-To judge whether [`4`] goes into a number, we only need to see whether [`4`] goes into the last 2 digits of the number.
+To judge whether [`4`] divides into a number, we only need to see whether [`4`] divides the last two digits of the number.
 
-For example, [`4`] goes into [`5678912`], because [`4`] goes into the last two digit of this number, [`12`].
+For example, [`4`] divides [`5678912`], because [`4`] divides the last two digit of this number, [`12`].
 
-For [`[@ $given[0] @]`], since [`4`] goes into the last two digits [`[@ $lastTwo[0] @]`], [`4`] must go into [`[@ $given[0] @]`].
+Be careful! This rule only works for [`4`], but it doesn't work for all numbers!
 
-For [`[@ $given[1] @]`], since [`4`] goes into the last two digits [`[@ $lastTwo[1] @]`], [`4`] must go into [`[@ $given[1] @]`].
+For [`[@ $given[0] @]`], since [`4`] divides the last two digits [`[@ $lastTwo[0] @]`], [`4`] must divide [`[@ $given[0] @]`].
 
-For [`[@ $given[2] @]`], since [`4`] does not go into the last two digits [`[@ $lastTwo[2] @]`], [`4`] does not go into [`[@ $given[2] @]`].
+For [`[@ $given[1] @]`], since [`4`] divides the last two digits [`[@ $lastTwo[1] @]`], [`4`] must divide [`[@ $given[1] @]`].
 
-For [`[@ $given[3] @]`], since [`4`] does not go into the last two digits [`[@ $lastTwo[3] @]`], [`4`] does not go into [`[@ $given[3] @]`].
+For [`[@ $given[2] @]`], since [`4`] does not divide the last two digits [`[@ $lastTwo[2] @]`], [`4`] does not divide [`[@ $given[2] @]`].
+
+For [`[@ $given[3] @]`], since [`4`] does not divide the last two digits [`[@ $lastTwo[3] @]`], [`4`] does not divide [`[@ $given[3] @]`].
 
 So the correct answers are [@$mc->correct_ans()@].
 

@@ -62,13 +62,13 @@ BEGIN_PGML_SOLUTION
 
     [``
 \begin{aligned}[t]
-   &\phantom{{}=} -\left| [$a]-[$b] \right| \\
+   -\left| [$a]-[$b] \right| 
    &= -\left| [$a-$b] \right|  \\
    &= [$ans] 
 \end{aligned}
     ``]
 
-Note that absolute value can change the number inside it from negative to positive, but it has no effect on the negative symbol outside it.
+Note that absolute value bars can change the number inside them from negative to positive, but they has no effect on the negative symbol outside them.
 
 END_PGML_SOLUTION
 

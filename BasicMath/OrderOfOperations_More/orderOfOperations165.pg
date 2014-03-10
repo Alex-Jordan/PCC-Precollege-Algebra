@@ -66,11 +66,11 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 
-When there is a fraction line, we must evaluate the numerator and denominators separately first, and then do the division.
+When there is a fraction line, we must evaluate the numerator and denominators separately first, and then do the division. The fraction line is itself a kind of grouping symbol.
 
     [``
 \begin{aligned}[t]
-   &\phantom{{}=} \frac{[$a]+[$b]}{[$c]-[$d]} \\
+   \frac{[$a]+[$b]}{[$c]-[$d]} 
    &= \frac{[$a+$b]}{[$c-$d]} \\
    &= [$ans]
 \end{aligned}

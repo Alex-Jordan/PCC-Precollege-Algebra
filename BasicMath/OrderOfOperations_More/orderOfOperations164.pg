@@ -62,23 +62,21 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 
-a)    [`
-         \begin{aligned}[t]
-           [$a]+\frac{[$b]}{[$den]} & = [$a]+[$b/$den] \\ 
-                           & = [$ans1] 
-          \end{aligned}
-    `]  
-
-In this problem, by order of operations, division overrides addition.
+a. [`
+  \begin{aligned}[t]
+  [$a]+\frac{[$b]}{[$den]} & = [$a]+[$b/$den] \\ 
+  & = [$ans1] 
+   \end{aligned}
+  `]  
+In this problem, by order of operations, division has higher priority than addition.
 ----
-b)   [`
-          \begin{aligned}[t]
-          \frac{[$a]+[$b]}{[$den]}  & = \frac{[$a+$b]}{[$den]} \\
-                       & = [$ans2] 
-       \end{aligned}
-      `]
-
-In this problem, we need to do addition before division, because there is a pair of "invisible" parentheses around the numerator, [` [$a]+[$b] `].
+a.  [`
+ \begin{aligned}[t]
+ \frac{[$a]+[$b]}{[$den]}  & = \frac{[$a+$b]}{[$den]} \\
+ & = [$ans2] 
+ \end{aligned}
+ `]  
+In this problem, we need to do addition before division, because the fraction bar itself is a kind of grouping symbol. There is a pair of "invisible" parentheses around the numerator, [` [$a]+[$b] `].
 
 END_PGML_SOLUTION
 

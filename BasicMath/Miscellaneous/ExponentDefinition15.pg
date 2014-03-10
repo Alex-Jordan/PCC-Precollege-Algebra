@@ -64,13 +64,18 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 
-The solutions are:
+The answers can be computed as follows:
 
-a)    [`` 1^{[$a]}=1\cdot1\cdot1...\cdot1=1,  ``]
+a)    [`` \begin{aligned}[t]
+       1^{[$a]}&=1\cdot1\cdot1...\cdot1\\
+                   &=1\end{aligned}  ``]
 
-b)    [`` 0^{[$d]}=0\cdot0\cdot0...\cdot0=0,  ``]
+b)    [``  \begin{aligned}[t]
+       0^{[$d]}&=0\cdot0\cdot0...\cdot0\\
+                   &=0\end{aligned}   ``]
 
-c)    [`` [$c]^{1}=[$c]  ``]
+c)    [``  \begin{aligned}[t]
+       [$c]^{1}&=[$c]  \end{aligned} ``]
 
 END_PGML_SOLUTION
 

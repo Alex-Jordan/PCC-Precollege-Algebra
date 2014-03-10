@@ -69,11 +69,11 @@ $s1= ($b-$c)**2;
 
 BEGIN_PGML_SOLUTION
 
-The bracket [$brackets] and parentheses ( ) have the same functions. We usually use [$brackets] when ( ) are already used in the problem, so we can tell which pair are which.
+The bracket [$brackets] and parentheses ( ) have the same purpose. We usually use [$brackets] when ( ) are already used in the problem, so we can tell which pair are which.
 
     [``
 \begin{aligned}[t]
-   &\phantom{=}-[[$a]-([$b]-[$c])^{2}] \\
+   &\phantom{={}}{-[[$a]-([$b]-[$c])^{2}]} \\
    &= -[[$a]-([$b-$c])^{2}] \\
    &= -[[$a]-[$s1]] \\
    &= -[[$a-$s1]]\\

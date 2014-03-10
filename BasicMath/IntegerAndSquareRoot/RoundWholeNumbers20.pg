@@ -103,7 +103,7 @@ TEXT(beginproblem());
 
 BEGIN_PGML
 
-Round the following numbers to the _[$roundToWord]_: (Don't use commas in your answer)
+Round the following numbers to the nearest _[$roundToWord]_. (Don't use commas in your answer.)
 
     [`` [$num1] = ``] [_____________]
 
@@ -140,14 +140,14 @@ $upper = roundPerl(($left+1)*10**($rightDigit+1));
 $lower = roundPerl($left*10**($rightDigit+1));
 
 if (($correctAns1+0)>$num1) {
-   $biggerOrSmaller1 = "greater than 4";
+   $biggerOrSmaller1 = "greater than [`4`]";
    $roundUpOrNot1 = "";
-   $biggerOrSmaller2 = "smaller than 5";
+   $biggerOrSmaller2 = "smaller than [`5`]";
    $roundUpOrNot2 = "do not";
 } else {
-   $biggerOrSmaller1 = "smaller than 5";
+   $biggerOrSmaller1 = "smaller than [`5`]";
    $roundUpOrNot1 = "do not";
-   $biggerOrSmaller2 = "greater than 4";
+   $biggerOrSmaller2 = "greater than [`4`]";
    $roundUpOrNot2 = "";
 }
 
@@ -155,41 +155,41 @@ if (($correctAns1+0)>$num1) {
 
 BEGIN_PGML_SOLUTION
 
-First, let's review the name of place values. Look at the number
+First, let's review the names of place values. Look at the number
 
-    [`` 2,345,678 ``]
+    [`` 2{,}345{,}678 ``]
 
 The name of each place is:
 
     [``
 \begin{aligned}[t]
-   2 & \rightarrow 2 \text{ millions} \\
-   3 & \rightarrow 3 \text{ hundred thousands} \\
-   4 & \rightarrow 4 \text{ ten thousands} \\
-   5 & \rightarrow 5 \text{ thousands} \\
-   6 & \rightarrow 6 \text{ hundreds} \\
-   7 & \rightarrow 7 \text{ tens} \\
-   8 & \rightarrow 8 \text{ ones} 
+   2 & \rightarrow \text{ millions} \\
+   3 & \rightarrow \text{ hundred thousands} \\
+   4 & \rightarrow \text{ ten thousands} \\
+   5 & \rightarrow \text{ thousands} \\
+   6 & \rightarrow \text{ hundreds} \\
+   7 & \rightarrow \text{ tens} \\
+   8 & \rightarrow \text{ ones} 
 \end{aligned}
     ``]
 
-This problem asks you to round numbers to [$roundToWord].
+This problem asks you to round numbers to the nearest [$roundToWord].
 
 ###1st number  
 
-For the first number [`[$num1]`], the number in the [$roundToWord]s' place is [`[$place]`]. 
+For the first number [`[$num1]`], the number in the [$roundToWord]s place is [`[$place]`]. 
 
 We break the first number [`[$num1]`] into two parts: [`[$num1Left]`] and [`[$num1Right]`]. The rounded value is either [`[$upper]`] or [`[$lower]`].
 
-Look at the digit immediately following the [$roundToWord]s' place: [`[$middle1]`]. Since this digit is [$biggerOrSmaller1], we [$roundUpOrNot1] round up and have [`[$correctAns1]`].
+Look at the digit immediately following the [$roundToWord]s place: [`[$middle1]`]. Since this digit is [$biggerOrSmaller1]**, we [$roundUpOrNot1] round up and have [`[$correctAns1]`].
 
 ###2nd number  
 
-For the second number [`[$num2]`], the number in the [$roundToWord]s' place is also [`[$place]`]. 
+For the second number [`[$num2]`], the number in the [$roundToWord]s place is also [`[$place]`]. 
 
 We break the second number [`[$num2]`] into two parts: [`[$num2Left]`] and [`[$num2Right]`]. The rounded value is either [`[$upper]`] or [`[$lower]`].
 
-Look at the digit immediately following the [$roundToWord]s' place: [`[$middle2]`]. Since this digit is [$biggerOrSmaller2], we [$roundUpOrNot2] round up and have [`[$correctAns2]`].
+Look at the digit immediately following the [$roundToWord]s place: [`[$middle2]`]. Since this digit is [$biggerOrSmaller2]**, we [$roundUpOrNot2] round up and have [`[$correctAns2]`].
 
 END_PGML_SOLUTION
 

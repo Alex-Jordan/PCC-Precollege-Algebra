@@ -100,7 +100,7 @@ Context()->texStrings;
 $mc = new_checkbox_multiple_choice();
 
 $mc -> qa (
-"Check all numbers which $factor goes into.$BR",
+"Mark all numbers which $factor divides into.$BR",
 "\($given[0]\) $BR",
 "\($given[1]\) $BR",
 );
@@ -144,17 +144,17 @@ for my $i (0..$numCorrect*2-1) {
 
 BEGIN_PGML_SOLUTION
 
-Let me explain how to tell whether [`9`] goes into a number with an example. Say the number is [` 7236 `]. We add up all its digits, and have [` 7+2+3+6 = 18 `]. Since [`9`] goes into [`18`], [`9`] must go into [` 7236 `].
+Let's see how to tell whether [`9`] divides into a number with an example. Suppose the number is [` 7236 `]. We add up all its digits, and have [` 7+2+3+6 = 18 `]. Since [`9`] divides into [`18`], [`9`] must divide [` 7236 `] too.
 
 Note that this rule only works for [`3`] and [`9`]. It doesn't work for the other numbers!
 
-For [`[@ $given[0] @]`], the sum of its digits is [`[@ $output[0] @] = [@ $sum[0] @]`]. Since [`9`] goes into [`[@ $sum[0] @]`], [`9`] must go into [`[@ $given[0] @]`].
+For [`[@ $given[0] @]`], the sum of its digits is [`[@ $output[0] @] = [@ $sum[0] @]`]. Since [`9`] divides [`[@ $sum[0] @]`], [`9`] must divide [`[@ $given[0] @]`].
 
-For [`[@ $given[1] @]`], the sum of its digits is [`[@ $output[1] @] = [@ $sum[1] @]`]. Since [`9`] goes into [`[@ $sum[1] @]`], [`9`] must go into [`[@ $given[1] @]`].
+For [`[@ $given[1] @]`], the sum of its digits is [`[@ $output[1] @] = [@ $sum[1] @]`]. Since [`9`] divides [`[@ $sum[1] @]`], [`9`] must divide [`[@ $given[1] @]`].
 
-For [`[@ $given[2] @]`], the sum of its digits is [`[@ $output[2] @] = [@ $sum[2] @]`]. Since [`9`] does not goes into [`[@ $sum[2] @]`], [`9`] does not go into [`[@ $given[2] @]`].
+For [`[@ $given[2] @]`], the sum of its digits is [`[@ $output[2] @] = [@ $sum[2] @]`]. Since [`9`] does not divide [`[@ $sum[2] @]`], [`9`] does not divide [`[@ $given[2] @]`].
 
-For [`[@ $given[3] @]`], the sum of its digits is [`[@ $output[3] @] = [@ $sum[3] @]`]. Since [`9`] does not goes into [`[@ $sum[3] @]`], [`9`] does not go into [`[@ $given[3] @]`].
+For [`[@ $given[3] @]`], the sum of its digits is [`[@ $output[3] @] = [@ $sum[3] @]`]. Since [`9`] does not divide [`[@ $sum[3] @]`], [`9`] does not divide [`[@ $given[3] @]`].
 
 So the correct answers are [@$mc->correct_ans()@].
 

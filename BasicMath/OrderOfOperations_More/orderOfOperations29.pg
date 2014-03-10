@@ -72,7 +72,7 @@ $step1 = $b*$c;
 
 BEGIN_PGML_SOLUTION
 
-Remember that in the order of operations, multiplication takes priority above subtraction.
+In the order of operations, multiplication takes priority above subtraction.
 
     [` 
         \begin{aligned}[t]

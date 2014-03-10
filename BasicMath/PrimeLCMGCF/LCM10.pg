@@ -158,13 +158,13 @@ So the Least Common Multiple of [`[$num1]`] and [`[$num2]`] is [`[$ans]`].
 
 ####Method 2  
 
-Another method is to find multiples of the bigger number until the smaller number can go into the multiple. This method only works when both numbers are small.
+Another method is to find multiples of the bigger number until the smaller number divides into the multiple. This method only works when both numbers are small.
 
 Let's list the first few multiples of the bigger number:
 
     [`` [$output] ``]
 
-Notice that [`[$smaller]`] goes into [`[$ans]`] in the list, so the LCM of these numbers is [`[$ans]`].
+Notice that [`[$smaller]`] divdes into [`[$ans]`] in the list, so the LCM of these numbers is [`[$ans]`].
 
 END_PGML_SOLUTION
 

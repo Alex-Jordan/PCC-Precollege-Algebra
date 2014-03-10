@@ -119,25 +119,25 @@ ANS( checkbox_cmp( $mc->correct_ans() ) );
 
 BEGIN_PGML_SOLUTION
 
-First, let's review the definition of factor. Since [`2`] goes into [`8`], we say [`2`] is a factor of [`8`].
+First, let's review the definition of factor. Since [`2`] divides into [`8`], we say [`2`] is a factor of [`8`].
 
 A _prime number_ only has two factors: [`1`] and itself.
 
 In the list, [`[@$given[0]@]`], [`[@$given[1]@]`] and [`[@$given[2]@]`] are prime numbers.
 
-For [`[@$given[3]@]`], [`[@$factor[3]@]`] can go into it. This implies [`[@$given[3]@]`] is not a prime number. It is called a _composite number_.
+For [`[@$given[3]@]`], [`[@$factor[3]@]`] can divide it. This implies [`[@$given[3]@]`] is not a prime number. It is called a _composite number_.
 
-Similarly, [`[@$factor[4]@]`] goes into [`[@$given[4]@]`], making [`[@$given[4]@]`] a composite number.
+Similarly, [`[@$factor[4]@]`] divides into [`[@$given[4]@]`], making [`[@$given[4]@]`] a composite number.
 
-And, [`[@$factor[5]@]`] goes into [`[@$given[5]@]`], making [`[@$given[5]@]`] a composite number.
+And, [`[@$factor[5]@]`] divides into [`[@$given[5]@]`], making [`[@$given[5]@]`] a composite number.
 
 So the correct answers are [@$mc->correct_ans()@].
 
-Please memorize the first 5 prime numbers:
+Please memorize the first five prime numbers:
 
     [`` 2, 3, 5, 7, 11 ``]
 
-You will frequently use them in later math courses.
+You will use them frequently in later math courses.
 
 END_PGML_SOLUTION
 

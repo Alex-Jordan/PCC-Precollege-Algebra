@@ -64,7 +64,7 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 
-Remember that in the order of operations, parentheses take priority above exponent.
+In the order of operations, parentheses take priority above exponents.
 
     [` 
         \begin{aligned}[t]

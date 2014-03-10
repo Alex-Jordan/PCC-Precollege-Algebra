@@ -77,7 +77,7 @@ Context()->texStrings;
 $mc = new_checkbox_multiple_choice();
 
 $mc -> qa (
-"Check all numbers which $factor goes into.$BR",
+"Mark all numbers which $factor divides into.$BR",
 "\($given[0]\) $BR",
 "\($given[1]\) $BR",
 "\($given[2]\) $BR",
@@ -117,7 +117,7 @@ ANS( checkbox_cmp( $mc->correct_ans() ) );
 
 BEGIN_PGML_SOLUTION
 
-The number [`2`] goes into all even numbers.
+The number [`2`] divides into all _even_ numbers.
 
 In the list, [`[@$given[0]@]`], [`[@$given[1]@]`] and [`[@$given[2]@]`] are even numbers.
 

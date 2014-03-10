@@ -69,9 +69,9 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 
-"A number to the second power" means the number multiplying itself twice.
+"A number to the second power" means the number is multiplied with itself.
 
-"A number to the third power" means the number multiplying itself three times.
+"A number to the third power" means the number is multiplied with itself three times.
 
 a)   [``
 \begin{aligned}[t]

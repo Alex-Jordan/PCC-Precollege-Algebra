@@ -63,7 +63,7 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 
-Remember that in the order of operations, parentheses take priority above multiplication.
+In the order of operations, parentheses take priority above multiplication.
 
     [` 
         \begin{aligned}[t]

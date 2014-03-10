@@ -140,7 +140,7 @@ $output .= "...";
 
 BEGIN_PGML_SOLUTION
 
-Since [`[$num1]`] goes into [`[$num2]`], the LCM of [`[$num1]`] and [`[$num2]`] is simply [`[$num2]`].
+Since [`[$num1]`] divides into [`[$num2]`], the LCM of [`[$num1]`] and [`[$num2]`] is simply [`[$num2]`].
 
 END_PGML_SOLUTION
 

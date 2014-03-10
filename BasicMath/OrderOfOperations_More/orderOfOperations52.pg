@@ -67,11 +67,11 @@ $brackets = "[ ]";
 
 BEGIN_PGML_SOLUTION
 
-The bracket [$brackets] and parentheses ( ) have the same functions. We usually use [$brackets] when ( ) are already used in the problem, so we can tell which pair are which.
+The bracket [$brackets] and parentheses ( ) have the same purpose. We usually use [$brackets] when ( ) are already used in the problem, so we can tell which pair are which.
 
     [``
 \begin{aligned}[t]
-   &\phantom{{}=} [$a]-[$b] [ [$c]-([$d]+[$e]\cdot[$f])] \\
+   &\phantom{={}} [$a]-[$b] [ [$c]-([$d]+[$e]\cdot[$f])] \\
    &= [$a]-[$b] [ [$c]-([$d]+[$e*$f])] \\
    &= [$a]-[$b] [ [$c]-[$d+$e*$f] ] \\
    &= [$a]-[$b] [ [$c-$d-$e*$f] ]\\

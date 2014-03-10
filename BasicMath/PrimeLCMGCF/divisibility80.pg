@@ -90,13 +90,13 @@ Context()->texStrings;
 $i=0;
 foreach my $item (@factors) {
    if ($num%$item==0) {
-      $canGoInto[$i++]="can";
+      $canGoInto[$i++]="does";
       $mc -> qa (
-      "Check all numbers which goes into $num.$BR",
+      "Mark all numbers which divide into $num.$BR",
       "\($item\)$BR",
       );
    } else {
-      $canGoInto[$i++]="can not";
+      $canGoInto[$i++]="does not";
    }
 }
 
@@ -135,25 +135,25 @@ ANS( checkbox_cmp( $mc->correct_ans() ) );
 
 BEGIN_PGML_SOLUTION
 
-###Can [`2`] go into [`[$num]`]?  
+###Does [`2`] divide [`[$num]`]?  
 
-[`2`] can go into all even numbers, so [`2`] [@$canGoInto[0]@]* go into [`[$num]`].
+[`2`] divides all even numbers, so [`2`] [@$canGoInto[0]@]* divide [`[$num]`].
 
-###Can [`3`] go into [`[$num]`]?  
+###Does [`3`] divide [`[$num]`]?  
 
-Add up all digits of [`[$num]`]: [`[$output]=[$sum]`]. Since [`3`] [@$canGoInto[1]@]* go into [`[$sum]`], [`3`] can go into [`[$num]`].
+Add up all digits of [`[$num]`]: [`[$output]=[$sum]`]. Since [`3`] [@$canGoInto[1]@]* divide [`[$sum]`], [`3`] [@$canGoInto[1]@]* divide [`[$num]`].
 
-###Can [`5`] go into [`[$num]`]?  
+###Does [`5`] divide [`[$num]`]?  
 
-[`5`] can go into a number which ends with [`5`] or [`0`], so [`5`] [@$canGoInto[2]@]* go into [`[$num]`].
+[`5`] only divides numbers which end with [`5`] or [`0`], so [`5`] [@$canGoInto[2]@]* divide [`[$num]`].
 
-###Can [`9`] go into [`[$num]`]?  
+###Does [`9`] divide [`[$num]`]?  
 
-Add up all digits of [`[$num]`]: [`[$output]=[$sum]`]. Since [`9`] [@$canGoInto[3]@]* go into [`[$sum]`], [`9`] can go into [`[$num]`].
+Add up all digits of [`[$num]`]: [`[$output]=[$sum]`]. Since [`9`] [@$canGoInto[3]@]* divide [`[$sum]`], [`9`] [@$canGoInto[3]@]* divide [`[$num]`].
 
-###Can [`10`] go into [`[$num]`]?  
+###Does [`10`] divide [`[$num]`]?  
 
-[`10`] can go into a number which ends with [`0`], so [`10`] [@$canGoInto[4]@]* go into [`[$num]`].
+[`10`] only divides numbers which end with [`0`], so [`10`] [@$canGoInto[4]@]* divide [`[$num]`].
 
 ####Solution:  
 

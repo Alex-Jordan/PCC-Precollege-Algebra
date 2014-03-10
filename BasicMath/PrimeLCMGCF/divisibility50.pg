@@ -99,7 +99,7 @@ Context()->texStrings;
 $mc = new_checkbox_multiple_choice();
 
 $mc -> qa (
-"Check all numbers which $factor goes into.$BR",
+"Mark all numbers which $factor divides into.$BR",
 "\($given[0]\) $BR",
 "\($given[1]\) $BR",
 );
@@ -142,25 +142,25 @@ for my $i (0..$numCorrect*2-1) {
 
 BEGIN_PGML_SOLUTION
 
-If both [`2`] and [`3`] go into a number, then [`6`] will go into that number. This is because [` 6=2 \cdot 3 `].
+If both [`2`] and [`3`] divide into a number, then [`6`] will divide into that number. This is because [` 6=2 \cdot 3 `].
 
 ###for the number [`[@ $given[0] @]`]  
 
-For [`[@ $given[0] @]`], the sum of its digits is [`[@ $output[0] @] = [@ $sum[0] @]`]. Since [`3`] goes into [`[@ $sum[0] @]`], [`3`] must go into [`[@ $given[0] @]`].
+For [`[@ $given[0] @]`], the sum of its digits is [`[@ $output[0] @] = [@ $sum[0] @]`]. Since [`3`] divides [`[@ $sum[0] @]`], [`3`] must divide [`[@ $given[0] @]`].
 
-At the same time, [`[@ $given[0] @]`] is even, so [`2`] goes into [`[@ $given[0] @]`].
+At the same time, [`[@ $given[0] @]`] is even, so [`2`] divides [`[@ $given[0] @]`].
 
-Since both [`2`] and [`3`] go into [`[@ $given[0] @]`], [`6`] goes into [`[@ $given[0] @]`].
+Since both [`2`] and [`3`] divide [`[@ $given[0] @]`], [`6`] divides [`[@ $given[0] @]`].
 
 ###for the number [`[@ $given[1] @]`]  
 
-For [`[@ $given[1] @]`], the sum of its digits is [`[@ $output[1] @] = [@ $sum[1] @]`]. Since [`3`] goes into [`[@ $sum[1] @]`], [`3`] must go into [`[@ $given[1] @]`].
+For [`[@ $given[1] @]`], the sum of its digits is [`[@ $output[1] @] = [@ $sum[1] @]`]. Since [`3`] divides [`[@ $sum[1] @]`], [`3`] must divide [`[@ $given[1] @]`].
 
-At the same time, [`[@ $given[1] @]`] is even, so [`2`] goes into [`[@ $given[1] @]`].
+At the same time, [`[@ $given[1] @]`] is even, so [`2`] divides [`[@ $given[1] @]`].
 
-Since both [`2`] and [`3`] go into [`[@ $given[1] @]`], [`6`] goes into [`[@ $given[1] @]`].
+Since both [`2`] and [`3`] divide [`[@ $given[1] @]`], [`6`] divides [`[@ $given[1] @]`].
 
-You can verify that either [`2`] or [`3`] doesn't go into the other two numbers, and thus [`6`] does not go into them.
+You can verify that either [`2`] or [`3`] doesn't divide into each of the other two numbers, and thus [`6`] does not divide into them.
 
 So the correct answers are [@$mc->correct_ans()@].
 

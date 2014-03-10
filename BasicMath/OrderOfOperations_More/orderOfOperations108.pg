@@ -67,11 +67,11 @@ $s1 = $b*($c*$c-$d+$e);
 
 BEGIN_PGML_SOLUTION
 
-The bracket [$brackets] and parentheses ( ) have the same functions. We usually use [$brackets] when ( ) are already used in the problem, so we can tell which pair are which.
+The bracket [$brackets] and parentheses ( ) have the same purpose. We usually use [$brackets] when ( ) are already used in the problem, so we can tell which pair are which.
 
     [``
 \begin{aligned}[t]
-   &\phantom{{}=} [$a]-[$b][[$c]^{2}-([$d]-[$e])] \\
+   &\phantom{={}} [$a]-[$b][[$c]^{2}-([$d]-[$e])] \\
    &= [$a]-[$b][[$c]^{2}-[$d-$e]] \\
    &= [$a]-[$b][[$c*$c]-[$d-$e]] \\
    &= [$a]-[$b][[$c*$c-$d+$e]] \\

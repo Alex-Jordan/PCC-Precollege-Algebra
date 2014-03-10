@@ -79,7 +79,7 @@ Context()->texStrings;
 $mc = new_checkbox_multiple_choice();
 
 $mc -> qa (
-"Check all numbers which $factor goes into.$BR",
+"Mark all numbers which $factor divides into.$BR",
 "\($given[0]\) $BR",
 "\($given[1]\) $BR",
 );
@@ -119,7 +119,7 @@ Let's look at some multiples of [`10`]:
 
     [`` 10, 20, 30, 440, 1000 ... ``]
 
-It's clear that [`10`] goes into a number if the number's last digit is [`0`].
+It's clear that [`10`] divides into a number if the number's last digit is [`0`].
 
 So the correct answers are [@$mc->correct_ans()@].
 
