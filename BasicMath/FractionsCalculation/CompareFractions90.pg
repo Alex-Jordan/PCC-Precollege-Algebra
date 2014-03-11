@@ -90,27 +90,29 @@ $multiple2 = $com/$den2;
 
 ########Begin solution.############
 
+$answer='{}'.$answer.'{}';
+
 BEGIN_PGML_SOLUTION
 
 To compare two fractions, one method is to change their denominators to the same number.
 
-For this problem, the common denominator is [`[$com]`].
+For this problem, a common denominator is [`[$com]`].
 
 We convert the first fraction to:
 
-    [`` [$frac1] = -\frac{[$num1]\cdot[$multiple1]}{[$den1]\cdot[$multiple1]} = -\frac{[$num1*$multiple1]}{[$den1*$multiple1]} ``]
+    [`` [$frac1] = -{\frac{[$num1]\cdot[$multiple1]}{[$den1]\cdot[$multiple1]}} = -{\frac{[$num1*$multiple1]}{[$den1*$multiple1]}} ``]
 
 We convert the second fraction to:
 
-    [`` [$frac2] = -\frac{[$num2]\cdot[$multiple2]}{[$den2]\cdot[$multiple2]} = -\frac{[$num2*$multiple2]}{[$den2*$multiple2]} ``]
+    [`` [$frac2] = -{\frac{[$num2]\cdot[$multiple2]}{[$den2]\cdot[$multiple2]}} = -{\frac{[$num2*$multiple2]}{[$den2*$multiple2]}} ``]
 
 Now we can compare these two fractions. Since
 
-    [``-\frac{[$num1*$multiple1]}{[$den1*$multiple1]}``] [``{\bf [$answer]}``] [``-\frac{[$num2*$multiple2]}{[$den2*$multiple2]}``],
+    [``{-{\frac{[$num1*$multiple1]}{[$den1*$multiple1]}}}[$answer]{-{\frac{[$num2*$multiple2]}{[$den2*$multiple2]}}}``]
 
-the solution is:
+the answer is:
 
-    [``[$frac1]``] [``{\bf [$answer]}``] [``[$frac2]``].
+    [``[$frac1][$answer][$frac2]``]
 
 END_PGML_SOLUTION
 

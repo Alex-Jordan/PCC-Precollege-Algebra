@@ -77,9 +77,9 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 
-When we multiply fractions, reduce numbers if we can. This way, we can avoid dealing with big numbers.
+When multiplying with fractions, reduce numerators and denominators if possible. This way, we can avoid dealing with big numbers.
 
-The solution is:
+The full computation is:
 
     [``
 \begin{aligned}

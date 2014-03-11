@@ -77,7 +77,7 @@ else {$ordinal = "$num"."th";}
 
 $intNext = $int-1;
 
-$alt = "The graph has a number line. The segment between $intNext and $int is cut into $den pieces and marked by ticks. A blue dot is marked at the $ordinal tick from $int.";
+$alt = "The graph has a number line. The segment between $intNext and $int is cut into $den pieces and marked by ticks. A blue dot is marked at the $ordinal tick to the left of $int.";
 
 BEGIN_PGML
 
@@ -86,7 +86,7 @@ BEGIN_PGML
 
 The dot in the graph can be represented by what fraction?
 
-Solution: [_________]{$frac}
+Answer: [_________]{$frac}
 
 END_PGML
 
@@ -94,7 +94,7 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 
-On the number line, the segment between [`[$int-1]`] and [`[$int]`] is cut into [`[$den]`] pieces. The blue dot is marked at the [$ordinal] tick from [`[$int]`], so it can be represented as [`[$int]\frac{[$num]}{[$den]}=[$frac]`].
+On the number line, the segment between [`[$int-1]`] and [`[$int]`] is cut into [`[$den]`] pieces. The blue dot is marked at the [$ordinal] tick to the left of [`[$int]`], so it can be represented as [`[$int]{\frac{[$num]}{[$den]}}=[$frac]`].
 
 END_PGML_SOLUTION
 

@@ -74,7 +74,7 @@ BEGIN_PGML_SOLUTION
 
 When we add a positive number and a negative number, we need to find the difference of their absolute values. In other words, to do [` [$frac2] + ([$int1]) `], first we do [` [$absInt1] - [$frac2] `].
 
-We can "split" [`1`] from the integer, and do [` 1 - [$frac2] `]:
+We can "split" [`1`] from the integer, and find [` 1 - [$frac2] `]:
 
     [``
 \begin{aligned}[t]
@@ -91,7 +91,7 @@ Note that we changed [`1`] to [`\frac{[$den2]}{[$den2]}`].
 
 Finally, since the absolute value of the negative number, [`[$int1]`], is bigger than that of the positive number, [`[$frac2]`], the answer is negative.
 
-*Solution:* [` [$frac2] + ([$int1]) = [$ans] `]
+*Answer:* [` [$frac2] + ([$int1]) = [$ans] `]
 
 ##Method2  
 
@@ -100,9 +100,9 @@ We could simply change the integer [`[$int1]`] into a fraction without "splittin
     [``
 \begin{aligned}[t]
    [$frac2] + ([$int1]) 
-      &= [$frac2] + (\frac{[$int1]}{1}) \\
-      &= [$frac2] + (\frac{[$int1] \cdot [$den2]}{1 \cdot [$den2]}) \\
-      &= [$frac2] + (\frac{[$int1*$den2]}{[$den2]}) \\
+      &= [$frac2] + \left(\frac{[$int1]}{1}\right) \\
+      &= [$frac2] + \left(\frac{[$int1] \cdot [$den2]}{1 \cdot [$den2]}\right) \\
+      &= [$frac2] + \left(\frac{[$int1*$den2]}{[$den2]}\right) \\
       &= \frac{[$num2]+([$int1*$den2])}{[$den2]} \\
       &= \frac{[$num2+$int1*$den2]}{[$den2]} \\
       &= [$ans]

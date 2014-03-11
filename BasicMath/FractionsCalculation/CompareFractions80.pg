@@ -70,6 +70,7 @@ else
     $popup = PopUp(["?", $LTS, $GTS, "="], "=");
 }
 
+
 ########Begin What the Student Sees############
 
 BEGIN_PGML
@@ -89,11 +90,13 @@ $multiple2 = $com/$den2;
 
 ########Begin solution.############
 
+$answer='{}'.$answer.'{}';
+
 BEGIN_PGML_SOLUTION
 
 To compare two fractions, one method is to change their denominators to the same number.
 
-For this problem, the common denominator is [`[$com]`].
+For this problem, a common denominator is [`[$com]`].
 
 We convert the first fraction to:
 
@@ -105,11 +108,11 @@ We convert the second fraction to:
 
 Now we can compare these two fractions. Since
 
-    [``\frac{[$num1*$multiple1]}{[$den1*$multiple1]}``] [``{\bf [$answer]}``] [``\frac{[$num2*$multiple2]}{[$den2*$multiple2]}``],
+    [``\frac{[$num1*$multiple1]}{[$den1*$multiple1]}[$answer]\frac{[$num2*$multiple2]}{[$den2*$multiple2]}``]
 
-the solution is:
+the answer is:
 
-    [``[$frac1]``] [``{\bf [$answer]}``] [``[$frac2]``].
+    [``[$frac1]``] [``{\bf [$answer]}``] [``[$frac2]``]
 
 END_PGML_SOLUTION
 

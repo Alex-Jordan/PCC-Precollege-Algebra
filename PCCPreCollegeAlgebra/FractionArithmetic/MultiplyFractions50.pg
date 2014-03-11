@@ -60,7 +60,7 @@ TEXT(beginproblem());
 
 BEGIN_PGML
 
-Multiply the integer with the fraction: [``[$integer]\cdot\left( -\frac{[$num]}{[$den]} \right)``]
+Multiply the integer with the fraction: [``[$integer]\cdot\left( -{\frac{[$num]}{[$den]}} \right)``]
 
 If needed, use an improper fraction in your answer. Don’t use a mixed number. 
 
@@ -97,9 +97,9 @@ To multiply an integer with a fraction, first we rewrite the integer as a fracti
 Next, do the fraction multiplication. If you reduce numbers before multiplying across, you can avoid dealing with big numbers:
 
     [``\begin{aligned}
-    [$integer]\cdot\left( -\frac{[$num]}{[$den]} \right)
-    &=\frac{[$integer]}{1} \cdot \left(-\frac{[$num]}{[$den]}\right) &\hbox{We can divide both the first numerator and the second denominator by [$den].}\\
-    &=\frac{[$integer/$den]}{1} \cdot \left(-\frac{[$num]}{1}\right)\\
+    [$integer]\cdot\left( -{\frac{[$num]}{[$den]}} \right)
+    &=\frac{[$integer]}{1} \cdot \left(-{\frac{[$num]}{[$den]}}\right) &\hbox{We can divide both the first numerator and the second denominator by [$den].}\\
+    &=\frac{[$integer/$den]}{1} \cdot \left(-{\frac{[$num]}{1}}\right)\\
     &=[$ans]
     \end{aligned}``]
 

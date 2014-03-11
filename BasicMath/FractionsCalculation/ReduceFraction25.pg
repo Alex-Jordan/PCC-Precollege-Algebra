@@ -168,12 +168,12 @@ if ($output1 eq "\frac{$num}{$den}") {
 
 BEGIN_PGML_SOLUTION
 
-#####Method 1:####   
+####Method 1:####  
 We find a number that divides into both the numerator [`[$num1]`], and the denominator [`[$den1]`].
 
 Check the first few prime numbers one by one: [`2, 3, 5, 7, \ldots`], until the prime number is greater than or equal to [`[$num]`]. No prime number goes into both [`[$num]`] and [`[$den]`], so the fraction [`[$frac]`] is not reducible.
 
-#####Method 2:####  
+####Method 2:####  
 A second method to reduce fraction is to prime factor both the numerator and the denominator, and then cancel out factors in pairs: one from the numerator and one from the denominator.
 
     [``
@@ -182,7 +182,7 @@ A second method to reduce fraction is to prime factor both the numerator and the
 \end{aligned}
     ``]
 
-Notice that no numbers can be cancelled out, so the fraction [`[$frac]`] is not reducible.
+Notice that no numbers can be canceled out, so the fraction [`[$frac]`] is not reducible.
 
 END_PGML_SOLUTION
 

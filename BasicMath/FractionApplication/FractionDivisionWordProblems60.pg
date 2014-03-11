@@ -57,7 +57,7 @@ A restaurant made [`[$total]`] cups of pudding for a festival.
 Customers at the festival will be served [`[$each]`] of a cup of pudding per serving.
 How many customers can the restaurant serve at the festival with the [`[$total]`] cups of pudding?
 
-*Solution:* The restaurant can serve [_______] customers at the festival with the [`[$total]`] cups of pudding?
+The restaurant can serve [_______] customers at the festival with the [`[$total]`] cups of pudding.
 
 END_PGML
 
@@ -83,7 +83,7 @@ ANS($servings->cmp()->withPostFilter(
 
 BEGIN_PGML_SOLUTION
 
-There are a total of [`[$total]`] cups of pudding, with each serving being [`[$each]`] cup. To find how many servings can be served, we need to find how many [`[$each]`] cup are there in [`[$total]`] cups, a division problem:
+There are a total of [`[$total]`] cups of pudding, with each serving being [`[$each]`] cup. To find how many servings can be served, we need to find how many "[`[$each]`] cups" are there in [`[$total]`] cups, a division problem:
 
     [`` 
 \begin{aligned}[t]
@@ -96,7 +96,7 @@ There are a total of [`[$total]`] cups of pudding, with each serving being [`[$e
 \end{aligned}
     ``]
 
-*Solution:* The restaurant can serve [`[$servings]`] customers at the festival with the [`[$total]`] cups of pudding?
+The restaurant can serve [`[$servings]`] customers at the festival with the [`[$total]`] cups of pudding.
 
 ###Shortcut
 

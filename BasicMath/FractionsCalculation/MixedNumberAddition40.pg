@@ -64,7 +64,7 @@ TEXT(beginproblem());
 
 BEGIN_PGML
 
-Add the following: [``-[$frac1] + (-[$frac2]) ``]
+Add the following: [``-[$frac1] + \left(-[$frac2]\right) ``]
 
     [___________]{$ans} 
 
@@ -96,9 +96,9 @@ BEGIN_PGML_SOLUTION
 
     [``
 \begin{aligned}[t]
-   -[$frac1] + (-[$frac2]) 
-      &= ([$frac1Display]) + ([$frac2Display]) \\
-      &= (-\frac{[$num1*$multiple1]}{[$com]}) + (-\frac{[$num2*$multiple2]}{[$com]}) \\
+   -[$frac1] + \left(-[$frac2]\right) 
+      &= \left([$frac1Display]\right) + \left([$frac2Display]\right) \\
+      &= \left(-{\frac{[$num1*$multiple1]}{[$com]}}\right) + \left(-{\frac{[$num2*$multiple2]}{[$com]}}\right) \\
       &= \frac{(-[$num1*$multiple1])+(-[$num2*$multiple2])}{[$com]} \\
       [$extra]
       &= -\frac{[$fracSumNum]}{[$fracSumDen]} \\

@@ -53,8 +53,8 @@ BEGIN_PGML
 Evaluate these expressions:
 
 a.    [`` [$a]+\frac{[$b]}{[$den]} =  ``]  [________]{$ans1} 
-----
-b.    [`` \frac{[$a]+[$b]}{[$den]} =  ``]  [________]{$ans2} 
+
+a.    [`` \frac{[$a]+[$b]}{[$den]} =  ``]  [________]{$ans2} 
 
 END_PGML
 
@@ -69,7 +69,7 @@ a. [`
    \end{aligned}
   `]  
 In this problem, by order of operations, division has higher priority than addition.
-----
+
 a.  [`
  \begin{aligned}[t]
  \frac{[$a]+[$b]}{[$den]}  & = \frac{[$a+$b]}{[$den]} \\

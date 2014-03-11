@@ -47,16 +47,18 @@ $native = $population/$den*$num;
 Context("LimitedFraction");
 $native=Compute("$native");
 
+$ethnicity = list_random("Native Americans", "Asian Americans", "African Americans", "Latino Americans", "white/Caucasian Americans");
+
 ##############################################
 
 TEXT(beginproblem());
 
 BEGIN_PGML
 
-A town has [`[$population]`] residents in total, of which [`[$frac]`] are Native Americans.
-How many Native Americans reside in this town?
+A town has [`[$population]`] residents in total, of which [`[$frac]`] are [$ethnicity].
+How many [$ethnicity] reside in this town?
 
-*Solution:* There are [_______] Native Americans residing in this town.
+There are [_______] [$ethnicity] residing in this town.
 
 END_PGML
 
@@ -82,9 +84,9 @@ ANS($native->cmp()->withPostFilter(
 
 BEGIN_PGML_SOLUTION
 
-When we use the word "of" in situations like "[`[$frac]`] of [`[$population]`]," we can translate "of" into the multiplication symbol.
+When we use the word "of" in expressions like "[`[$frac]`] of [`[$population]`]," we can translate "of" into the multiplication symbol.
 
-In this problem, to find [`[$frac]`] of [`[$population]`], we do:
+In this problem, to find [`[$frac]`] of [`[$population]`], we compute:
 
     [`` 
 \begin{aligned}[t]
@@ -96,7 +98,7 @@ In this problem, to find [`[$frac]`] of [`[$population]`], we do:
 \end{aligned}
     ``]
 
-*Solution:* There are [`[$native]`] Native Americans residing in this town.
+There are [`[$native]`] [$ethnicity] residing in this town.
 
 END_PGML_SOLUTION
 

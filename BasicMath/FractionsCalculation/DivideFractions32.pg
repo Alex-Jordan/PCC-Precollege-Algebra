@@ -112,7 +112,7 @@ Next, we do the fraction multiplication. The full process is:
 \end{aligned}
     ``]
 
-The answer to this question is [`[$ans]`].
+The result of this computation is [`[$ans]`].
 
 END_PGML_SOLUTION
 

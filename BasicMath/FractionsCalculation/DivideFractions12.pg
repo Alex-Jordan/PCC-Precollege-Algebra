@@ -65,7 +65,7 @@ TEXT(beginproblem());
 
 BEGIN_PGML
 
-Divide these two fractions: [`` \frac{[$num1]}{[$den1]} \div \left(-\frac{[$den2]}{[$num2]} \right) ``]
+Divide these two fractions: [`` \frac{[$num1]}{[$den1]} \div \left(-{\frac{[$den2]}{[$num2]}} \right) ``]
 
     [_______]{$ans}
 
@@ -79,17 +79,17 @@ BEGIN_PGML_SOLUTION
 
 To divide two fractions, we change division to multiplication, and then "flip" the second fraction.
 
-When a positive number is divided by a negative number, the answer will be negative. In the first step, we move the negative symbol to the front, so we won't forget the answer is negative.
+When a positive number is divided by a negative number, the result will be negative. In the first step, we move the negative symbol to the front, so we won't forget the answer is negative.
 
     [`` 
 \begin{aligned}[t]
-   &\phantom{{}=} \frac{[$num1]}{[$den1]} \div (-\frac{[$den2]}{[$num2]}) \\
-   &=-\frac{[$num1]}{[$den1]} \div \frac{[$den2]}{[$num2]} \\
-   &=-\frac{[$num1]}{[$den1]} \cdot \frac{[$num2]}{[$den2]} \\
-   &=-\frac{[$num1]}{[$den1]\div[$factor]} \cdot \frac{[$num2]\div[$factor]}{[$den2]} \\
-   &=-\frac{[$num1]}{[$den1/$factor]} \cdot \frac{[$num2/$factor]}{[$den2]} \\
-   &=-\frac{[$num1] \cdot [$num2/$factor]}{[$den1/$factor] \cdot [$den2]} \\
-   &=-\frac{[$numAns]}{[$denAns]}
+   &\phantom{{}=} \frac{[$num1]}{[$den1]} \div \left(-{\frac{[$den2]}{[$num2]}}\right) \\
+   &=-{\frac{[$num1]}{[$den1]}} \div \frac{[$den2]}{[$num2]} \\
+   &=-{\frac{[$num1]}{[$den1]}} \cdot \frac{[$num2]}{[$den2]} \\
+   &=-{\frac{[$num1]}{[$den1]\div[$factor]}} \cdot \frac{[$num2]\div[$factor]}{[$den2]} \\
+   &=-{\frac{[$num1]}{[$den1/$factor]}} \cdot \frac{[$num2/$factor]}{[$den2]} \\
+   &=-{\frac{[$num1] \cdot [$num2/$factor]}{[$den1/$factor] \cdot [$den2]}} \\
+   &=-{\frac{[$numAns]}{[$denAns]}}
 \end{aligned}
     ``]
 

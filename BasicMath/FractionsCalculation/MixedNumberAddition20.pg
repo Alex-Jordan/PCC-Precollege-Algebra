@@ -69,7 +69,7 @@ TEXT(beginproblem());
 
 BEGIN_PGML
 
-Add the following: [``-[$frac1] + (-[$frac2]) ``]
+Add the following: [``-[$frac1] + \left(-[$frac2]\right) ``]
 
     [___________]{$ans} 
 
@@ -88,8 +88,8 @@ BEGIN_PGML_SOLUTION
 
     [``
 \begin{aligned}[t]
-   -[$frac1] + (-[$frac2]) 
-      &= \frac{-[$num1]+(-[$num2])}{[$den1]} \\
+   -[$frac1] + \left(-[$frac2]\right) 
+      &= \frac{-[$num1]+\left(-[$num2]\right)}{[$den1]} \\
       &= \frac{[$numSum]}{[$den1]} \\
       &= \frac{-[$fracSumNum]}{[$fracSumDen]} \\
       &= [$ans]

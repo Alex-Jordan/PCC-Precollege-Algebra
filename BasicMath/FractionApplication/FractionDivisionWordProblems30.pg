@@ -57,7 +57,7 @@ BEGIN_PGML
 
 A food bank just received [`[$total]`] kilograms of emergency food. Each family in need is to receive [`[$piece]`] kilograms of food. How many families can be served with the [`[$total]`] kilograms of food?
 
-*Solution:* [__________] families can be served with the [`[$total]`] kilograms of food.
+[__________] families can be served with the [`[$total]`] kilograms of food.
 
 END_PGML
 
@@ -95,7 +95,7 @@ We can address this problem as repeatedly taking away [`[$piece]`] kilograms fro
 \end{aligned}
     ``]
 
-*Solution:*  [`[$families]`] families can be served with the [`[$total]`] kilograms of food.
+[`[$families]`] families can be served with the [`[$total]`] kilograms of food.
 
 END_PGML_SOLUTION
 

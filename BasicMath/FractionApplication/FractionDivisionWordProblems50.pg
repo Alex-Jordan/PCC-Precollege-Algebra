@@ -60,7 +60,7 @@ BEGIN_PGML
 
 A child is stacking up tiles. Each tile's height is [`[$each]`] of a centimeter. How many layers of tiles are needed to reach [`[$total]`] centimeters in total height?
 
-*Solution:* To reach the total height of [`[$total]`] centimeters, [_________] layers of tiles are needed.
+To reach the total height of [`[$total]`] centimeters, [_________] layers of tiles are needed.
 
 END_PGML
 
@@ -86,7 +86,7 @@ ANS($layers->cmp()->withPostFilter(
 
 BEGIN_PGML_SOLUTION
 
-In this problem, each layer of tile is [`[$each]`] centimeters tall. The child will keep stacking up layers until the total height reaches [`[$total]`] centimeters. This is like asking how many [`[$each]`] centimeters are there in [`[$total]`] centimeters, a division problem.
+In this problem, each layer of tile is [`[$each]`] centimeters tall. The child will keep stacking up layers until the total height reaches [`[$total]`] centimeters. This is like asking how many "[`[$each]`] centimeters" are there in [`[$total]`] centimeters, a division problem.
 
     [`` 
 \begin{aligned}[t]
@@ -99,7 +99,7 @@ In this problem, each layer of tile is [`[$each]`] centimeters tall. The child w
 \end{aligned}
     ``]
 
-*Solution:*  To reach the total height of [`[$total]`] centimeters, [`[$layers]`] layers of tiles are needed.
+To reach the total height of [`[$total]`] centimeters, [`[$layers]`] layers of tiles are needed.
 
 END_PGML_SOLUTION
 

@@ -68,7 +68,7 @@ BEGIN_PGML
 
 Divide the fraction by the integer: 
 
-    [``-\frac{[$num]}{[$den]} \div (-[$integer])  ``] = [___________]{$ans}
+    [``-{\frac{[$num]}{[$den]}} \div (-[$integer])  ``] = [___________]{$ans}
 
 END_PGML
 
@@ -78,7 +78,7 @@ BEGIN_PGML_SOLUTION
 
 When a negative number is divided by a negative number, the result is positive. We can simply ignore those two negative signs:
 
-    [`` -\frac{[$num]}{[$den]} \div (-[$integer]) = \frac{[$num]}{[$den]} \div [$integer] ``]
+    [`` -{\frac{[$num]}{[$den]}} \div (-[$integer]) = \frac{[$num]}{[$den]} \div [$integer] ``]
 
 When we do fraction multiplication/division, we need to rewrite any integer as a fraction. In this problem, we will do this with:
 
@@ -92,7 +92,7 @@ Next, we do the fraction multiplication. The full process is:
 
     [``
 \begin{aligned}
-   \left(-\frac{[$num]}{[$den]}\right) \div (-[$integer])
+   \left(-{\frac{[$num]}{[$den]}}\right) \div (-[$integer])
        &= \frac{[$num]}{[$den]} \div [$integer] \\
        &= \frac{[$num]}{[$den]} \div \frac{[$integer]}{1} \\
        &= \frac{[$num]}{[$den]} \cdot \frac{1}{[$integer]} \\

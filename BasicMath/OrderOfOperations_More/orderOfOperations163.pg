@@ -55,7 +55,7 @@ BEGIN_PGML
 Evaluate these expressions:
 
 a.    [`` \frac{[$a]}{[$b]}+[$c] =  ``]  [________]{$ans1} 
-----
+
 a.    [`` \frac{[$a]}{[$b]+[$c]} =  ``]  [________]{$ans2} 
 
 END_PGML
@@ -71,7 +71,7 @@ a.  [`
   \end{aligned}
  `]  
 In this problem, by order of operations, division has higher priority than addition.
-----
+
 a.   [`
  \begin{aligned}[t]
  \frac{[$a]}{[$b]+[$c]}  & = \frac{[$a]}{[$b+$c]} \\

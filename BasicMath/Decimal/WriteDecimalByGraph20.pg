@@ -79,7 +79,7 @@ $leftover = $b-int($b/10)*10;
 $x += $xstep;
 for (my $j = 0; $j < $leftover; $j++) {
    my $y = $TopLeftY-$j*$ystep-$ystep/2;
-   $gr->fillRegion([$x,$y,"red"]);
+   $gr->fillRegion([$x+0.05,$y+0.05,"red"]);
 }
 
 

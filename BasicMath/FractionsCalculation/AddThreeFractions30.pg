@@ -98,15 +98,15 @@ $s1 = $num1*$commonDenominator/$den1+$num2*$commonDenominator/$den2+$num3*$commo
 
 BEGIN_PGML_SOLUTION
 
-To add fractions with different denominators, we need to find the common denominator first. One way is to list the multiples of the largest denominator, until all [`3`] denominators go into the multiple.
+To add fractions with different denominators, we need to find the common denominator first. One way is to list the multiples of the largest denominator, until all [`3`] denominators divide into the multiple.
 
 The largest denominator is [`[$largest]`]. We list its first few multiples:
 
     [`` [$outputList] ``]
 
-Note that all denominators, [`[$den1], [$den2] \text{ and } [$den3]`], go into [`[$commonDenominator]`].
+Note that all denominators, [`[$den1], [$den2] \text{ and } [$den3]`] each divide into [`[$commonDenominator]`].
 
-The full solution is:
+The full computation is:
 
     [``
 \begin{aligned}

@@ -70,7 +70,7 @@ BEGIN_PGML
 
 A company received a grant, and decided to spend [`[$frac1]`] of this grant in research and development next year. Out of the money set aside for research and development, [`[$frac2]`] will be used to buy new equipment. What fraction of the grant will be used to buy new equipment? 
 
-*Solution:* [_______]{$ans} of the grant will be used to buy new equipment.
+[_______]{$ans} of the grant will be used to buy new equipment.
 
 END_PGML
 
@@ -89,7 +89,7 @@ For this problem, we are trying to find [`[$frac2]`] of [`[$frac1]`]. The word "
 \end{aligned}
     ``]
 
-*Solution:* [`[$ans]`] of the grant will be used to buy new equipment.
+So [`[$ans]`] of the grant will be used to buy new equipment.
 
 END_PGML_SOLUTION
 

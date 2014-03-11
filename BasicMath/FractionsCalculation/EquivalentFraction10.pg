@@ -50,7 +50,7 @@ TEXT(beginproblem());
 
 BEGIN_PGML
 
-Find the equivalent fraction of [`\frac{[$num1]}{[$den1]}`]:
+Find an equivalent fraction to [`\frac{[$num1]}{[$den1]}`]:
 
     [`` \frac{[$num1]}{[$den1]} = \frac{?}{[$den2]} ``]
 

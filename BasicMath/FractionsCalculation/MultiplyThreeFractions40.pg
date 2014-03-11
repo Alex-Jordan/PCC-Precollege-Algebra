@@ -73,13 +73,13 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 
-In this problem, there are two negative numbers. Their negative signs cancel, so the result must be positive.
+In this problem, there are two negative numbers being multiplied together. Their negative signs cancel, so the result will be positive.
 
-When we multiply fractions, if there is an integer, we change the integer to a fraction by adding [`1`] as its denominator. For example, [` [$integer] = \frac{[$integer]}{1} `].
+When we multiply fractions, if there is an integer, we change the integer to a fraction by writing [`1`] as its denominator. For example, [` [$integer] = \frac{[$integer]}{1} `].
 
-When we multiply fractions, reduce numbers if we can. This way, we can avoid dealing with big numbers.
+When multiplying with fractions, reduce numerators and denominators if possible. This way, we can avoid dealing with big numbers.
 
-The full solution is:
+The full computation is:
 
     [``
 \begin{aligned}

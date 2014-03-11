@@ -70,6 +70,8 @@ else
     $popup = PopUp(["?", $LTS, $GTS, "="], "=");
 }
 
+$answer='{}'.$answer.'{}';
+
 ########Begin What the Student Sees############
 
 BEGIN_PGML
@@ -88,9 +90,11 @@ ANS( $popup->cmp(correct_ans_latex_string => "$answer") );
 
 BEGIN_PGML_SOLUTION
 
-A positive number is always greater than a negative number. The solution is:
+A positive number is always greater than a negative number. 
 
-    [``[$frac1]``] [``{\bf [$answer]}``] [``[$frac2]``]
+The answer is:
+
+    [``[$frac1][$answer][$frac2]``]
 
 END_PGML_SOLUTION
 

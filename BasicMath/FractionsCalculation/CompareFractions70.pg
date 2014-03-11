@@ -75,6 +75,8 @@ else
     $popup = PopUp(["?", $LTS, $GTS, "="], "=");
 }
 
+
+
 ########Begin What the Student Sees############
 
 BEGIN_PGML
@@ -91,6 +93,7 @@ ANS( $popup->cmp(correct_ans_latex_string => "$answer") );
 
 ########Begin solution.############
 
+$answer='{}'.$answer.'{}';
 BEGIN_PGML_SOLUTION
 
 It's always helpful to reduce fractions if we can. Notice that the second fraction can be reduced:
@@ -99,11 +102,11 @@ It's always helpful to reduce fractions if we can. Notice that the second fracti
 
 Their denominators happen to be the same, so we can simply compare the numerators. Since
 
-    [``[$frac1]``] [``{\bf [$answer]}``] [``[$frac2Reduced]``],
+    [``[$frac1][$answer][$frac2Reduced]``]
 
-the solution is:
+the answer is:
 
-    [``[$frac1]``] [``{\bf [$answer]}``] [``[$frac2]``].
+    [``[$frac1][$answer][$frac2]``]
 
 END_PGML_SOLUTION
 

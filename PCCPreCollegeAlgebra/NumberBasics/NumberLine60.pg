@@ -75,6 +75,11 @@ for $i (@decoys) {
    $j++;
 }
 
+for $i (0..3)
+{
+$abs = Real(abs($decoys[$i]));
+$directions[$i] = ($decoys[$i] > 0) ? "$abs ticks to the right of 0" : "$abs ticks to the left of 0";
+}
 
 ##############################################
 TEXT(beginproblem());
@@ -87,16 +92,17 @@ Choose the graph showing \(\sqrt{$n}\) on the number line. If no scale is given 
 $PAR
 
 A. \{ image( insertGraph($gr[0]), width=>400, height=>50, tex_size=>800, 
-   extra_html_tags=>'title="Graph of a number line with a dot at square root of $n." alt="Graph of a number line with a dot at square root of $n."'  ) \}
+   extra_html_tags=>'title="Graph of a number line with a dot $directions[0]." alt="Graph of a number line with a dot $directions[0]."'  ) \}
 $PAR
 B. \{ image( insertGraph($gr[1]), width=>400, height=>50, tex_size=>800, 
-   extra_html_tags=>'title="Graph of a number line with a dot at square root of $n." alt="Graph of a number line with a dot at square root of $n."'  ) \}
+   extra_html_tags=>'title="Graph of a number line with a dot $directions[1]." alt="Graph of a number line with a dot $directions[1]."'  ) \}
 $PAR
 C. \{ image( insertGraph($gr[2]), width=>400, height=>50, tex_size=>800, 
-   extra_html_tags=>'title="Graph of a number line with a dot at square root of $n." alt="Graph of a number line with a dot at square root of $n."'  ) \}
+   extra_html_tags=>'title="Graph of a number line with a dot $directions[2]." alt="Graph of a number line with a dot $directions[2]."'  ) \}
 $PAR
 D. \{ image( insertGraph($gr[3]), width=>400, height=>50, tex_size=>800, 
-   extra_html_tags=>'title="Graph of a number line with a dot at square root of $n." alt="Graph of a number line with a dot at square root of $n."'  ) \}
+   extra_html_tags=>'title="Graph of a number line with a dot at $directions[3]." alt="Graph of a number line with a dot $directions[3]."'  ) \}
+
 
 $BR
 $BR

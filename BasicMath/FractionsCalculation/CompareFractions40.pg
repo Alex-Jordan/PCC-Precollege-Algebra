@@ -65,6 +65,8 @@ else
     $popup = PopUp(["?", $LTS, $GTS, "="], "=");
 }
 
+$answer='{}'.$answer.'{}';
+
 ########Begin What the Student Sees############
 
 BEGIN_PGML
@@ -89,15 +91,15 @@ if ($den1>$den2) {
 
 BEGIN_PGML_SOLUTION
 
-The fraction [` [$frac1] `] means, cutting the whole into [`[$den1]`] pieces evenly, and then take [`[$num]`] pieces.
+The fraction [` [$frac1] `] represents cutting the whole into [`[$den1]`] pieces evenly, and then taking [`[$num]`] pieces.
 
-The fraction [` [$frac2] `] means, cutting the whole into [`[$den2]`] pieces evenly, and then take [`[$num]`] pieces.
+The fraction [` [$frac2] `] represents cutting the whole into [`[$den2]`] pieces evenly, and then takin [`[$num]`] pieces.
 
 Since the [$which] fraction has bigger pieces, it has a bigger value.
 
-The solution is:
+The answer is:
 
-    [``[$frac1]``] [``{\bf [$answer]}``] [``[$frac2]``]
+    [``[$frac1][$answer][$frac2]``]
 
 END_PGML_SOLUTION
 

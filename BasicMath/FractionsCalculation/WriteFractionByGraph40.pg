@@ -84,8 +84,10 @@ for my $i (0..$up) {
 
 ##############################################
 
+$vertcuts = $den/2;
+
 $OneOrNot = $num==1 ? "piece" : "pieces";
-$alt = "a rectangle evenly cut into $den pieces, with $num $OneOrNot shaded";
+$alt = "a rectangle cut horizontally into 2 equal pieces, and cut vertically into $vertcuts equal pieces, for a total of $den pieces, with $num $OneOrNot shaded";
 
 BEGIN_PGML
 

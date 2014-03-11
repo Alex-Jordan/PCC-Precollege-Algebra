@@ -57,7 +57,7 @@ BEGIN_PGML
 
 A school just won a grant, and decided to spend [`[$total]`] of the grant to purchase new equipment. School administrators plan to spend [`[$part]`] of that amount of money each month. How many months does it take to spend all the money allocated to purchase new equipment?
 
-*Solution:* It will take [_________] months to spend all the money allocated to purchase new equipment.
+It will take [_________] months to spend all the money allocated to purchase new equipment.
 
 END_PGML
 
@@ -95,7 +95,7 @@ We can address this problem as repeatedly taking away [`[$part]`] from [`[$total
 \end{aligned}
     ``]
 
-*Solution:* It will take [`[$months]`] months to spend all the money allocated to purchase new equipment.
+It will take [`[$months]`] months to spend all the money allocated to purchase new equipment.
 
 END_PGML_SOLUTION
 

@@ -56,9 +56,9 @@ BEGIN_PGML
 
 A school just won a grant, and decided to spend [`[$total]`] of the grant to purchase new equipment.
 
-The school administrators decide to spend the new equipment money in [`[$months]`] months.  Assume every month the same amount of money will be spent on new equipment.  What fraction of the grant will be spent to purchase new equipment every month? 
+The school administrators decide to spend the new equipment money in [`[$months]`] months.  Assume every month the same amount of money will be spent on new equipment.  What _fraction_ of the grant will be spent to purchase new equipment every month? 
 
-*Solution:* Every month, [_________]{$part} of the grant will be spent to purchase new equipment.
+Every month, [_________]{$part} of the grant will be spent to purchase new equipment.
 
 END_PGML
 
@@ -88,7 +88,7 @@ We can address this problem by dividing [`[$total]`] evenly into [`[$months]`] p
 \end{aligned}
     ``]
 
-*Solution:* Every month, [`[$part]`] of the grant will be spent to purchase new equipment.
+Every month, [`[$part]`] of the grant will be spent to purchase new equipment.
 
 END_PGML_SOLUTION
 

@@ -59,7 +59,7 @@ $frac1 = Fraction($num1*$num1den2factor,$den1*$num3den1factor);
 $frac2 = Fraction($num2*$num2den3factor,$den2*$num1den2factor);
 $frac3 = Fraction($num3*$num3den1factor,$den3*$num2den3factor);
 
-$ans = $frac1*$frac2*$frac3;
+$ans = -$frac1*$frac2*$frac3;
 
 ##############################################
 
@@ -77,18 +77,18 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 
-When three negative numbers multiply each other, two negative signs cancel, and there is still one left. The final result would be negative.
+When three negative numbers are multiplied together, two negative signs cancel, and there is still one left. The final result will be negative.
 
-When we multiply fractions, reduce numbers if we can. This way, we can avoid dealing with big numbers.
+When multiplying with fractions, reduce numerators and denominators if possible. This way, we can avoid dealing with big numbers.
 
-The full solution is:
+The full computation is:
 
     [``
 \begin{aligned}
     \left( -[$frac1] \right) \cdot \left( -[$frac2] \right) \cdot \left( -[$frac3] \right)
         &= -[$frac1] \cdot [$frac2] \cdot [$frac3] \\
-        &= \frac{[$num1]\cdot[$num1den2factor]}{[$den1]\cdot[$num3den1factor]} \cdot \frac{[$num2]\cdot[$num2den3factor]}{[$den2]\cdot[$num1den2factor]} \cdot \frac{[$num3]\cdot[$num3den1factor]}{[$den3]\cdot[$num2den3factor]} \\
-        &= \frac{[$num1]}{[$den1]} \cdot \frac{[$num2]}{[$den2]} \cdot \frac{[$num3]}{[$den3]} \\
+        &= -{\frac{[$num1]\cdot[$num1den2factor]}{[$den1]\cdot[$num3den1factor]}} \cdot \frac{[$num2]\cdot[$num2den3factor]}{[$den2]\cdot[$num1den2factor]} \cdot \frac{[$num3]\cdot[$num3den1factor]}{[$den3]\cdot[$num2den3factor]} \\
+        &= -{\frac{[$num1]}{[$den1]}} \cdot \frac{[$num2]}{[$den2]} \cdot \frac{[$num3]}{[$den3]} \\
         &= [$ans] \\
 \end{aligned}
     ``]

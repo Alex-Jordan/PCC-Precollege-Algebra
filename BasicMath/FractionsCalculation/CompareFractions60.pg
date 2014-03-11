@@ -70,6 +70,7 @@ else
     $popup = PopUp(["?", $LTS, $GTS, "="], "=");
 }
 
+
 ########Begin What the Student Sees############
 
 BEGIN_PGML
@@ -86,9 +87,10 @@ ANS( $popup->cmp(correct_ans_latex_string => "$answer") );
 
 ########Begin solution.############
 
+$answer='{}'.$answer.'{}';
 BEGIN_PGML_SOLUTION
 
-It's easy to compare two fractions if they have the same denominator. For this problem, the common denominator is [`[$com]`].
+It's easy to compare two fractions if they have the same denominator. For this problem, a common denominator is [`[$com]`].
 
 We change the first fraction's denominator to the common denominator:
 
@@ -98,11 +100,11 @@ The second fraction, [` [$frac2] `], already has the common denominator.
 
 Now we can simply compare the numerator. Since
 
-    [``-\frac{[$num1*$multiple]}{[$com]}``] [``{\bf [$answer]}``] [``[$frac2]``],
+    [``-\frac{[$num1*$multiple]}{[$com]}[$answer][$frac2]``]
 
-the solution is:
+the answer is:
 
-    [``[$frac1]``] [``{\bf [$answer]}``] [``[$frac2]``].
+    [``[$frac1][$answer][$frac2]``]
 
 END_PGML_SOLUTION
 

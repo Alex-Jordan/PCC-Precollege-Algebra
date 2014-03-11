@@ -92,7 +92,7 @@ for my $i (0..$int) {
 $IsOrAre = $int==1 ? "is" : "are";
 $OneOrNot1 = $int==1 ? "circle" : "circles";
 $OneOrNot2 = $num==1 ? "piece" : "pieces";
-$alt = "There $IsOrAre $int $OneOrNot1 completely shaded, and a circle evenly cut into $den pieces, with $num $OneOrNot2 shaded.";
+$alt = "There $IsOrAre $int $OneOrNot1 completely shaded, and a circle cut from its center into $den equal pie pieces, with $num $OneOrNot2 shaded.";
 
 BEGIN_PGML
 

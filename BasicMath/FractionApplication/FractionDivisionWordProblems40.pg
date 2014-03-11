@@ -57,7 +57,7 @@ BEGIN_PGML
 A construction team maintains a [`[$total]`]-mile-long sewage pipe. Each day, the team
 can cover [`[$each]`] of a mile. How many days will it take the team to complete the maintenance of the entire sewage pipe?
 
-*Solution:* It will take the team [_________] days to complete maintaining the entire sewage pipe.
+It will take the team [_________] days to complete maintaining the entire sewage pipe.
 
 END_PGML
 
@@ -96,7 +96,7 @@ In this problem, the team maintains [`[$each]`] miles of sewage pipe every day, 
 \end{aligned}
     ``]
 
-*Solution:*  It will take the team [`[$days]`] days to complete maintaining the entire sewage pipe.
+It will take the team [`[$days]`] days to complete maintaining the entire sewage pipe.
 
 END_PGML_SOLUTION
 

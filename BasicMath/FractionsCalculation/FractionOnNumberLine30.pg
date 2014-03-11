@@ -86,7 +86,7 @@ BEGIN_PGML
 
 The dot in the graph can be represented by what fraction?
 
-Solution: [_________]{$frac}
+Answer: [_________]{$frac}
 
 END_PGML
 
@@ -94,7 +94,7 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 
-On the number line, the segment between [`[$int]`] and [`[$int+1]`] is cut into [`[$den]`] pieces. The blue dot is marked at the [$ordinal] tick from [`[$int]`], so it can be represented as [`[$int]\frac{[$num]}{[$den]}=[$frac]`].
+On the number line, the segment between [`[$int]`] and [`[$int+1]`] is cut into [`[$den]`] pieces. The blue dot is marked at the [$ordinal] tick from [`[$int]`], so it can be represented as [`[$int]{\frac{[$num]}{[$den]}}`], which reduces to [`[$frac]`].
 
 END_PGML_SOLUTION
 

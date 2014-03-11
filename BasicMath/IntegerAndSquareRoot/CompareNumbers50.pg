@@ -114,7 +114,7 @@ $gr->lb( new Label($pos,-0.5,$pos,'black','center','middle'));
 
 $first = min($neg1,$neg2);
 $second = max($neg1,$neg2);
-$ALT = "This is a graph of a number line with $first, $second, 0 and $pos marked, from left to right.";
+$ALT = "This is a number line with $first, $second, 0 and $pos marked, from left to right.";
 
 
 
@@ -147,7 +147,7 @@ ANS( $popups[2]->cmp(correct_ans_latex_string=>$correct[2]) );
 
 BEGIN_PGML_SOLUTION
 
-One method to compare numbers is to plot them on a number line. The number located to the right is bigger.
+One method to compare numbers is to plot them on a number line. The number located to the right is greater.
 
 >>[@ image( insertGraph($gr), width=>400, height=>50, tex_size=>800, 
    extra_html_tags=>"alt = '$ALT' title = '$ALT'") @]*<<

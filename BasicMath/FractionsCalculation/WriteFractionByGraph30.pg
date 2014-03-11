@@ -73,7 +73,7 @@ for my $i (0..$num-1) {
 ##############################################
 
 $OneOrNot = $num==1 ? "piece" : "pieces";
-$alt = "a circle evenly cut into $den pieces, with $num $OneOrNot shaded";
+$alt = "a circle evenly cut from its center into $den equal pie pieces, with $num $OneOrNot shaded";
 
 BEGIN_PGML
 
