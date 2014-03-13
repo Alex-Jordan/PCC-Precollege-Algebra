@@ -107,7 +107,7 @@ $PAR
 
 END_TEXT
 BEGIN_PGML
-    Its perimeter is [_____________]{$perimeter} meters. (Use fraction in your answer.)
+    Its perimeter is [_____________]{$perimeter} meters. (Use a fraction in your answer.)
 
 END_PGML
 
@@ -125,7 +125,7 @@ if ($factor==1) {
 } else {
    $s2 = $s1/$factor;
    $s3 = $com/$factor;
-   $output2 = "& = 2(\frac{$s2}{$s3}) \\";
+   $output2 = "& = 2\left(\frac{$s2}{$s3}\right) \\";
 }
 
 if ($den3%2==0) {
@@ -147,28 +147,23 @@ which can be simplified to:
 
     [`` \text{rectangle perimeter} = 2(\text{base}+\text{height}) ``]
 
-We will use the simplified formula.
-
-----
-For the given rectangle, we have:
+We will use the simplified formula. For the given rectangle, we have:
 
 [``\begin{aligned}
        \text{rectangle perimeter}
-       & = 2(\text{base}+\text{height})\\
-       & = 2([$base]+[$height]) \\
-       & = 2(\frac{[$num1]\cdot[$com/$den1]}{[$den1]\cdot[$com/$den1]}+\frac{[$num2]\cdot[$com/$den2]}{[$den2]\cdot[$com/$den2]}) \\
-       & = 2(\frac{[$num1*$com/$den1]}{[$com]}+\frac{[$num2*$com/$den2]}{[$com]}) \\
-       & = 2(\frac{[$num1*$com/$den1]+[$num2*$com/$den2]}{[$com]}) \\
-       & = 2(\frac{[$num1*$com/$den1+$num2*$com/$den2]}{[$com]}) \\
+       & = 2\left(\text{base}+\text{height}\right)\\
+       & = 2\left([$base]+[$height]\right) \\
+       & = 2\left(\frac{[$num1]\cdot[$com/$den1]}{[$den1]\cdot[$com/$den1]}+\frac{[$num2]\cdot[$com/$den2]}{[$den2]\cdot[$com/$den2]}\right) \\
+       & = 2\left(\frac{[$num1*$com/$den1]}{[$com]}+\frac{[$num2*$com/$den2]}{[$com]}\right) \\
+       & = 2\left(\frac{[$num1*$com/$den1]+[$num2*$com/$den2]}{[$com]}\right) \\
+       & = 2\left(\frac{[$num1*$com/$den1+$num2*$com/$den2]}{[$com]}\right) \\
        [$output2]
        & = \frac{2}{1} \cdot \frac{[$num3]}{[$den3]} \\
        [$output1]
        & = [$perimeter]
      \end{aligned}``]
 
-Don't forget the length unit [`\textrm{m}`].  
-
-*Solution:* The rectangle's perimeter is [`[$perimeter]`] meters.
+The rectangle's perimeter is [`[$perimeter]`] meters.
 
 END_PGML_SOLUTION
 

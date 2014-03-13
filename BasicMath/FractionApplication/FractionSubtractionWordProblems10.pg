@@ -57,9 +57,9 @@ TEXT(beginproblem());
 
 BEGIN_PGML
 
-A trail's total length is [`[$total]`] miles. It has two legs. The first leg is [`[$second]`] miles long. How long is the second leg?
+A trail's total length is [`[$total]`] of a mile. It has two legs. The first leg is [`[$second]`] of a mile long. How long is the second leg?
 
-*Solution:* The second leg is [___________]{$first} miles in length.
+The second leg is [___________]{$first} of a mile in length.
 
 END_PGML
 
@@ -87,7 +87,7 @@ if ($com==$den1) {
 
 BEGIN_PGML_SOLUTION
 
-This is clearly a subtraction problem. 
+This is a subtraction problem. 
 
     [`` 
 \begin{aligned}[t]
@@ -100,7 +100,7 @@ This is clearly a subtraction problem.
 \end{aligned}
     ``]
 
-*Solution:* The second leg is [`[$first]`] miles in length.
+The second leg is [`[$first]`] of a mile in length.
 
 END_PGML_SOLUTION
 

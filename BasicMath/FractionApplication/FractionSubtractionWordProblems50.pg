@@ -69,7 +69,7 @@ BEGIN_PGML
 
 [$name1] and [$name2] are sharing a pizza. [$name1] ate [`[$first]`] of the pizza, and [$name2] ate [`[$second]`] of the pizza. How much more pizza did [$name1] eat than [$name2]?
 
-*Solution:* [$name1] ate [__________]{$difference} more pizza than [$name2].
+[$name1] ate [__________]{$difference} more of the pizza than [$name2] ate.
 
 END_PGML
 
@@ -110,7 +110,7 @@ To find the difference of two numbers, we use subtraction:
 \end{aligned}
     ``]
 
-*Solution:* [$name1] ate [`[$difference]`] more pizza than [$name2].
+[$name1] ate [`[$difference]`] more of the pizza than [$name2] ate.
 
 END_PGML_SOLUTION
 

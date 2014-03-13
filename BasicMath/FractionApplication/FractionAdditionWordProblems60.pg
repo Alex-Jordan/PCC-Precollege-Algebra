@@ -167,7 +167,7 @@ We will use addition to find the total portion of white and black students at th
 \end{aligned}
     ``]
 
-*Solution:* Together, white and black students make up [`[$sum]`] of the school's population.
+Together, white and black students make up [`[$sum]`] of the school's population.
 
 END_PGML_SOLUTION
 

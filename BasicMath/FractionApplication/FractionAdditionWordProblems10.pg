@@ -68,7 +68,7 @@ BEGIN_PGML
 
 [$name] walked [`[$first]`] of a mile in the morning, and then walked [`[$second]`] of a mile in the afternoon. How far did [$name] walk altogether?
 
-*Solution:* [$name] walked a total of [___________]{$total} of a mile.
+[$name] walked a total of [___________]{$total} of a mile.
 
 END_PGML
 
@@ -96,7 +96,7 @@ if ($com==$totalDen) {
 
 BEGIN_PGML_SOLUTION
 
-This is clearly an addition problem. 
+This is an addition problem. 
 
     [`` 
 \begin{aligned}[t]
@@ -109,7 +109,7 @@ This is clearly an addition problem.
 \end{aligned}
     ``]
 
-*Solution:* [$name] walked a total of [`[$total]`] miles altogether.
+[$name] walked a total of [`[$total]`] miles altogether.
 
 END_PGML_SOLUTION
 

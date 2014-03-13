@@ -63,9 +63,9 @@ TEXT(beginproblem());
 
 BEGIN_PGML
 
-[$name1] and [$name2] are sharing a pizza. [$name1] ate [`[$first]`] of the pizza, and [$name2] ate [`[$second]`] of the pizza. How much of the pizza was eaten by both of them?
+[$name1] and [$name2] are sharing a pizza. [$name1] ate [`[$first]`] of the pizza, and [$name2] ate [`[$second]`] of the pizza. How much of the pizza was eaten in total?
 
-*Solution:* They ate [___________]{$total} of the pizza.
+They ate [___________]{$total} of the pizza.
 
 END_PGML
 
@@ -93,7 +93,7 @@ if ($com==$totalDen) {
 
 BEGIN_PGML_SOLUTION
 
-This is clearly an addition problem. 
+This is an addition problem. 
 
     [`` 
 \begin{aligned}[t]
@@ -106,7 +106,7 @@ This is clearly an addition problem.
 \end{aligned}
     ``]
 
-*Solution:* They ate [`[$total]`] of the pizza.
+They ate [`[$total]`] of the pizza.
 
 END_PGML_SOLUTION
 

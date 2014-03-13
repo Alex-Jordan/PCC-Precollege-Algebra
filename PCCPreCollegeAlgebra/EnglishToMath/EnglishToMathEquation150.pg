@@ -61,7 +61,7 @@ Write an equation for the following situation, and then solve for the unknown. P
     The quotient of a number and [@numberWord($a)@] happens to be [@numberWord($b)@] less than [@numberWord($c)@] times the number. What is the number?
 
 Your equation is: 
-    [_______________________]{$ans1->cmp(cmp_class => "a linear equation",correct_ans=>"x/$a=$c*x-$b")}
+    [_______________________]{$ans1->cmp(cmp_class => "a linear equation",correct_ans=>"x/$a=$c x-$b",correct_ans_latex_string=>"\\frac\{x\}\{$a\}=$c x-$b")}
 
 The unknown number is: 
     [___________]{$ans2}

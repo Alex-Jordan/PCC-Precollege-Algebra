@@ -63,9 +63,9 @@ TEXT(beginproblem());
 
 BEGIN_PGML
 
-A school had a fund raising event. The profit came from three resources: ticket sales, auction sales and donations. Ticket sales account for [`[$frac1]`] of the total profit; auction sales account for [`[$frac2]`] of the total profit. What fraction of the profit came from donations?
+A school had a fund raising event. The revenue came from three resources: ticket sales, auction sales, and donations. Ticket sales account for [`[$frac1]`] of the total revenue; auction sales account for [`[$frac2]`] of the total revenue. What fraction of the revenue came from donations?
 
-*Solution:* [__________]{$frac3} of the profit came from donations.
+[__________]{$frac3} of the revenue came from donations.
 
 END_PGML
 
@@ -82,9 +82,9 @@ if ($frac3Den==$com) {
 
 BEGIN_PGML_SOLUTION
 
-The profit consists of [`3`] parts. The total profit is like a big [`1`]; ticket sales account for [`[$frac1]`]; auction sales account for [`[$frac2]`]. To find the missing piece (from donations), we use subtraction.
+The revenue consists of [`3`] parts. The total revenue is like a big [`1`]; ticket sales account for [`[$frac1]`]; auction sales account for [`[$frac2]`]. To find the missing piece (from donations), we use subtraction.
 
-Note that the common denominator of [`1`], [`[$frac1]`] and [`[$frac2]`] is [`[$com]`].
+Note that a common denominator of [`1`], [`[$frac1]`] and [`[$frac2]`] is [`[$com]`].
 
     [``
 \begin{aligned}[t]
@@ -96,7 +96,7 @@ Note that the common denominator of [`1`], [`[$frac1]`] and [`[$frac2]`] is [`[$
 \end{aligned}
     ``]
 
-*Solution:* [`[$frac3]`] of the profit came from donations.
+So [`[$frac3]`] of the revenue came from donations.
 
 END_PGML_SOLUTION
 

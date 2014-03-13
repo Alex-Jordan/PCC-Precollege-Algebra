@@ -59,7 +59,7 @@ Write an equation for the following situation, and then solve for the unknown. P
     [@numberWord($a,capital=>1)@] less than a number is [@numberWord($b)@]. What is the number?
 
 Your equation is: 
-    [_______________________]{$ans1->cmp(cmp_class => "a linear equation",correct_ans=>"x-$a=$b")}
+    [_______________________]{$ans1->cmp(cmp_class => "a linear equation",correct_ans=>"x-$a=$b",correct_ans_latex_string=>"x-$a=$b")}
 
 The unknown number is: 
     [___________]{$ans2}

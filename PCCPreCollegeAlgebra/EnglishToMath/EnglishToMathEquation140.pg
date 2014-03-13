@@ -60,7 +60,7 @@ Write an equation for the following situation, and then solve for the unknown. P
     [@numberWord($a,capital=>1)@] times a number is the same as [@numberWord($b)@] less than twice the number. What is the number?
 
 Your equation is: 
-    [_______________________]{$ans1->cmp(cmp_class => "a linear equation",correct_ans=>"$a*x=2x-$b")}
+    [_______________________]{$ans1->cmp(cmp_class => "a linear equation",correct_ans=>"$a x=2x-$b",correct_ans_latex_string=>"$a x=2x-$b")}
 
 The unknown number is: 
     [___________]{$ans2}

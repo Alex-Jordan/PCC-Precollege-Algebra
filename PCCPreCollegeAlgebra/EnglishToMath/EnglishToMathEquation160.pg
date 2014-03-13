@@ -63,7 +63,7 @@ Write an equation for the following situation, and then solve for the unknown. P
     [@numberWord($b,capital=>1)@] less than the quotient of a number and [@numberWord($a)@] is the same as the quotient of the number and [@numberWord($c)@]. What is the number?
 
 Your equation is: 
-    [_______________________]{$ans1->cmp(cmp_class => "a linear equation",correct_ans=>"x/$a -$b = x/$c")}
+    [_______________________]{$ans1->cmp(cmp_class => "a linear equation",correct_ans=>"x/$a -$b = x/$c",correct_ans_latex_string=>"\\frac\{x\}\{$a\} -$b = \\frac\{x\}\{$c\}")}
 
 The unknown number is: 
     [___________]{$ans2}

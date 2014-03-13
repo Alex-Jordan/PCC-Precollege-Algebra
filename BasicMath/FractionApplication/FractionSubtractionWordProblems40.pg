@@ -44,8 +44,8 @@ $num1 = 1;
 do {$den2 = random(5,10,1);} until ($den1!=$den2);
 $num2 = 1;
 
-$second = Fraction($num1,$den1);
-$first = Fraction($num2,$den2);
+$first = Fraction($num1,$den1);
+$second = Fraction($num2,$den2);
 $total = $second+$first;
 ($totalNum,$totalDen) = $total->value;
 
@@ -54,8 +54,9 @@ $com = lcm($den2,$totalDen);
 $sex1 = list_random('male','female');
 $sex2 = list_random('male','female');
 
-$pronoun2 = 'him' if ($sex2 eq 'male');
-$pronoun2 = 'her' if ($sex2 eq 'female');
+$pronoun2 = ($sex2 eq 'male') ? 'him' : 'her';
+$Pronoun2 = ($sex2 eq 'male') ? 'he' : 'she';
+
 
 $name1 = RandomName(sex=>$sex1);
 do {$name2 = RandomName(sex=>$sex2);} until ($name1 ne $name2);
@@ -68,7 +69,7 @@ BEGIN_PGML
 
 A room needs to be painted. It would take [$name1] [`[$den1]`] hours to paint the whole room, but [$name2] will help [$name1]. Working together, they can pain [`[$total]`] of the room each hour. If [$name2] works alone, how many hours will it take [$pronoun2] to paint the whole room?
 
-*Solution:* If [$name2] works alone, it would take [$pronoun2] [___________]{$den2} hours to paint the whole room.
+If [$name2] works alone, it would take [$pronoun2] [___________]{$den2} hours to paint the whole room.
 
 END_PGML
 
@@ -111,9 +112,7 @@ Together, [$name1] and [$name2] paint [`[$total]`] of the room each hour. We can
 \end{aligned}
     ``]
 
-Since [$name2] paints [`[$second]`] of the room each hour, it would take [$pronoun2] [`[$den2]`] hours to paint the whole room.
-
-*Solution:* If [$name2] works alone, it would take [$pronoun2] [`[$den2]`] hours to paint the whole room.
+Since [$name2] paints [`[$second]`] of the room each hour, it would take [$pronoun2] [`[$den2]`] hours to paint the whole room if [$Pronoun2] works alone.
 
 END_PGML_SOLUTION
 

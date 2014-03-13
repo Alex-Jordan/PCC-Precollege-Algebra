@@ -66,15 +66,11 @@ TEXT(beginproblem());
 
 BEGIN_PGML
 
-[$name] is participating in a running event. 
+[$name] is participating in a running event. In the first hour, [$pronoun] completed [`[$first]`] of the total distance. After another hour, in total [$pronoun] had completed [`[$total]`] of the total distance. 
 
-In the first hour, [$pronoun] completed [`[$first]`] of the total distance. 
+What fraction of the total distance did [$name] complete during the second hour?
 
-After another hour, in total [$pronoun] had completed [`[$total]`] of the distance. 
-
-What fraction of the total distance did [$name] complete in the second hour?
-
-*Solution:* [$name] completed [__________]{$second} of the distance in the second hour.
+[$name] completed [__________]{$second} of the distance during the second hour.
 
 END_PGML
 
@@ -102,7 +98,7 @@ if ($com==$den1) {
 
 BEGIN_PGML_SOLUTION
 
-This is clearly a subtraction problem. 
+This is a subtraction problem. 
 
     [`` 
 \begin{aligned}[t]
@@ -115,7 +111,7 @@ This is clearly a subtraction problem.
 \end{aligned}
     ``]
 
-*Solution:* [$name] completed [`[$second]`] of the distance in the second hour.
+[$name] completed [`[$second]`] of the distance during the second hour.
 
 END_PGML_SOLUTION
 

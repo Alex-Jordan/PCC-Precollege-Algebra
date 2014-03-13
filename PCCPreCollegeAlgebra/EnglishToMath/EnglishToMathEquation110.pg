@@ -60,7 +60,7 @@ Write an equation for the following situation, and then solve for the unknown. P
     [@numberWord($c,capital=>1)@] is the product of [@numberWord($a)@] and [@numberWord($b)@] less than a number. What is the number?
 
 Your equation is: 
-    [_______________________]{$ans1->cmp(cmp_class => "a linear equation",correct_ans=>"$c=$a(x-$b)")}
+    [_______________________]{$ans1->cmp(cmp_class => "a linear equation",correct_ans=>"$c=$a(x-$b)",correct_ans_latex_string=>"$c=$a(x-$b)")}
 
 The unknown number is: 
     [___________]{$ans2}

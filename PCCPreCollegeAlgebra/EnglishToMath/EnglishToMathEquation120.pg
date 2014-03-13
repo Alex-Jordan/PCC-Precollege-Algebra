@@ -60,7 +60,7 @@ Write an equation for the following situation, and then solve for the unknown. P
     The product of [@numberWord($a)@] and [@numberWord($b)@] more than a number is [@numberWord($c)@]. What is the number?
 
 Your equation is: 
-    [_______________________]{$ans1->cmp(cmp_class => "a linear equation",correct_ans=>"$a($b+x)=$c")}
+    [_______________________]{$ans1->cmp(cmp_class => "a linear equation",correct_ans=>"$a($b+x)=$c",correct_ans_latex_string=>"$a($b+x)=$c")}
 
 The unknown number is: 
     [___________]{$ans2}
