@@ -55,9 +55,9 @@ TEXT(beginproblem());
 
 BEGIN_PGML
 
-A recipe needs [`[$each]`] cups of flour to bake a kind of cake. By this recipe, to bake [`[$numCakes]`] cakes, how many cups of flour are needed?
+A cake recipe needs [`[$each]`] cups of flour. Using this recipe, to bake [`[$numCakes]`] cakes, how many cups of flour are needed?
 
-*Solution:* To bake [`[$numCakes]`] cakes, [_________]{$total} cups of flour are needed.
+To bake [`[$numCakes]`] cakes, [_________]{$total} cups of flour are needed.
 
 END_PGML
 
@@ -94,7 +94,7 @@ Each cake needs [`[$each]`] cups of flour. To find how many cups of flour are ne
 \end{aligned}
     ``]
 
-*Solution:* To bake [`[$numCakes]`] cakes, [`[$total]`] cups of flour are needed.
+To bake [`[$numCakes]`] cakes, [`[$total]`] cups of flour are needed.
 
 END_PGML_SOLUTION
 

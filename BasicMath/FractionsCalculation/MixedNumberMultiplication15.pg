@@ -96,7 +96,7 @@ In this problem, we have:
 
     [`` \text{negative number} \cdot \text{negative number} = \text{positive number} ``]
 
-Now we know the solution must be positive, so we can simply throw away those two negative signs, and the problem becomes:
+Now we know the result must be positive, so we can simply throw away those two negative signs, and the problem becomes:
 
     [`` [$frac1] \cdot [$frac2] ``]
 
@@ -104,7 +104,7 @@ We first change both mixed numbers to improper fractions. In this case, the prob
 
     [``\frac{[$num1]}{[$den1]} \cdot \frac{[$num2]}{[$den2]}``]
 
-Then we do fraction multiplication as usual. To avoid dealing with big numbers, we reduce fractions before doing multiplications. The full solution is:
+Then we do fraction multiplication as usual. To avoid dealing with big numbers, we reduce fractions before doing multiplications. The full calculation is:
 
     [``
 \begin{aligned}[t]
@@ -116,7 +116,7 @@ Then we do fraction multiplication as usual. To avoid dealing with big numbers, 
 \end{aligned}
     ``]
 
-[$output2] The solution is [`[$ans]`].
+[$output2] The result is [`[$ans]`].
 
 END_PGML_SOLUTION
 

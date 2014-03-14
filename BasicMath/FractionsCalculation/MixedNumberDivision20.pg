@@ -94,15 +94,15 @@ In order to divide two mixed numbers, like
 
     [`` [$frac1] \div[$frac2] ``]
 
-it helps to first change both mixed numbers to improper fractions. In this case, the problem becomes
+it helps to first rewrite both mixed numbers as improper fractions. In this case, the problem becomes
 
     [``\frac{[$num1]}{[$den1]} \div \frac{[$den2]}{[$num2]}``]
 
-Next, change division into multiplication, and, at the same time, flip the *second* fraction:
+Next, change division into multiplication, and at the same time, flip the *second* fraction:
 
     [``\frac{[$num1]}{[$den1]} \cdot \frac{[$num2]}{[$den2]}``]
 
-Then we do fraction multiplication as usual. To avoid dealing with big numbers, we reduce fractions before doing multiplications. The full solution is:
+Then we do fraction multiplication as usual. To avoid dealing with big numbers, we reduce fractions before doing multiplications. The full calculation is:
 
     [``
 \begin{aligned}[t]
@@ -114,7 +114,7 @@ Then we do fraction multiplication as usual. To avoid dealing with big numbers, 
 \end{aligned}
     ``]
 
-[$output2] The solution is [`[$ans]`].
+[$output2] The result is [`[$ans]`].
 
 END_PGML_SOLUTION
 

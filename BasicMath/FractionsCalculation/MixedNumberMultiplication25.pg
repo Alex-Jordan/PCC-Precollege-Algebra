@@ -97,27 +97,27 @@ In this problem, we have:
 
     [`` \text{positive number} \cdot \text{negative number} = \text{negative number} ``]
 
-Now we know the solution must be negative, so we can move the negative sign to the front of the first fraction:
+Now we know the result must be negative, so we can move the negative sign to the front of the first fraction:
 
     [`` [$frac1] \cdot \left( -[$frac2] \right) = - [$frac1] \cdot [$frac2] ``]
 
-Next, we do fraction multiplication as usual. We first change both numbers to improper fractions. In this case, the problem becomes
+We continue by rewriting both numbers as fractions. In this case, the problem becomes
 
-    [``-\frac{[$num1]}{[$den1]} \cdot \frac{[$num2]}{[$den2]}``]
+    [``-{\frac{[$num1]}{[$den1]}} \cdot \frac{[$num2]}{[$den2]}``]
 
-Then we do fraction multiplication as usual. To avoid dealing with big numbers, we reduce fractions before doing multiplications. The full solution is:
+Then we do fraction multiplication as usual. To avoid dealing with big numbers, we reduce fractions before doing multiplications. The full calculation is:
 
     [``
 \begin{aligned}[t]
    [$frac1] \cdot \left( -[$frac2] \right)
       &= -[$frac1] \cdot [$frac2] \\
-      &= -\frac{[$num1]}{[$den1]} \cdot \frac{[$num2]}{[$den2]} \\
-      &= -\frac{[$num1/$div1]}{[$den1/$div2]} \cdot \frac{[$num2/$div2]}{[$den2/$div1]} \\
+      &= -{\frac{[$num1]}{[$den1]}} \cdot \frac{[$num2]}{[$den2]} \\
+      &= -{\frac{[$num1/$div1]}{[$den1/$div2]}} \cdot \frac{[$num2/$div2]}{[$den2/$div1]} \\
       &= [$output1]
 \end{aligned}
     ``]
 
-[$output2] The solution is [`[$ans]`].
+[$output2] The result is [`[$ans]`].
 
 END_PGML_SOLUTION
 

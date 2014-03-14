@@ -72,7 +72,7 @@ $ansDen = $ans[1];
 TEXT(beginproblem());
 
 BEGIN_PGML
-Multiply the following: [``[$frac1] \div \left( -[$frac2] \right) ``]
+Divide the following: [``[$frac1] \div \left( -[$frac2] \right) ``]
 
     [___________]{$ans} 
 
@@ -90,40 +90,40 @@ $output2 = ((abs($ans)<1)||($ansDen==1)) ? "" : "If we like, we may convert this
 
 BEGIN_PGML_SOLUTION
 
-When we do fraction multiplication or division, if negative numbers are involved, it helps to first determine the sign (positive or negative) of the solution. This way, when we carry out the fraction operation, we don't have to think about signs.
+When we do fraction multiplication or division, if negative numbers are involved, it helps to first determine the sign (positive or negative) of the result. This way, when we carry out the fraction operation, we don't have to think about signs.
 
 In this problem, we have:
 
     [`` \text{positive number} \div \text{negative number} = \text{negative number} ``]
 
-Now we know the solution must be negative, so we can move the negative sign to the front of the first fraction:
+Now we know the result must be negative, so we can move the negative sign to the front of the first fraction:
 
     [`` [$frac1] \div \left( -[$frac2] \right) = - [$frac1] \div [$frac2] ``]
 
-Next, we do fraction division as usual, without the need to think of the negative sign.
+Next, we do fraction division as usual, without the need to think about the negative sign.
 
-We first change both mixed numbers to improper fractions. In this case, the problem becomes
+We change both mixed numbers to improper fractions. In this case, the problem becomes
 
-    [``-\frac{[$num1]}{[$den1]} \div \frac{[$den2]}{[$num2]}``]
+    [``-{\frac{[$num1]}{[$den1]}} \div \frac{[$den2]}{[$num2]}``]
 
 Next, change division into multiplication, and, at the same time, flip the *second* fraction:
 
-    [``-\frac{[$num1]}{[$den1]} \cdot \frac{[$num2]}{[$den2]}``]
+    [``-{\frac{[$num1]}{[$den1]}} \cdot \frac{[$num2]}{[$den2]}``]
 
-Then we do fraction multiplication as usual. To avoid dealing with big numbers, we reduce fractions before doing multiplications. The full solution is:
+Then we do fraction multiplication as usual. To avoid dealing with big numbers, we reduce fractions before doing multiplications. The full calculation is:
 
     [``
 \begin{aligned}[t]
    [$frac1] \div \left( -[$frac2] \right)
       &= - [$frac1] \div [$frac2] \\
-      &= -\frac{[$num1]}{[$den1]} \div \frac{[$den2]}{[$num2]} \\
-      &= -\frac{[$num1]}{[$den1]} \cdot \frac{[$num2]}{[$den2]} \\
-      &= -\frac{[$num1/$div1]}{[$den1/$div2]} \cdot \frac{[$num2/$div2]}{[$den2/$div1]} \\
+      &= -{\frac{[$num1]}{[$den1]}} \div \frac{[$den2]}{[$num2]} \\
+      &= -{\frac{[$num1]}{[$den1]}} \cdot \frac{[$num2]}{[$den2]} \\
+      &= -{\frac{[$num1/$div1]}{[$den1/$div2]}} \cdot \frac{[$num2/$div2]}{[$den2/$div1]} \\
       &= [$output1]
 \end{aligned}
     ``]
 
-[$output2] The solution is [`[$ans]`].
+[$output2] The result is [`[$ans]`].
 
 END_PGML_SOLUTION
 

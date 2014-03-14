@@ -58,9 +58,9 @@ TEXT(beginproblem());
 
 BEGIN_PGML
 
-A stick is [`[$whole]`] inches in length. A carpenter will cut off [`[$frac]`] of the stick. How long is the part to be cut off? Answer this question in fractions.
+A stick is [`[$whole]`] inches in length. A carpenter will cut off [`[$frac]`] of the stick. How long is the part to be cut off? Answer this question with a fraction of an inch.
 
-*Solution:* The carpenter will cut off [________]{$part} inches off the stick.
+The carpenter will cut off [________]{$part} inches from the stick.
 
 END_PGML
 
@@ -99,7 +99,7 @@ For this problem, we are trying to find [`[$frac]`] of [`[$whole]`] inches. The 
 \end{aligned}
     ``]
 
-*Solution:* The carpenter will cut off [`[$part]`] inches off the stick.
+The carpenter will cut off [`[$part]`] inches from the stick.
 
 END_PGML_SOLUTION
 

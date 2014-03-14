@@ -90,13 +90,13 @@ $output2 = (($ans<1)||($ansDen==1)) ? "" : "If we like, we may convert this answ
 
 BEGIN_PGML_SOLUTION
 
-When we do fraction multiplication or division, if negative numbers are involved, it helps to first determine the sign (positive or negative) of the solution. This way, when we carry out the fraction operation, we don't have to think about signs.
+When we do fraction multiplication or division, if negative numbers are involved, it helps to first determine the sign (positive or negative) of the result. This way, when we carry out the fraction operation, we don't have to think about signs.
 
 In this problem, we have:
 
     [`` \text{negative number} \div \text{negative number} = \text{positive number} ``]
 
-Now we know the solution must be positive, so we can simply throw away those two negative signs, and the problem becomes:
+Now we know the result must be positive, so we can simply throw away those two negative signs, and the problem becomes:
 
     [`` [$frac1] \div[$frac2] ``]
 
@@ -108,7 +108,7 @@ Next, change division into multiplication, and, at the same time, flip the *seco
 
     [``\frac{[$num1]}{[$den1]} \cdot \frac{[$num2]}{[$den2]}``]
 
-Then we do fraction multiplication as usual. To avoid dealing with big numbers, we reduce fractions before doing multiplications. The full solution is:
+Then we do fraction multiplication as usual. To avoid dealing with big numbers, we reduce fractions before doing multiplications. The full computation is:
 
     [``
 \begin{aligned}[t]
@@ -121,7 +121,7 @@ Then we do fraction multiplication as usual. To avoid dealing with big numbers, 
 \end{aligned}
     ``]
 
-[$output2] The solution is [`[$ans]`].
+[$output2] The result is [`[$ans]`].
 
 END_PGML_SOLUTION
 

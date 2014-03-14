@@ -72,8 +72,8 @@ do {
 $x1 = (-$b[0]+sqrt($discriminant))/(2*$a[0]);
 $x2 = (-$b[0]-sqrt($discriminant))/(2*$a[0]);
 
-$x1 = sprintf "%.2f", $x1;
-$x2 = sprintf "%.2f", $x2;
+$x1Show = sprintf "%.2f", $x1;
+$x2Show = sprintf "%.2f", $x2;
 
 $a[1]= $a[0];
 $b[1]= -$b[0];
@@ -245,6 +245,12 @@ Context()->normalStrings;
 
 ##############################################
 
+Context("Numeric");
+Context()->flags->set(
+  tolerance => 0.005,
+  tolType => "absolute",
+);
+
 ANS( $popup->cmp() );
 ANS( $axis->cmp() );
 ANS( $vertexCorrect->cmp() );
@@ -332,11 +338,11 @@ Identify that [`a=[@$a[0]@], b=[@$b[0]@], c=[@$c[0]@]`]. We have:
    x &= \frac{-([@$b[0]@]) \pm \sqrt{([@$b[0]@])^{2}-4([@$a[0]@])([@$c[0]@])}}{2([@$a[0]@])} \\
    x &= \frac{[$s1] \pm \sqrt{[$discriminant]}}{[$s2]} \\
    x &\approx \frac{[$s1] + [$s3]}{[$s2]} & \text{or} && x &\approx \frac{[$s1] - [$s3]}{[$s2]} \\
-   x & \approx [$x1] & \text{or} && x &\approx [$x2]
+   x & \approx [$x1Show] & \text{or} && x &\approx [$x2Show]
 \end{aligned}
     `]
 
-The parabola has two [`x`]-intercepts: [`\left([$x1],0\right)`] and [`\left([$x2],0\right)`].
+The parabola has two [`x`]-intercepts: [`\left([$x1Show],0\right)`] and [`\left([$x2Show],0\right)`].
 
 #####graph:  
 

@@ -115,7 +115,7 @@ $PAR
 
 END_TEXT
 BEGIN_PGML
-    Its area is [_____________]{$area} square feet. (Use fraction in your answer.)
+    Its area is [_____________]{$area} square feet. (Use a fraction in your answer.)
 
 END_PGML
 
@@ -161,7 +161,7 @@ For the given triangle, we have:
 
 Don't forget the length unit [`\textrm{ft}^{2}`].  
 
-*Solution:* The rectangle's area is [`[$area]`] square feet, or [`[$area] \textrm{ ft}^{2}`].
+The triangle's area is [`[$area]`] square feet, or [`[$area] \textrm{ ft}^{2}`].
 
 END_PGML_SOLUTION
 

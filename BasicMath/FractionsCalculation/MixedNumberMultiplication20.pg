@@ -99,7 +99,7 @@ it helps to first change both numbers to improper fractions. In this case, the p
 
     [``\frac{[$num1]}{[$den1]} \cdot \frac{[$num2]}{[$den2]}``]
 
-Then we do fraction multiplication as usual. To avoid dealing with big numbers, we reduce fractions before doing multiplications. The full solution is:
+Then we do fraction multiplication as usual. To avoid dealing with big numbers, we reduce fractions before doing multiplications. The full calculation is:
 
     [``
 \begin{aligned}[t]
@@ -110,7 +110,7 @@ Then we do fraction multiplication as usual. To avoid dealing with big numbers, 
 \end{aligned}
     ``]
 
-[$output2] The solution is [`[$ans]`].
+[$output2] The result is [`[$ans]`].
 
 END_PGML_SOLUTION
 

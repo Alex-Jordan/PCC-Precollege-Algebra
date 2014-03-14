@@ -130,7 +130,7 @@ BEGIN_PGML_SOLUTION
 
 ###Part 1  
 
-Shaded area has [`[$int]`] whole [$output3], plus part of a pie. 
+The shaded area has [`[$int]`] whole [$output3], plus part of a pie. 
 
 The partly-shaded pie is cut into [`[$den]`] pieces evenly, with [`[$num]`] [$output1] shaded. We can tell [`\frac{[$num]}{[$den]}`] of the pie is shaded.
 
@@ -138,7 +138,7 @@ Counting in the whole [$output3], the mixed number version of shaded area is [`[
 
 ###Part 2  
 
-To find the improper version of the shaded area, we count the number of shaded pieces, including whole [$output3] and the partly-shaded pie. Altogether, [`[$int*$den+$num]`] pieces are shaded, so the improper fraction version of shaded area is [`[$improperAns]`].
+To find the improper fraction representing the shaded area, we count the number of shaded pieces, including the whole [$output3] and the partly-shaded pie. All together, [`[$int*$den+$num]`] pieces are shaded, so the improper fraction representing the shaded area is [`[$improperAns]`].
 
 END_PGML_SOLUTION
 

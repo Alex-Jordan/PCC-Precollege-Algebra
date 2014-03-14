@@ -89,34 +89,34 @@ $output2 = $ansDen!=1 ? "If we like, we may convert this answer to a mixed numbe
 
 BEGIN_PGML_SOLUTION
 
-When we do fraction multiplication or division, if negative numbers are involved, it helps to first determine the sign (positive or negative) of the solution. This way, when we carry out the fraction operation, we don't have to think about signs.
+When we do fraction multiplication or division, if negative numbers are involved, it helps to first determine the sign (positive or negative) of the result. This way, when we carry out the fraction operation, we don't have to think about signs.
 
 In this problem, we have:
 
     [`` \text{negative number} \cdot \text{positive number} = \text{negative number} ``]
 
-Now we know the solution must be negative, so we can keep the negative sign in front of the first fraction, and then do fraction multiplication as usual.
+Now we know the result must be negative, so we can keep the negative sign in front of the first fraction, and then do fraction multiplication as usual.
 
 In order to multiply a mixed number with an integer, like 
 
     [`` -[$frac1] \cdot [$frac2] ``]
 
-it helps to first change both numbers to improper fractions. In this case, the problem becomes
+it helps to first rewrite both numbers to improper fractions. In this case, the problem becomes
 
-    [`` -\frac{[$num1]}{[$den1]} \cdot \frac{[$num2]}{[$den2]}``]
+    [`` -{\frac{[$num1]}{[$den1]}} \cdot \frac{[$num2]}{[$den2]}``]
 
-Then we do fraction multiplication as usual. To avoid dealing with big numbers, we reduce fractions before doing multiplications. The full solution is:
+Then we do fraction multiplication as usual. To avoid dealing with big numbers, we reduce fractions before doing multiplications. The full calculation is:
 
     [``
 \begin{aligned}[t]
    -[$frac1] \cdot [$frac2] 
-      &= -\frac{[$num1]}{[$den1]} \cdot \frac{[$num2]}{[$den2]} \\
-      &= -\frac{[$num1/$div1]}{[$den1/$div2]} \cdot \frac{[$num2/$div2]}{[$den2/$div1]} \\
+      &= -{\frac{[$num1]}{[$den1]}} \cdot \frac{[$num2]}{[$den2]} \\
+      &= -{\frac{[$num1/$div1]}{[$den1/$div2]}} \cdot \frac{[$num2/$div2]}{[$den2/$div1]} \\
       &= [$output1]
 \end{aligned}
     ``]
 
-[$output2] The solution is [`[$ans]`].
+[$output2] The result is [`[$ans]`].
 
 END_PGML_SOLUTION
 
