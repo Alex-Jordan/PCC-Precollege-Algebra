@@ -68,7 +68,7 @@ BEGIN_PGML_SOLUTION
 \end{aligned}
     ``]
 
-Note that absolute value bars can change the number inside them from negative to positive, but they has no effect on the negative symbol outside them.
+Note that absolute value bars can change the number inside them from negative to positive, but they have no effect on the negative symbol outside them.
 
 END_PGML_SOLUTION
 
