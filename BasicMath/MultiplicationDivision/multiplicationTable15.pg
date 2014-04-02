@@ -43,7 +43,7 @@ Context("LimitedNumeric");
 @num2 = ();
 @products = ();
 
-do
+do {
 for my $i (0..9) {
   $num1[$i] = random(2,12,1);
   $num2[$i] = random(2,12,1);
