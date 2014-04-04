@@ -36,10 +36,10 @@ loadMacros(
 ##############################################
 
 Context("Numeric");
-#Context()->flags->set(
-#  tolerance => 0.1,
-#  tolType => "absolute",
-#);
+Context()->flags->set(
+  tolerance => Context()->flag(zeroLevel),
+  tolType => "absolute",
+);
 
 $numDigits = 7;
 
@@ -62,11 +62,11 @@ $leftDigit = $numDigits - $rightDigit - 1;
 $left = random(10**($leftDigit-2),10**$leftDigit-1,1);
 $middle1 = random(0,4,1);
 $right = $roundToDigit==10 ? 0 : random(1,$roundToDigit/10-1,1);
-$num1 = $left*10**($rightDigit+1)+$middle1*10**$rightDigit+$right;
+$num1 = round($left*10**($rightDigit+1)+$middle1*10**$rightDigit+$right);
 $ans1 = $left*10**($rightDigit+1);
 
 $middle2 = random(5,9,1);
-$num2 = $left*10**($rightDigit+1)+$middle2*10**$rightDigit+$right;
+$num2 = round($left*10**($rightDigit+1)+$middle2*10**$rightDigit+$right);
 $ans2 = ($left+1)*10**($rightDigit+1);
 
 #Randomize questions

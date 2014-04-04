@@ -87,7 +87,7 @@ BEGIN_PGML_SOLUTION
 \begin{aligned}
  [$a][$var]   	+	[$b]  	&= 	[$c] \\
  [$a][$var]   	+[$b]\mathbf{{}-[$b]}  &= [$c] \mathbf{{}-[$b]} \\
- [$a][$var]	+[$b]&=	[$c-$b] \\
+ [$a][$var]	   &=	[$c-$b] \\
  \frac{[$a][$var]}{[$a]} 	&=	\frac{[$c-$b]}{[$a]} \\
  [$var]                  	&=	[$ans]
 \end{aligned}
