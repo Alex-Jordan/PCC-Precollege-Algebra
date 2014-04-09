@@ -62,6 +62,7 @@ Context("Numeric");
 $numCorrect = 3;
 
 @primes = (2,3,5,7,11,13,17,19,23,29,31,37,41,43,47);
+@primesCopy = @primes;
 
 for my $i (0..$numCorrect-1) {
    push(@given,splice(@primes,random(0,$#primes,1),1));
@@ -69,7 +70,7 @@ for my $i (0..$numCorrect-1) {
 
 $composite = 0;
 for my $i (0..$numCorrect-1) {
-   do {$composite=random(4,49,1);} until !(isInArray($composite,@primes));
+   do {$composite=random(4,49,1);} until !(isInArray($composite,@primesCopy));
    $factor[$i+$numCorrect]=findFactor($composite);
    push(@given,$composite);
 }
@@ -125,11 +126,11 @@ A _prime number_ only has two factors: [`1`] and itself.
 
 In the list, [`[@$given[0]@]`], [`[@$given[1]@]`] and [`[@$given[2]@]`] are prime numbers.
 
-For [`[@$given[3]@]`], [`[@$factor[3]@]`] can divide it. This implies [`[@$given[3]@]`] is not a prime number. It is called a _composite number_.
+For [`[@$given[3]@]`], the number [`[@$factor[3]@]`] can divide it. This implies [`[@$given[3]@]`] is not a prime number. It is called a _composite number_.
 
-Similarly, [`[@$factor[4]@]`] divides into [`[@$given[4]@]`], making [`[@$given[4]@]`] a composite number.
+Similarly, the number [`[@$factor[4]@]`] divides into [`[@$given[4]@]`], making [`[@$given[4]@]`] a composite number.
 
-And, [`[@$factor[5]@]`] divides into [`[@$given[5]@]`], making [`[@$given[5]@]`] a composite number.
+And, the number [`[@$factor[5]@]`] divides into [`[@$given[5]@]`], making [`[@$given[5]@]`] a composite number.
 
 So the correct answers are [@$mc->correct_ans()@].
 

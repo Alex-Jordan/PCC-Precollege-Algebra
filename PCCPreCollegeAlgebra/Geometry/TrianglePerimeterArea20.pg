@@ -54,7 +54,7 @@ $ymax = $xmax;
 $xLabelShift = $xmax/40;
 $yLabelShift = $ymax/40;
 
-@x = (($xmax-$base)/2,($xmax+$base)/2);
+@x = (($xmax-$base)/2-$xLabelShift,($xmax+$base)/2-2*$xLabelShift);
 @y = (($ymax-$height)/2,($ymax+$height)/2);
 
 $cornersize = min(($x[1]-$x[0]),($y[1]-$y[0]))/10;
@@ -86,12 +86,14 @@ $ansA = NumberWithUnits("$area cm^2");
 $refreshCachedImages=1;
 TEXT(beginproblem());
 
+$text = "a right triangle with legs of lengths $base cm and $height cm, and hypotenuse of length $hypotenuse cm";
+
 BEGIN_TEXT
 
 Find the perimeter and area of the right triangle.$PAR
 
 $BCENTER
-\{ image(insertGraph( $picture  ), tex_size=>400, height=>400, width=>400, extra_html_tags => 'alt = "a right triangle with legs of lengths $base cm and $height cm, and hypotenuse of length $hypotenuse cm" title = "a right triangle with its dimensions given"') \}
+\{ image(insertGraph( $picture  ), tex_size=>400, height=>400, width=>400, extra_html_tags => 'alt = "$text" title = "$text"') \}
 $ECENTER
 $PAR
 END_TEXT

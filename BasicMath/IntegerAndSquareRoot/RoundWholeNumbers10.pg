@@ -77,6 +77,10 @@ if (random(0,1,1)==1) {
 }
 
 #These are used in the Correct Answer field.
+
+$ans1 = round($ans1);
+$ans2 = round($ans2);
+
 $correctAns1 = "$ans1";
 $correctAns2 = "$ans2";
 
@@ -118,13 +122,13 @@ ANS( Compute($ans2)->cmp(correct_ans_latex_string=>$correctAns2,correct_ans=>$co
 
 ##############################################
 
-$num1Left = $left;
-$num2Left = $left;
-$num1Right = $middle1*10**$rightDigit+$right;
-$num2Right = $middle2*10**$rightDigit+$right;
-$place = $left-int($left/10)*10;
-$upper = ($left+1)*10**($rightDigit+1);
-$lower = $left*10**($rightDigit+1);
+$num1Left = round($left);
+$num2Left = round($left);
+$num1Right = round($middle1*10**$rightDigit+$right);
+$num2Right = round($middle2*10**$rightDigit+$right);
+$place = round($left-int($left/10)*10);
+$upper =round( ($left+1)*10**($rightDigit+1));
+$lower = round($left*10**($rightDigit+1));
 
 if ($ans1>$num1) {
    $biggerOrSmaller1 = "greater than [`4`]";

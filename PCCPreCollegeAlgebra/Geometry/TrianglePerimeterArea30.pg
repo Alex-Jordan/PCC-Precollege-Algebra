@@ -90,12 +90,15 @@ $ansA = NumberWithUnits($area,"m^2");
 
 TEXT(beginproblem());
 $refreshCachedImages = 1;
+
+$text = "an obtuse triangle with legs of lengths $base m, $rightSide m, and $leftSide m; its height perpendicular to the side of length $base m is $height m";
+
 BEGIN_TEXT
 
 Find the perimeter and area of the triangle.$PAR
 
 $BCENTER
-\{ image(insertGraph( $picture  ), tex_size=>400, height=>400, width=>400, extra_html_tags => 'alt = "an obtuse triangle with legs of lengths $base m, $rightSide m, and $leftSide m; its height perpendicular to the side of length $base m is $height m" title = "an obtuse triangle with dimensions given"') \}
+\{ image(insertGraph( $picture  ), tex_size=>400, height=>400, width=>400, extra_html_tags => 'alt = "$text"  title = "$text"') \}
 $ECENTER
 $PAR
 END_TEXT

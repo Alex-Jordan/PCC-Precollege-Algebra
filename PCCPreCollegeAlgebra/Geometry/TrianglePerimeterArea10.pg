@@ -92,12 +92,14 @@ $ansA = NumberWithUnits("$area ft^2");
 $refreshCachedImages = 1;
 TEXT(beginproblem());
 
+$text = "a triangle with one side parallel to the ground; this side is $base ft long; the left side is $leftSide ft long; the right side is $rightSide ft long; the height is $height ft";
+
 BEGIN_TEXT
 
 Find the perimeter and area of the triangle.$PAR
 
 $BCENTER
-\{ image(insertGraph( $picture  ), tex_size=>400, height=>400, width=>400, extra_html_tags => 'alt = "a triangle with one side parallel to the ground; this side is $base ft long; the left side is $leftSide ft long; the right side is $rightSide ft long; the height is $height ft" title = "a triangle with its dimensions given"') \}
+\{ image(insertGraph( $picture  ), tex_size=>400, height=>400, width=>400, extra_html_tags => 'alt = "$text" title = "$text" ') \}
 $ECENTER
 $PAR
 END_TEXT
