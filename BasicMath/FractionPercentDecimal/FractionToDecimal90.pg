@@ -53,32 +53,49 @@ sub array_shuffle
 
 ########################################
 
-Context("LimitedFraction");
+Context("LimitedNumeric");
 
 @decimals=(0.5,0.25,0.75,0.2,0.4,0.6,0.8,0.125,0.375,0.625,0.875,0.1,0.3,0.7,0.9);
 array_shuffle(~~@decimals);
 
+$deci0 = $decimals[0];
+$deci1 = $decimals[1];
+$deci2 = $decimals[2];
+$deci3 = $decimals[3];
+$deci4 = $decimals[4];
+$deci5 = $decimals[5];
+$deci6 = $decimals[6];
+$deci7 = $decimals[7];
+$deci8 = $decimals[8];
+$deci9 = $decimals[9];
+$deci10 = $decimals[10];
+$deci11 = $decimals[11];
+$deci12 = $decimals[12];
+$deci13 = $decimals[13];
+$deci14 = $decimals[14];
+
+Context("LimitedFraction");
 @fractions=();
 for my $i (0..@decimals-1) {
    $decimals[$i]=Real($decimals[$i]);
    $fractions[$i]=Fraction($decimals[$i]);
 }
 
-$frac0 = $fractions[0]; $deci0 = $decimals[0];
-$frac1 = $fractions[1]; $deci1 = $decimals[1];
-$frac2 = $fractions[2]; $deci2 = $decimals[2];
-$frac3 = $fractions[3]; $deci3 = $decimals[3];
-$frac4 = $fractions[4]; $deci4 = $decimals[4];
-$frac5 = $fractions[5]; $deci5 = $decimals[5];
-$frac6 = $fractions[6]; $deci6 = $decimals[6];
-$frac7 = $fractions[7]; $deci7 = $decimals[7];
-$frac8 = $fractions[8]; $deci8 = $decimals[8];
-$frac9 = $fractions[9]; $deci9 = $decimals[9];
-$frac10 = $fractions[10]; $deci10 = $decimals[10];
-$frac11 = $fractions[11]; $deci11 = $decimals[11];
-$frac12 = $fractions[12]; $deci12 = $decimals[12];
-$frac13 = $fractions[13]; $deci13 = $decimals[13];
-$frac14 = $fractions[14]; $deci14 = $decimals[14];
+$frac0 = $fractions[0];
+$frac1 = $fractions[1];
+$frac2 = $fractions[2];
+$frac3 = $fractions[3];
+$frac4 = $fractions[4];
+$frac5 = $fractions[5];
+$frac6 = $fractions[6];
+$frac7 = $fractions[7];
+$frac8 = $fractions[8];
+$frac9 = $fractions[9];
+$frac10 = $fractions[10];
+$frac11 = $fractions[11];
+$frac12 = $fractions[12];
+$frac13 = $fractions[13];
+$frac14 = $fractions[14];
 
 Context("LimitedNumeric");
 

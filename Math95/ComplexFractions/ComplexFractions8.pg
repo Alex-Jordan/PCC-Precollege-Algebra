@@ -83,7 +83,7 @@ $student = $student->value; # ditto
 
 Context("Interval");
 my $smallSet = Set("-$a");
-my $largeSet = Set("-$a,$a,-($c*$a+1)/$c");
+my $largeSet = Set("-$a,$a,(1-$c*$a)/$c");
 
 $student = Set("{$student}");
 
