@@ -45,8 +45,8 @@ $numPoints = 3;
 #Create ordered pairs with no duplicate values in x, no duplicate values in y.
 @px=();
 @py=();
-@xArray = (-8..8);
-@yArray = (-8..8);
+@xArray = (-5..5);
+@yArray = (-5..5);
 for my $i (0..$numPoints-1) {
    $px[$i] = splice @xArray,random(0,$#xArray,1),1;
    $py[$i] = splice @yArray,random(0,$#yArray,1),1;
@@ -73,8 +73,10 @@ for my $i (0..$numPoints-1) {
    }
 }
 $ansXDupList = List($ansXDups[0],$ansXDups[1]);
+$ansXDup0 = $ansXDups[0];
+$ansXDup1 = $ansXDups[1];
 
-($min[0], $max[0], $min[1], $max[1], $ticknum[0], $ticknum[1], $xticks_ref, $yticks_ref, $marksep[0], $marksep[1]) = NiceGraphParameters([-8,8],[-8,8],centerOrigin=>1);
+($min[0], $max[0], $min[1], $max[1], $ticknum[0], $ticknum[1], $xticks_ref, $yticks_ref, $marksep[0], $marksep[1]) = NiceGraphParameters([-5,5],[-5,5],centerOrigin=>1);
 
 @xticks = @$xticks_ref;
 @yticks = @$yticks_ref;
@@ -106,7 +108,7 @@ for my $i (0..0) {
 
 $ALTPoints =~ s/, $//;
 $ALTPoints =~ s|(.+), |$1 and |;
-$ALT = "This is the graph of a function consisting of the following points: $ALTPoints.";
+$ALT0 = "This is the graph of a function consisting of the following points: $ALTPoints.";
 $ALTPoints =~ s/ and /, /;
 
 ##############################################
@@ -131,13 +133,13 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 
-The problem [`f([$p0x])`]=? implies the function's [`x`] value is [`[$p0x]`]. On the graph, we draw a dotted vertical line at [`x=[$p0x]`], and it intersects the function's graph at [`([$p0x],[$p0y])`]. This implies [`f([$p0x])=[$p0y]`]. See the graph below.
+The function [`f(x)`] has [`3`] ordered pairs:
 
->>[@image(insertGraph($gr[1]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>"alt = '$ALT1' title = '$ALT1'") @]*<<
+    [`` ([$ansXNoDup],[$ansYNoDup]), ([$ansXDup0],[$ansYDup]), ([$ansXDup1],[$ansYDup]) ``]
 
-The problem [`f(?)=[$p1y]`] implies the function's [`y`] value is [`[$p1y]`]. On the graph, we draw a dotted horizontal line at [`y=[$p1y]`], and it intersects the function's graph at [`([$p1x],[$p1y])`]. This implies [`f([$p1x])=[$p1y]`]. See the graph below.
+In function notation, we have:
 
->>[@image(insertGraph($gr[2]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>"alt = '$ALT2' title = '$ALT2'") @]*<<
+    [`` f([$ansXNoDup])=[$ansYNoDup], f([$ansXDup0])=[$ansYDup], f([$ansXDup1])=[$ansYDup] ``]
 
 END_PGML_SOLUTION
 

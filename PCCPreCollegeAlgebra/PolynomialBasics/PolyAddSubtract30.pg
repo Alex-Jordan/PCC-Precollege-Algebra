@@ -115,7 +115,7 @@ Use a vertical format to add the polynomials.
      \begin{alignedat}{2}
              [$poly1]\\
              [$poly2]\\
-             \rule{10pt}{2pt}
+             \hline
     \end{alignedat}
     `]
 
@@ -130,6 +130,7 @@ Combining like terms gives
      \begin{alignedat}{2}
              [$poly1]\\
              [$poly2]\\
+             \hline
              [$formattedanswer]
     \end{alignedat}     `]
 END_PGML_SOLUTION
