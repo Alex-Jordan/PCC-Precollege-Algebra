@@ -100,7 +100,7 @@ Context()->operators->add(
 
 
 
-$a = random(1,10,0.1);
+$a = random(1,9.9,0.1);
 $b = random(2,5,1);
 
 # answer
