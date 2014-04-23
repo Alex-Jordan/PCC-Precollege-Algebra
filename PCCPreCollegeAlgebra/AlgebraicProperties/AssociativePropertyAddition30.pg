@@ -63,10 +63,7 @@ $giv = Formula("$var1+$var2+$var3");
 $ans0 = Formula("($var1+$var2)+$var3");
 $ans1 = Formula("$var1+($var2+$var3)");
 
-# Because of the absolute value hack for parens, make sure to test at both pos and neg input:
-$giv->{test_at} = [[-1,-1,-1],[-1,-1,1],[-1,1,-1],[-1,1,1],[1,-1,-1],[1,-1,1],[1,1,-1],[1,1,1]];
-$ans ->{test_at} = [[-1,-1,-1],[-1,-1,1],[-1,1,-1],[-1,1,1],[1,-1,-1],[1,-1,1],[1,1,-1],[1,1,1]];
-$alt ->{test_at} = [[-1,-1,-1],[-1,-1,1],[-1,1,-1],[-1,1,1],[1,-1,-1],[1,-1,1],[1,1,-1],[1,1,1]];
+
 
 ##############################################
 TEXT(beginproblem());
@@ -91,6 +88,11 @@ END_PGML
 
 ANS($ans0->cmp(checker => sub {
       my ($correct,$student,$ans) = @_;
+
+      # Because of the absolute value hack for parens, make sure to test at both pos and neg input:
+      $student ->{test_at} = [[-1,-1,-1],[-1,-1,1],[-1,1,-1],[-1,1,1],[1,-1,-1],[1,-1,1],[1,1,-1],[1,1,1]];
+      $correct->{test_at} = [[-1,-1,-1],[-1,-1,1],[-1,1,-1],[-1,1,1],[1,-1,-1],[1,-1,1],[1,1,-1],[1,1,1]];
+
       Value->Error("This expression is algebraically equivalent to the given expression, but it is not what is asked for") if (($student == $giv) or ($student == $ans1) or (($student == $correct) and ($student ne $correct)));
       return ($student eq $correct);
     }));
@@ -98,6 +100,13 @@ ANS($ans0->cmp(checker => sub {
 
 ANS($ans1->cmp(checker => sub {
       my ($correct,$student,$ans) = @_;
+
+      # Because of the absolute value hack for parens, make sure to test at both pos and neg input:
+      $student ->{test_at} = [[-1,-1,-1],[-1,-1,1],[-1,1,-1],[-1,1,1],[1,-1,-1],[1,-1,1],[1,1,-1],[1,1,1]];
+      $correct->{test_at} = [[-1,-1,-1],[-1,-1,1],[-1,1,-1],[-1,1,1],[1,-1,-1],[1,-1,1],[1,1,-1],[1,1,1]];
+      $ans0->{test_at} = [[-1,-1,-1],[-1,-1,1],[-1,1,-1],[-1,1,1],[1,-1,-1],[1,-1,1],[1,1,-1],[1,1,1]];
+      $giv->{test_at} = [[-1,-1,-1],[-1,-1,1],[-1,1,-1],[-1,1,1],[1,-1,-1],[1,-1,1],[1,1,-1],[1,1,1]];
+
       Value->Error("This expression is algebraically equivalent to the given expression, but it is not what is asked for") if (($student == $giv) or ($student == $ans0) or (($student == $correct) and ($student ne $correct)));
       return ($student eq $correct);
     }));

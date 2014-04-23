@@ -59,10 +59,7 @@ $giv = Compute("$var1+($a+$var2)");
 $amb = Compute("$var1+$a+$var2");
 $ans = Compute("($var1+$a)+$var2");
 
-# Because of the absolute value hack for parens, make sure to test at both pos and neg input:
-$giv->{test_at} = [[-$a-1],[-$a+1]];
-$ans ->{test_at} = [[-$a-1],[-$a+1]];
-$alt ->{test_at} = [[-$a-1],[-$a+1]];
+
 
 ##############################################
 TEXT(beginproblem());
@@ -81,6 +78,13 @@ END_PGML
 
 ANS($ans->cmp(checker => sub {
       my ($correct,$student,$ans) = @_;
+
+      # Because of the absolute value hack for parens, make sure to test at both pos and neg input:
+     $giv->{test_at} = [[-$a-1],[-$a+1]];
+     $student ->{test_at} = [[-$a-1],[-$a+1]];
+     $amb->{test_at} = [[-$a-1],[-$a+1]];
+     $correct->{test_at} = [[-$a-1],[-$a+1]];
+
       Value->Error("This expression is algebraically equivalent to the given expression, but it is not what an application of the associative property of addition would give you") if (($student == $giv) or ($student == $amb) or (($student == $correct) and ($student ne $correct)));
       return ($student eq $correct);
     }));
