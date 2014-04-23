@@ -59,6 +59,10 @@ $giv = Compute("$var1+($a+$var2)");
 $amb = Compute("$var1+$a+$var2");
 $ans = Compute("($var1+$a)+$var2");
 
+# Because of the absolute value hack for parens, make sure to test at both pos and neg input:
+$giv->{test_at} = [[-$a-1],[-$a+1]];
+$ans ->{test_at} = [[-$a-1],[-$a+1]];
+$alt ->{test_at} = [[-$a-1],[-$a+1]];
 
 ##############################################
 TEXT(beginproblem());

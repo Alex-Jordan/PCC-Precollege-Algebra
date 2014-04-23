@@ -55,6 +55,10 @@ $ans = Formula("($a*$b)*$var");
 $ab = $a*$b;
 $alt = Formula("$ab*$var");
 
+# Because of the absolute value hack for parens, make sure to test at both pos and neg input:
+$giv->{test_at} = [[-1],[1]];
+$ans ->{test_at} = [[-1],[1]];
+$alt ->{test_at} = [[-1],[1]];
 
 ##############################################
 TEXT(beginproblem());

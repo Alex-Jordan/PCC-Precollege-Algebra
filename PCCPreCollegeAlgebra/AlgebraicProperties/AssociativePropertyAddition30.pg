@@ -63,6 +63,10 @@ $giv = Formula("$var1+$var2+$var3");
 $ans0 = Formula("($var1+$var2)+$var3");
 $ans1 = Formula("$var1+($var2+$var3)");
 
+# Because of the absolute value hack for parens, make sure to test at both pos and neg input:
+$giv->{test_at} = [[-1,-1,-1],[-1,-1,1],[-1,1,-1],[-1,1,1],[1,-1,-1],[1,-1,1],[1,1,-1],[1,1,1]];
+$ans ->{test_at} = [[-1,-1,-1],[-1,-1,1],[-1,1,-1],[-1,1,1],[1,-1,-1],[1,-1,1],[1,1,-1],[1,1,1]];
+$alt ->{test_at} = [[-1,-1,-1],[-1,-1,1],[-1,1,-1],[-1,1,1],[1,-1,-1],[1,-1,1],[1,1,-1],[1,1,1]];
 
 ##############################################
 TEXT(beginproblem());
