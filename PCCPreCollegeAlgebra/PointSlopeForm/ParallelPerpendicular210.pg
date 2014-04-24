@@ -123,12 +123,26 @@ END_PGML
 
 ##############################################
 
-ANS(ImplicitPlane($ansPS)->cmp(correct_ans_latex_string => $ansPSstringTeX
+Context()->flags->set(reduceConstants=>0);
+Context()->flags->set(reduceConstantFormulas=>0);
+
+ANS($ansPS->cmp(correct_ans_latex_string => $ansPSstringTeX
    ) -> withPostFilter(sub {
       my $ansHash = shift;
-      if ($ansHash->{score}) {
-        my $student = $ansHash->{student_value};
+        my $student = $ansHash->{original_student_ans};
         my @sides = split('=',"$student");
+
+      #if it's an implicit plane object, reset how student's answer is displayed:
+      if ($ansHash->{student_formula}->cmp_class eq "an Implicit line") {
+        $ansHash->{preview_text_string} = "$sides[0]=$sides[1]";
+        my $leftTex = Formula("$sides[0]")->TeX;
+        my $rightTex = Formula("$sides[1]")->TeX;
+        $ansHash->{preview_latex_string} = "$leftTex=$rightTex";
+        $ansHash->{student_ans} = $ansHash->{original_student_ans};
+      }
+
+      #if they have the line correct, then check each side to see if the sides are correct
+      if ($ansHash->{score}) {
          if (Formula("y-$y1") != Formula("$sides[0]") and Formula("y-$y1") != Formula("$sides[1]")) {
          $ansHash->{score} = 0;                 
          $ansHash->{ans_message} = "This is an equation for the line, but it is not the point-slope equation that uses the given point"; 
