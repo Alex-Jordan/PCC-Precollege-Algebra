@@ -60,6 +60,7 @@ $ansPSstring2 = "y-$y2=$m(x-$x2)";
 
 
 Context("ImplicitPlane");
+Context()->variables->are(x=>'Real',y=>'Real');
 Context()->flags->set(showExtraParens=>0);
 Context()->flags->set(showExtraParens=>0);
 $ansPS1 = ImplicitPlane("$ansPSstring1");
@@ -129,7 +130,7 @@ ANS($ansPS2->cmp(correct_ans_latex_string => $ansPSstringTeX2
 
       #if they have the line correct, then check each side to see if the sides are correct
       if ($ansHash->{score}) {
-         if (Formula("y-$y1") != Formula("$sides[0]") and Formula("y-$y1") != Formula("$sides[1]")) {
+         if (Formula("y-$y2") != Formula("$sides[0]") and Formula("y-$y2") != Formula("$sides[1]")) {
          $ansHash->{score} = 0;                 
          $ansHash->{ans_message} = "This is an equation for the line, but it is not the point-slope equation that uses the given point"; 
          }  
