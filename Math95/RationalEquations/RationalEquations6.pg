@@ -31,6 +31,7 @@ $e = non_zero_random(-10,10,1);
 $f = random(2,5,1);
 
 while ($a*$d - $c*$b == 0){$d = random(2,5,1);}
+while ($a*$f - $c*$e == 0){$f = random(2,5,1);}
 
 Context()->reductions->set('(-x)+y'=>0,'(-x)-y'=>0);
 $left = Compute("($a $var + $b)/($c $var + $d)")->reduce;
