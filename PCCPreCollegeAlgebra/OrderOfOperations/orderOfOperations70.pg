@@ -74,13 +74,13 @@ $pro2Step2 = $b*$c**3;
 $wrong=($a+$b)*($c**2);
 ANS($ans1 -> cmp() ->
   withPostFilter(AnswerHints(
-    [Formula("$wrong")] =>
+    [Compute("$wrong")] =>
     "Remember that terms with exponents must be evaluated first (order of operations).")));
 
 $wrong=($a+$b)*($c**3);
 ANS($ans2 -> cmp() ->
   withPostFilter(AnswerHints(
-    [Formula("$wrong")] =>
+    [Compute("$wrong")] =>
     "Remember that terms with exponents must be evaluated first (order of operations).")));
 
 

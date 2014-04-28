@@ -68,13 +68,13 @@ END_PGML
 $wrong=$a+$b**2;
 ANS($ans1 -> cmp() ->
   withPostFilter(AnswerHints(
-    [Formula("$wrong")] =>
+    [Compute("$wrong")] =>
     "When you square a negative number the result is a positive number.")));
 
 $wrong=$a-$b**3;
 ANS($ans2 -> cmp() ->
   withPostFilter(AnswerHints(
-    [Formula("$wrong")] =>
+    [Compute("$wrong")] =>
     "When you cube a negative number the result is a negative number.")));
 
 

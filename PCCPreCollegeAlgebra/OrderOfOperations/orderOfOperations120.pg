@@ -65,7 +65,7 @@ END_PGML
 $wrong=0;
 ANS($ans -> cmp() ->
   withPostFilter(AnswerHints(
-    [Formula("$wrong")] =>
+    [Compute("$wrong")] =>
     "Note that parentheses make all the difference.")));
 
 $step1 = $a*$b;

@@ -65,8 +65,8 @@ $wrong1=($a-$b)*(-$c);
 $wrong2=$a-$b*$c;
 ANS($ans -> cmp() ->
   withPostFilter(AnswerHints(
-    [Formula("$wrong1")] =>"Remember to do the multiplication first (order of operations).",
-    [Formula("$wrong2")] =>"Remember that a negative number times a negative number gives a positive number.",     
+    [Compute("$wrong1")] =>"Remember to do the multiplication first (order of operations).",
+    [Compute("$wrong2")] =>"Remember that a negative number times a negative number gives a positive number.",     
 )));
 
 

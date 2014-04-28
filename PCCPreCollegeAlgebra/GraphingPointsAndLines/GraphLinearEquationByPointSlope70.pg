@@ -184,7 +184,7 @@ $PAR
 Next, we find the rise and run in this line's slope triangle. The line's slope is \($m\). So we can take the "rise" to be \($num\), and the "run" to be \($den\).
 $PAR
 
-Starting from the \(y\)-intercept \( ($x1,$y1) \), we run by \($run\) units and then rise by \($den\) units. This way we find a second point on the line.
+Starting from the \(y\)-intercept \( ($x1,$y1) \), we run by \($run\) units and then rise by \($num\) units. This way we find a second point on the line.
 $PAR
 
 We can draw more slope triangles and locate more points on the line, as shown in the graph. Finally, connect all the dots and extend in both directions, and we have this line's graph.

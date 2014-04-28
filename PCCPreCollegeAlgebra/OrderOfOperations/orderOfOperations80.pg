@@ -71,7 +71,7 @@ $pro2Step1 = -$a**2;
 $wrong=-($a**2)+$b;
 ANS($ans1 -> cmp() ->
   withPostFilter(AnswerHints(
-    [Formula("$wrong")] =>
+    [Compute("$wrong")] =>
     "Notice that the negative symbol is also being squared in this calculation.")));
 
 ANS($ans2 -> cmp());
