@@ -107,10 +107,10 @@ ANS($ans -> cmp(
 #Move negative sign to front of fraction for display purpose
 if ($totalCoeff<0) {
    $top = -$totalCoeff;
-   $output = "-\frac{$top}{$var^$total}";
+   $output = "-\frac{$top}{$var^{$total}}";
 }
 else {
-   $output = "\frac{$totalCoeff}{$var^$total}";
+   $output = "\frac{$totalCoeff}{$var^{$total}}";
 }
 
 BEGIN_PGML_SOLUTION

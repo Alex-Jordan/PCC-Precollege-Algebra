@@ -38,11 +38,13 @@ loadMacros(
 
 Context("LimitedFraction");
 
-$den1 = random(5,10,1);
-$num1 = 1;
+do {
+   $den1 = random(5,10,1);
+   $num1 = 1;
 
-do {$den2 = random(5,10,1);} until ($den1!=$den2);
-$num2 = 1;
+   do {$den2 = random(5,10,1);} until ($den1!=$den2);
+   $num2 = 1;
+} until ($den1<$den2);
 
 $first = Fraction($num1,$den1);
 $second = Fraction($num2,$den2);
@@ -76,17 +78,17 @@ END_PGML
 #############################################
 
 $s1 = $com/$totalDen;
-$s2 = $com/$den2;
+$s2 = $com/$den1;
 
 if ($totalDen==$com) {
-   $output1 = "&= \frac{$totalNum}{$totalDen}-\frac{$num2 \cdot $s2}{$den2 \cdot $s2} \\";
-} elsif ($den2==$com) {
-   $output1 = "&= \frac{$totalNum \cdot $s1}{$totalDen \cdot $s1}-\frac{$num2}{$den2} \\";
+   $output1 = "&= \frac{$totalNum}{$totalDen}-\frac{$num1 \cdot $s2}{$den1 \cdot $s2} \\";
+} elsif ($den1==$com) {
+   $output1 = "&= \frac{$totalNum \cdot $s1}{$totalDen \cdot $s1}-\frac{$num1}{$den1} \\";
 } else {
-   $output1 = "&= \frac{$totalNum \cdot $s1}{$totalDen \cdot $s1}-\frac{$num2 \cdot $s2}{$den2 \cdot $s2} \\";
+   $output1 = "&= \frac{$totalNum \cdot $s1}{$totalDen \cdot $s1}-\frac{$num1 \cdot $s2}{$den1 \cdot $s2} \\";
 }
 
-if ($com==$den1) {
+if ($com==$den2) {
    $output2 = "";
 } else {
    $s3 = $totalNum*$s1-$num2*$s2;
