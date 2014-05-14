@@ -32,6 +32,7 @@ loadMacros(
   "PCCgraphMacros.pl",
   "PGcourse.pl",
   "PGchoicemacros.pl",
+  "pccTables.pl",
   "unionTables.pl",
 );
 
@@ -255,29 +256,15 @@ Context()->texStrings;
 BEGIN_TEXT
 $BCENTER
 \{ 
-BeginTable(border=>0, tex_border=>"0pt", spacing=>0, padding=>20, center=>0).
 
-AlignedRow([
-image( insertGraph($gr[$scramble{0}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{0}]" title = "$ALTtags[$scramble{0}]"'  ), 
-
-image( insertGraph($gr[$scramble{1}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{1}]" title = "$ALTtags[$scramble{1}]"'  ),
-], separation=>0).
-
-
-AlignedRow([
-image( insertGraph($gr[$scramble{2}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{2}]" title = "$ALTtags[$scramble{2}]"'  ), 
-
-image( insertGraph($gr[$scramble{3}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{3}]" title = "$ALTtags[$scramble{3}]"'  ),
-], separation=>0).
-
-
-AlignedRow([
-image( insertGraph($gr[$scramble{4}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{4}]" title = "$ALTtags[$scramble{4}]"'  ), 
-
-image( insertGraph($gr[$scramble{5}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{5}]" title = "$ALTtags[$scramble{5}]"'  ),
-], separation=>0).
-
-EndTable()
+LayoutTable([
+[image( insertGraph($gr[$scramble{0}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{0}]" title = "$ALTtags[$scramble{0}]"'  ),
+image( insertGraph($gr[$scramble{1}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{1}]" title = "$ALTtags[$scramble{1}]"'  ),],
+[image( insertGraph($gr[$scramble{2}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{2}]" title = "$ALTtags[$scramble{2}]"'  ),
+image( insertGraph($gr[$scramble{3}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{3}]" title = "$ALTtags[$scramble{3}]"'  )],
+[image( insertGraph($gr[$scramble{4}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{4}]" title = "$ALTtags[$scramble{4}]"'  ),
+image( insertGraph($gr[$scramble{5}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{5}]" title = "$ALTtags[$scramble{5}]"'  )],
+], allcellcss => "padding:20pt;")
 \}
 $ECENTER
 $PAR
@@ -311,29 +298,15 @@ To check if a graph represents \(y\) as a function of \(x\), apply the vertical 
 
 $BCENTER
 \{ 
-BeginTable(border=>0, tex_border=>"0pt", spacing=>0, padding=>20, center=>0).
 
-AlignedRow([
-image( insertGraph($gr[$scramble{0}+6]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{0}+6]" title = "$ALTtags[$scramble{0}+6]"'  ), 
-
-image( insertGraph($gr[$scramble{1}+6]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{1}+6]" title = "$ALTtags[$scramble{1}+6]"'  ),
-], separation=>0).
-
-
-AlignedRow([
-image( insertGraph($gr[$scramble{2}+6]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{2}+6]" title = "$ALTtags[$scramble{2}+6]"'  ), 
-
-image( insertGraph($gr[$scramble{3}+6]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{3}+6]" title = "$ALTtags[$scramble{3}+6]"'  ),
-], separation=>0).
-
-
-AlignedRow([
-image( insertGraph($gr[$scramble{4}+6]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{4}+6]" title = "$ALTtags[$scramble{4}+6]"'  ), 
-
-image( insertGraph($gr[$scramble{5}+6]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{5}+6]" title = "$ALTtags[$scramble{5}+6]"'  ),
-], separation=>0).
-
-EndTable()
+LayoutTable([
+[image( insertGraph($gr[$scramble{0}+6]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{0}+6]" title = "$ALTtags[$scramble{0}+6]"'  ),
+image( insertGraph($gr[$scramble{1}+6]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{1}+6]" title = "$ALTtags[$scramble{1}+6]"'  ),],
+[image( insertGraph($gr[$scramble{2}+6]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{2}+6]" title = "$ALTtags[$scramble{2}+6]"'  ),
+image( insertGraph($gr[$scramble{3}+6]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{3}+6]" title = "$ALTtags[$scramble{3}+6]"'  )],
+[image( insertGraph($gr[$scramble{4}+6]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{4}+6]" title = "$ALTtags[$scramble{4}+6]"'  ),
+image( insertGraph($gr[$scramble{5}+6]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{5}+6]" title = "$ALTtags[$scramble{5}+6]"'  )],
+], allcellcss => "padding:20pt;")
 \}
 $ECENTER
 $PAR

@@ -31,7 +31,7 @@ loadMacros(
   "MathObjects.pl",
   "PGML.pl",
   "parserRadioButtons.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PCCgraphMacros.pl",
   "PGcourse.pl",
 );
@@ -124,21 +124,17 @@ Choose the graph of the equation [` x=[$b]`] in the coordinate system. You may l
 to help you to find two points on the line; choose _any_ two values of [`x`] and find the corresponding values of [`y`].
 
 END_PGML
-
+Context()->texStrings;
 BEGIN_TEXT
 $PAR
 $BCENTER
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
-
-AlignedRow(["\(x\)-value","\(y\)-value","ordered pair"], separation=>0).
-
-AlignedRow(["$SPACE","$SPACE", "$SPACE"], separation=>0).
-
-AlignedRow(["$SPACE","$SPACE", "$SPACE"], separation=>0).
-
-EndTable()
+DataTable([[{data=>"\(x\)-value",header=>"CH"},{data=>"\(y\)-value",header=>"CH"},{data=>"Ordered pair",header=>"CH"},],
+["$SPACE","$SPACE","$SPACE"],
+["$SPACE","$SPACE","$SPACE"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption =>" Values of \(x\) and \(y\) satisfying the equation \( x=$b \) ", captioncss =>"padding:4pt; text-decoration:none;");
 \}
+
 $ECENTER
 $PAR
 END_TEXT
@@ -153,22 +149,13 @@ END_PGML
 BEGIN_TEXT
 $BCENTER
 \{ 
-BeginTable(border=>0, tex_border=>"0pt", spacing=>0, padding=>20, center=>0).
-
-AlignedRow([
-image( insertGraph($gr[$scramble{0}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{0}]" title = "$ALTtags[$scramble{0}]"'  ), 
-
+LayoutTable([[image( insertGraph($gr[$scramble{0}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{0}]" title = "$ALTtags[$scramble{0}]"'  ),
 image( insertGraph($gr[$scramble{1}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{1}]" title = "$ALTtags[$scramble{1}]"'  ),
-], separation=>0).
+],
+[image( insertGraph($gr[$scramble{2}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{2}]" title = "$ALTtags[$scramble{2}]"'  ),
+image( insertGraph($gr[$scramble{3}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{3}]" title = "$ALTtags[$scramble{3}]"'  )
+]], allcellcss => "padding:20pt;")
 
-
-AlignedRow([
-image( insertGraph($gr[$scramble{2}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{2}]" title = "$ALTtags[$scramble{2}]"'  ), 
-
-image( insertGraph($gr[$scramble{3}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{3}]" title = "$ALTtags[$scramble{3}]"'  ),
-], separation=>0).
-
-EndTable()
 \}
 $ECENTER
 $PAR

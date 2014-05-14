@@ -28,7 +28,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "contextCurrency.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PGML.pl",
   "PCCmacros.pl",
   "answerHints.pl",
@@ -69,16 +69,12 @@ Context()->texStrings;
 BEGIN_TEXT
 $PAR
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Time",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Distance",header=>"CH"},],
+["$name1","\(x\)","$SPACE","\($t\)","$SPACE",ans_rule(15)],
+["$name2","\(x-$rDif\)","$SPACE","\($t\)","$SPACE",ans_rule(15)],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["","Rate","\(\times\)","Time","\(=\)","Distance"], align=>CENTER, separation=>0).
-
-AlignedRow([$name1, "\(x\)", "$SPACE", "\($t\)", "$SPACE", ans_rule(15)], separation=>0).
-
-AlignedRow([$name2, "\(x-$rDif\)", "$SPACE", "\($t\)", "$SPACE", ans_rule(15)], separation=>0).
-
-EndTable()
-\}
 $PAR
 END_TEXT
 Context()->normalStrings;
@@ -129,15 +125,12 @@ $PAR
 Now the table looks like:
 $PAR
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Time",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Distance",header=>"CH"},],
+["$name1","\(x\)","$SPACE","\($t\)","$SPACE","\($t x\)"],
+["$name2","\(x-$rDif\)","$SPACE","\($t\)","$SPACE","\($t(x-$rDif)\)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["","Rate","\(\times\)","Time","\(=\)","Distance"], align=>CENTER, separation=>0).
-
-AlignedRow([$name1, "\(x\)", "$SPACE", "\($t\)", "$SPACE", "\($t x\)"], separation=>0).
-
-AlignedRow([$name2, "\(x-$rDif\)", "$SPACE", "\($t\)", "$SPACE", "\($t (x-$rDif )\)"], separation=>0).
-EndTable()
-\}
 
 $PAR
 

@@ -27,7 +27,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "contextCurrency.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PGML.pl",
   "PGcourse.pl",
 );
@@ -93,18 +93,13 @@ $PAR
 We can organize the information about each town into a table:
 $PAR
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"",header=>"CH"},{data=>"Percent of $ethnicity",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Total Number of Residents",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Number of $ethnicity",header=>"CH"},],
+["Town A","\($p1\)$PERCENT","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
+["Town B","\($p2\)$PERCENT","$SPACE","\($s3-x\)","$SPACE","\($dp2 ($s3-x)\)"],
+["Merged City","\($p3\)$PERCENT","$SPACE","\($s3\)","$SPACE","\($dp3 \cdot $s3\)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["","Percent of $ethnicity","\(\times\)","Total Number of Residents","\(=\)","Number of $ethnicity"], separation=>0).
-
-AlignedRow(["Town A","\($p1\)$PERCENT","$SPACE","\(x\)","$SPACE","\($dp1 x\)"], separation=>0).
-
-AlignedRow(["Town B","\($p2\)$PERCENT","$SPACE","\($s3-x\)","$SPACE","\($dp2 ($s3-x)\)"], separation=>0).
-
-AlignedRow(["Merged City","\($p3\)$PERCENT","$SPACE","\($s3\)","$SPACE","\($dp3($s3)\)"], separation=>0).
-
-EndTable()
-\}
 $PAR
 
 Since the two towns merged to make the new city, the number of $ethnicity in the new city should be equal to the sum of the numbers of $ethnicity from the two towns. So we can write an equation and then solve it:

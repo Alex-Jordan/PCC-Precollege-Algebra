@@ -30,7 +30,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "PGML.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "parserMultiAnswer.pl",
   "parserRadioButtons.pl",
   "PCCgraphMacros.pl",
@@ -233,22 +233,15 @@ Context()->texStrings;
 BEGIN_TEXT
 
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"\(x\)",header=>"CH"},{data=>"\(y\)",header=>"CH"},],
+ [$multians->ans_rule(8), $multians->ans_rule(8)],
+[$multians->ans_rule(8), $multians->ans_rule(8)],
+[$multians->ans_rule(8), $multians->ans_rule(8)],
+[$multians->ans_rule(8), $multians->ans_rule(8)],
+[$multians->ans_rule(8), $multians->ans_rule(8)],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Values of \(x\) and \(y\) satisfying the equation \($left=$right\)", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["\(x\)","\(y\)"], separation=>0).
- 
-AlignedRow([$multians->ans_rule(8),$multians->ans_rule(8)], separation=>0).
-
-AlignedRow([$multians->ans_rule(8),$multians->ans_rule(8)], separation=>0).
-
-AlignedRow([$multians->ans_rule(8),$multians->ans_rule(8)], separation=>0).
-
-AlignedRow([$multians->ans_rule(8),$multians->ans_rule(8)], separation=>0).
-
-AlignedRow([$multians->ans_rule(8),$multians->ans_rule(8)], separation=>0).
-
-EndTable()
-\}
 
 $PAR
 
@@ -272,22 +265,13 @@ BEGIN_TEXT
 $PAR
 $BCENTER
 \{ 
-BeginTable(border=>0, tex_border=>"0pt", spacing=>0, padding=>20, center=>0).
-
-AlignedRow([
-image( insertGraph($gr[$scramble{0}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$alt[$scramble{0}]" title = "$alt[$scramble{0}]"'  ),
-
+LayoutTable([[image( insertGraph($gr[$scramble{0}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$alt[$scramble{0}]" title = "$alt[$scramble{0}]"'  ),
 image( insertGraph($gr[$scramble{1}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$alt[$scramble{1}]" title = "$alt[$scramble{1}]"'  ),
-], separation=>0).
+],
+[image( insertGraph($gr[$scramble{2}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$alt[$scramble{2}]" title = "$alt[$scramble{2}]"'  ),
+image( insertGraph($gr[$scramble{3}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$alt[$scramble{3}]" title = "$alt[$scramble{3}]"'  )
+]], allcellcss => "padding:20pt;")
 
-
-AlignedRow([
-image( insertGraph($gr[$scramble{2}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$alt[$scramble{2}]" title = "$alt[$scramble{2}]"'  ),
-
-image( insertGraph($gr[$scramble{3}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$alt[$scramble{3}]" title = "$alt[$scramble{3}]"'  ),
-], separation=>0).
-
-EndTable()
 \}
 $ECENTER
 $PAR
@@ -347,22 +331,15 @@ $ls[4] = $rs[4] &\implies y=$y[4]\\
 So the table may be completed as:
 
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"\(x\)",header=>"CH"},{data=>"\(y\)",header=>"CH"},],
+ ["\($x[0]\)", "\($y[0]\)"],
+["\($x[1]\)", "\($y[1]\)"],
+["\($x[2]\)", "\($y[2]\)"],
+["\($x[3]\)", "\($y[3]\)"],
+["\($x[4]\)", "\($y[4]\)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;width:60pt;", caption => "Values of \(x\) and \(y\) satisfying the equation \($left=$right\)", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["\(\qquad x \qquad\)","\(\qquad y \qquad\)"], separation=>0).
- 
-AlignedRow(["\($x[0]\)","\($y[0]\)"], separation=>0).
-
-AlignedRow(["\($x[1]\)","\($y[1]\)"], separation=>0).
-
-AlignedRow(["\($x[2]\)","\($y[2]\)"], separation=>0).
-
-AlignedRow(["\($x[3]\)","\($y[3]\)"], separation=>0).
-
-AlignedRow(["\($x[4]\)","\($y[4]\)"], separation=>0).
-
-EndTable()
-\}
 $PAR
 By values in the table, \{ $radio->correct_ans() \} is the correct answer.
 $PAR

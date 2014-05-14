@@ -28,7 +28,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "contextCurrency.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PGML.pl",
   "PGcourse.pl",
 );
@@ -80,26 +80,17 @@ The following table demonstrates the relation between the concentration (by mass
 $PAR
 
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"",header=>"CH"},{data=>"Percent of Alcohol",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Weight of Solution (in grams)",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Weight of Pure Alcohol (in grams)",header=>"CH"},],
+["Solution 1","\($p1\)$PERCENT","$SPACE","\(100\)","$SPACE","\($p1\)"],
+["Solution 2","\($p2\)$PERCENT","$SPACE","\($m2\)","$SPACE",ans_rule(10)],
+["Solution 3","\($p3\)$PERCENT","$SPACE","\($m3\)","$SPACE",ans_rule(10)],
+["Solution 4","\($p4\)$PERCENT","$SPACE","\($m4\)","$SPACE",ans_rule(10)],
+["Solution 5","\($p5\)$PERCENT","$SPACE","\($m5\)","$SPACE",ans_rule(10)],
+["Solution 6","\($p6\)$PERCENT","$SPACE","\(x\)","$SPACE",ans_rule(10)],
+["Solution 7","\($p7\)$PERCENT","$SPACE","\($m7-x\)","$SPACE",ans_rule(10)],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["Percent of Alcohol","\(\times\)","Weight of Solution (in grams)","\(=\)","Pure Alcohol (in grams)"], separation=>0).
-
-AlignedRow(["\($p1\)$PERCENT","$SPACE","\(100\)","$SPACE","\($p1\)"], separation=>0).
-
-AlignedRow(["\($p2\)$PERCENT","$SPACE","\($m2\)","$SPACE",ans_rule(10)], separation=>0).
-
-AlignedRow(["\($p3\)$PERCENT","$SPACE","\($m3\)","$SPACE",ans_rule(10)], separation=>0).
-
-AlignedRow(["\($p4\)$PERCENT","$SPACE","\($m4\)","$SPACE",ans_rule(10)], separation=>0).
-
-AlignedRow(["\($p5\)$PERCENT","$SPACE","\($m5\)","$SPACE",ans_rule(10)], separation=>0).
-
-AlignedRow(["\($p6\)$PERCENT","$SPACE","\(x\)","$SPACE",ans_rule(10)], separation=>0).
-
-AlignedRow(["\($p7\)$PERCENT","$SPACE","\($m7-x\)","$SPACE", ans_rule(10)], separation=>0).
-
-EndTable()
-\}
 
 $PAR
 
@@ -121,27 +112,18 @@ ANS( Compute($ans7) -> cmp);
 Context()->texStrings;
 BEGIN_SOLUTION
 $PAR
-\{
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+\{ 
+DataTable([[{data=>"",header=>"CH"},{data=>"Percent of Alcohol",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Weight of Solution (in grams)",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Weight of Pure Alcohol (in grams)",header=>"CH"},],
+["Solution 1","\($p1\)$PERCENT","$SPACE","\(100\)","$SPACE","\($dp1 \cdot 100 = $p1\)"],
+["Solution 2","\($p2\)$PERCENT","$SPACE","\($m2\)","$SPACE","\($dp2 \cdot $m2 = $ans2\)"],
+["Solution 3","\($p3\)$PERCENT","$SPACE","\($m3\)","$SPACE","\($dp3 \cdot $m3 = $ans3\)"],
+["Solution 4","\($p4\)$PERCENT","$SPACE","\($m4\)","$SPACE","\($dp4 \cdot $m4 = $ans4\)"],
+["Solution 5","\($p5\)$PERCENT","$SPACE","\($m5\)","$SPACE","\($dp5 \cdot $m5 = $ans5\)"],
+["Solution 6","\($p6\)$PERCENT","$SPACE","\(x\)","$SPACE","\($dp6 \cdot x = $ans6\)"],
+["Solution 7","\($p7\)$PERCENT","$SPACE","\($m7-x\)","$SPACE","\($ans7\)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["Percent of Alcohol","\(\times\)","Weight of Solution (in grams)","\(=\)","Pure Alcohol (in grams)"], separation=>0).
-
-AlignedRow(["\($p1%\)","$SPACE","\(100\)","$SPACE","\($dp1 \cdot 100 = $p1\)"], separation=>0).
-
-AlignedRow(["\($p2%\)","$SPACE","\($m2\)","$SPACE","\($dp2 \cdot $m2 =$ans2\)"], separation=>0).
-
-AlignedRow(["\($p3%\)","$SPACE","\($m3\)","$SPACE","\($dp3 \cdot $m3 =$ans3\)"], separation=>0).
-
-AlignedRow(["\($p4%\)","$SPACE","\($m4\)","$SPACE","\($dp4 \cdot $m4 =$ans4\)"], separation=>0).
-
-AlignedRow(["\($p5%\)","$SPACE","\($m5\)","$SPACE","\($dp5 \cdot $m5 =$ans5\)"], separation=>0).
-
-AlignedRow(["\($p6%\)","$SPACE","\(x\)","$SPACE","\($dp6 \cdot x =$ans6\)"], separation=>0).
-
-AlignedRow(["\($p7%\)","$SPACE","\($m7-x\)","$SPACE","\($ans7\)"], separation=>0).
-
-EndTable()
-\}
 
 END_SOLUTION
 Context()->normalStrings;

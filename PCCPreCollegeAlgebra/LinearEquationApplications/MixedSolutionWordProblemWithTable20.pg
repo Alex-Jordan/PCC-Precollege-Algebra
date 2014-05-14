@@ -28,7 +28,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "contextCurrency.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PGML.pl",
   "contextPercent.pl",
   "answerHints.pl",
@@ -71,18 +71,13 @@ $PAR
  
 
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"",header=>"CH"},{data=>"Percent of Alcohol",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Weight of Solution (in grams)",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Weight of Pure Alcohol (in grams)",header=>"CH"},],
+["Solution 1","\($p1\)$PERCENT","$SPACE","\($s1\)","$SPACE","\($dp1 \cdot $s1=$pure1\)"],
+["Solution 2","\($p2\)$PERCENT","$SPACE","\($s2\)","$SPACE","\($dp2 \cdot $s2=$pure2\)"],
+ ["Mixture","\(x\)","$SPACE","\($s1+$s2\)","$SPACE","\(x ($s1+$s2)\)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["","Percent of Alcohol","\(\times\)","Weight of Solution (in grams)","\(=\)","Weight of Pure Alcohol (in grams)"], separation=>0).
-
-AlignedRow(["Solution 1","\($p1\)$PERCENT","$SPACE","\($s1\)","$SPACE","\($dp1 \cdot $s1=$pure1\)"], separation=>0).
-
-AlignedRow(["Solution 2","\($p2\)$PERCENT","$SPACE","\($s2\)","$SPACE","\($dp2 \cdot $s2=$pure2\)"], separation=>0).
-
-AlignedRow(["Mixture","\(x\)","$SPACE","\($s1+$s2\)","$SPACE","\(x($s1+$s2)\)"], separation=>0).
-
-EndTable()
-\}
 $PAR
 END_TEXT
 Context()->normalStrings;

@@ -27,7 +27,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "PGML.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PGcourse.pl",
 );
 
@@ -88,24 +88,16 @@ Fill out this table for the equation \( y=$func \). The first row is an example.
 $PAR
 
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"\(x\)",header=>"CH"},{data=>"\(y\)",header=>"CH"},{data=>"Points",header=>"CH"},],
+ ["\($x0\)","\($ans01\)", "\($ans02\)"],
+["\($x1\)",ans_rule(5), ans_rule(10)],
+["\($x2\)",ans_rule(5), ans_rule(10)],
+["\($x3\)",ans_rule(5), ans_rule(10)],
+["\($x4\)",ans_rule(5), ans_rule(10)],
+["\($x5\)",ans_rule(5), ans_rule(10)],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Values of \(x\) and \(y\) satisfying the equation \( y=$func \)", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["\(x\)","\(y\)","point"], separation=>0).
-
-AlignedRow(["\($x0\)","\($ans01\)","\($ans02\)"], separation=>0).
-
-AlignedRow(["\($x1\)",ans_rule(5),ans_rule(10)], separation=>0).
-
-AlignedRow(["\($x2\)",ans_rule(5),ans_rule(10)], separation=>0).
-
-AlignedRow(["\($x3\)",ans_rule(5),ans_rule(10)], separation=>0).
-
-AlignedRow(["\($x4\)",ans_rule(5),ans_rule(10)], separation=>0).
-
-AlignedRow(["\($x5\)",ans_rule(5),ans_rule(10)], separation=>0).
-
-EndTable()
-\}
 
 $PAR
 
@@ -133,22 +125,15 @@ Context()->texStrings;
 SOLUTION(EV3(<<'END_SOLUTION'));
 
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"\(x\)",header=>"CH"},{data=>"\(y\)",header=>"CH"},{data=>"Points",header=>"CH"},],
+["\($x1\)","\(y= - ($x1) +$b = $ans11\)", "\($ans12\)"],
+["\($x2\)","\(y= - ($x2) +$b = $ans21\)", "\($ans22\)"],
+["\($x3\)","\(y= - ($x3) +$b = $ans31\)", "\($ans32\)"],
+["\($x4\)","\(y= - ($x4) +$b = $ans41\)", "\($ans42\)"],
+["\($x5\)","\(y= - ($x5) +$b = $ans51\)", "\($ans52\)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center; width:60pt;", caption => "Values of \(x\) and \(y\) satisfying the equation \( y=$func \)", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["\(x\)","\(y\)","point"], separation=>0).
-
-AlignedRow(["\($x1\)","\( y= -($x1) + $b = $ans11 \)", "\($ans12\)"], separation=>0).
-
-AlignedRow(["\($x2\)","\( y= -($x2) + $b  = $ans21 \)", "\($ans22\)"], separation=>0).
-
-AlignedRow(["\($x3\)","\( y= -($x3) + $b  = $ans31 \)", "\($ans32\)"], separation=>0).
-
-AlignedRow(["\($x4\)","\( y= -($x4)+ $b  = $ans41 \)", "\($ans42\)"], separation=>0).
-
-AlignedRow(["\($x5\)","\( y= -($x5) + $b  = $ans51 \)", "\($ans52\)"], separation=>0).
-
-EndTable()
-\}
 
 END_SOLUTION
 Context()->normalStrings;

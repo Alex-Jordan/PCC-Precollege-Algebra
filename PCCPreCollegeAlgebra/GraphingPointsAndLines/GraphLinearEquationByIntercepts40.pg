@@ -33,7 +33,7 @@ loadMacros(
   "MathObjects.pl",
   "PGML.pl",
   "parserRadioButtons.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PCCgraphMacros.pl",
   "PGcourse.pl",
 );
@@ -91,7 +91,12 @@ for my $i (0..4) {
   }
    $gr[$i]->lb( new Label($min[0]+$marksep[0]/8, $max[1]-$marksep[1]/8, $ALPHABET[$inverse{$i}], 'black', 'left', 'top')) unless ($i==4);
    add_functions($gr[$i], "$ar_mb[$i][0]*x+$ar_mb[$i][1] for x in <$min[0],$max[0]> using color:blue and weight:1");
+
+   $ALTtags[$i]="Graph $ALPHABET[$inverse{$i}]: graph of a line crossing the x-axis at $xInts[$i] and the y-axis at $ar_mb[$i][1]";
 }
+
+pop(@ALTtags);
+push(@ALTtags,"graph of a line crossing the x-axis at $xInts[$inverse{4}] and the y-axis at $ar_mb[$inverse{4}][1]");
 
 
 
@@ -118,22 +123,13 @@ BEGIN_TEXT
 
 $BCENTER
 \{ 
-BeginTable(border=>0, tex_border=>"0pt", spacing=>0, padding=>20, center=>0).
+LayoutTable([[image( insertGraph($gr[$scramble{0}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{0}]" title = "$ALTtags[$scramble{0}]"'  ),
+image( insertGraph($gr[$scramble{1}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{1}]" title = "$ALTtags[$scramble{1}]"'  ),
+],
+[image( insertGraph($gr[$scramble{2}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{2}]" title = "$ALTtags[$scramble{2}]"'  ),
+image( insertGraph($gr[$scramble{3}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{3}]" title = "$ALTtags[$scramble{3}]"'  )
+]], allcellcss => "padding:20pt;")
 
-AlignedRow([
-image( insertGraph($gr[$scramble{0}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "graph of a line crossing the x-axis at $xInts[$scramble{0}] and the y-axis at $ar_mb[$scramble{0}][1]" title = "graph of a line crossing the x-axis at $xInts[$scramble{0}] and the y-axis at $ar_mb[$scramble{0}][1]"'  ), 
-
-image( insertGraph($gr[$scramble{1}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "graph of a line crossing the x-axis at $xInts[$scramble{1}] and the y-axis at $ar_mb[$scramble{1}][1]" title = "graph of a line crossing the x-axis at $xInts[$scramble{1}] and the y-axis at $ar_mb[$scramble{1}][1]"'  ),
-], separation=>0).
-
-
-AlignedRow([
-image( insertGraph($gr[$scramble{2}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "graph of a line crossing the x-axis at $xInts[$scramble{2}] and the y-axis at $ar_mb[$scramble{2}][1]" title = "graph of a line crossing the x-axis at $xInts[$scramble{2}] and the y-axis at $ar_mb[$scramble{2}][1]"'  ), 
-
-image( insertGraph($gr[$scramble{3}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "graph of a line crossing the x-axis at $xInts[$scramble{3}] and the y-axis at $ar_mb[$scramble{3}][1]" title = "graph of a line crossing the x-axis at $xInts[$scramble{3}] and the y-axis at $ar_mb[$scramble{3}][1]"'  ),
-], separation=>0).
-
-EndTable()
 \}
 $ECENTER
 $PAR
@@ -211,23 +207,20 @@ We have:
 $PAR
 $BCENTER
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>0).
-
-AlignedRow(["","\(x\)-value","\(y\)-value","location"], separation=>0).
-
-AlignedRow(["\(y\)-intercept","\(0\)","\($yInt\)","\( (0,$yInt) \)"], separation=>0).
-
-AlignedRow(["\(x\)-intercept","\($xInt\)","\(0\)","\( ($xInt,0) \)"], separation=>0).
-
-EndTable()
+DataTable([[{data=>"",header=>"CH"},{data=>"\(x\)-value",header=>"CH"},{data=>"\(y\)-value",header=>"CH"},{data=>"Location",header=>"CH"},],
+["\(y\)-intercept","\(0\)","\($yInt\)","\( (0,$yInt) \)"],
+["\(x\)-intercept","\($xInt\)","\(0\)","\( ($xInt,0) \)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "\(x\)-intercept and \(y\)-intercept of the line \( $a x + $b y = $c \)", captioncss =>"padding:4pt; text-decoration:none;");
 \}
+
 $ECENTER
 $PAR
 Locating these two points in the coordinate system, we can see the correct answer is \{ $radio->correct_ans() \}.
 $PAR
 $BCENTER
-\{ image( insertGraph($gr[4]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "graph of a line crossing the x-axis at $xInts[4] and the y-axis at $ar_mb[4][1]" title = "graph of a line crossing the x-axis at $xInts[4] and the y-axis at $ar_mb[4][1]"'  ) \}
+\{ image( insertGraph($gr[4]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[4]" title = "$ALTtags[4]"'  ) \}
 $ECENTER
+
 
 END_SOLUTION
 Context()->normalStrings;

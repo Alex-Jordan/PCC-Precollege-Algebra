@@ -27,7 +27,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "contextCurrency.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PGML.pl",
   "PGcourse.pl",
 );
@@ -88,18 +88,13 @@ $PAR
 Let's organize the information above into a table:
 $PAR
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"",header=>"CH"},{data=>"Percent of Alcohol",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Weight of Solution (in grams)",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Weight of Pure Alcohol (in grams)",header=>"CH"},],
+["Solution 1","\($p1\)$PERCENT","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
+["Solution 2","\($p2\)$PERCENT","$SPACE","\($s3-x\)","$SPACE","\($dp2 ($s3-x)\)"],
+["Mixture","\($p3\)$PERCENT","$SPACE","\($s3\)","$SPACE","\($dp3 \cdot $s3\)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["","Percent of Alcohol","\(\times\)","Weight of Solution (in grams)","\(=\)","Weight of Pure Alcohol (in grams)"], separation=>0).
-
-AlignedRow(["Solution 1","\($p1\)$PERCENT","$SPACE","\(x\)","$SPACE","\($dp1 x\)"], separation=>0).
-
-AlignedRow(["Solution 2","\($p2\)$PERCENT","$SPACE","\($s3 -x\)","$SPACE","\($dp2 ($s3 -x)\)"], separation=>0).
-
-AlignedRow(["Mixture","\($p3\)$PERCENT","$SPACE","\($s3\)","$SPACE","\($dp3 \cdot $s3\)"], separation=>0).
-
-EndTable()
-\}
 $PAR
 
 Since the amounts of pure alcohol in the first two solutions combine to make the amount of pure alcohol in the mixture, we have the following relationship:
@@ -116,7 +111,7 @@ $PAR
    $step3 \mathbf{{}-$step1} &= $step2 x+$step1 \mathbf{{}-$step1}  \\
    $step4  &= $step2 x \\
    \frac{$step4 }{$step2 } &= \frac{$step2 x}{$step2 } \\
-              $s1        &= x\\'
+              $s1        &= x\\
               x  &= $s1
 \end{aligned}
 \]

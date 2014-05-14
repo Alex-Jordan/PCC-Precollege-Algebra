@@ -28,7 +28,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "contextCurrency.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PGML.pl",
   "PCCmacros.pl",
   "answerHints.pl",
@@ -78,17 +78,12 @@ Context()->texStrings;
 BEGIN_TEXT
 $PAR
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Principal",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Interest",header=>"CH"},],
+["\($p1\)$PERCENT Investment","\($dp1\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
+["\($p2\)$PERCENT Investment","\($dp2\)","$SPACE",ans_rule(15),"$SPACE",ans_rule(15)],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["","Rate","\(\times\)","Principal","\(=\)","Interest"], separation=>0).
-
-AlignedRow(["\($p1\)$PERCENT Investment","\($dp1\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"], separation=>0).
-
-AlignedRow(["\($p2\)$PERCENT Investment","\($dp2\)","$SPACE",ans_rule(20),"$SPACE", ans_rule(20)], separation=>0).
-
-
-EndTable()
-\}
 $PAR
 END_TEXT
 Context()->normalStrings;
@@ -134,17 +129,12 @@ $PAR
 We can organize the quantities (interest rate, principal investment, and interest amount) for the two accounts into the table:
 $PAR
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Principal",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Interest",header=>"CH"},],
+["\($p1\)$PERCENT Investment","\($dp1\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
+["\($p2\)$PERCENT Investment","\($dp2\)","$SPACE","\($rInit-x\)","$SPACE","\($dp2($rInit-x)\)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["","Rate","\(\times\)","Principal","\(=\)","Interest"], separation=>0).
-
-AlignedRow(["\($p1\)$PERCENT  Investment","\($dp1\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"], separation=>0).
-
-AlignedRow(["\($p2\)$PERCENT Investment","\($dp2\)","$SPACE","\($rInit-x\)","$SPACE", "\($dp2($rInit-x)\)"], separation=>0).
-
-
-EndTable()
-\}
 $PAR
 The table tells us that $name earned a total of \($dp1 x+ $dp2($rInit-x)\) dollars in interest. The introduction tells us that $pronoun earned \($cTotalInt\) in interest. Now we can write an equation and then solve it:
 $PAR

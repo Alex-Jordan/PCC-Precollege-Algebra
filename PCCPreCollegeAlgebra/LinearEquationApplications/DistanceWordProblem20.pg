@@ -27,7 +27,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "contextCurrency.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PGML.pl",
   "PCCmacros.pl",
   "PGcourse.pl",
@@ -80,16 +80,12 @@ If we let \(x\) represent $nameA's speed (in miles per hour), then $nameB's spee
 $PAR
 
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Time",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Distance",header=>"CH"},],
+["$nameA","\(x\)","$SPACE","\($t\)","$SPACE","\($t x\)"],
+["$nameB","\(x+$rDif\)","$SPACE","\($t\)","$SPACE","\($t(x+$rDif)\)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["","Rate","\(\times\)","Time","\(=\)","Distance"], align=>Center, separation=>0).
-
-AlignedRow(["$nameA", "\(x\)", "$SPACE", "\($t\)", "$SPACE", "\($t x\)"], separation=>0).
-
-AlignedRow(["$nameB", "\(x+$rDif\)", "$SPACE", "\($t\)", "$SPACE", "\($t (x+$rDif)\)"], separation=>0).
-
-EndTable()
-\}
 $PAR
 
 On the one hand the table shows us that the total distance between the two vehicles is \($t x+$t(x+$rDif)\) miles. We also know that at time \($t\) they are  \($d\) miles apart. Now we can write an equation and solve it:

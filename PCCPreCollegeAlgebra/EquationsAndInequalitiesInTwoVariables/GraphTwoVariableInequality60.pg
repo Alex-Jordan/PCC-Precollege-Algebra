@@ -30,7 +30,7 @@ loadMacros(
   "MathObjects.pl",
   "PGML.pl",
   "parserRadioButtons.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PCCgraphMacros.pl",
   "PGcourse.pl",
 );
@@ -204,22 +204,13 @@ Context()->texStrings;
 BEGIN_TEXT
 $BCENTER
 \{ 
-BeginTable(border=>0, tex_border=>"0pt", spacing=>0, padding=>20, center=>0).
-
-AlignedRow([
-image( insertGraph($gr[$scramble{0}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{0}]" title = "$ALTtags[$scramble{0}]"'  ), 
-
+LayoutTable([[image( insertGraph($gr[$scramble{0}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{0}]" title = "$ALTtags[$scramble{0}]"'  ),
 image( insertGraph($gr[$scramble{1}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{1}]" title = "$ALTtags[$scramble{1}]"'  ),
-], separation=>0).
+],
+[image( insertGraph($gr[$scramble{2}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{2}]" title = "$ALTtags[$scramble{2}]"'  ),
+image( insertGraph($gr[$scramble{3}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{3}]" title = "$ALTtags[$scramble{3}]"'  )
+]], allcellcss => "padding:20pt;")
 
-
-AlignedRow([
-image( insertGraph($gr[$scramble{2}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{2}]" title = "$ALTtags[$scramble{2}]"'  ), 
-
-image( insertGraph($gr[$scramble{3}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{3}]" title = "$ALTtags[$scramble{3}]"'  ),
-], separation=>0).
-
-EndTable()
 \}
 $ECENTER
 $PAR
@@ -234,7 +225,7 @@ ANS( $radio->cmp() );
 
 $gr[4]->lb( new Label($x1,$y1+$marksep[1]/5,"$pt1",'red','center','middle'));
 $gr[4]->lb( new Label($x2,$y2+$marksep[1]/5,"$pt2",'red','center','middle'));
-$gr[4]->lb( new Label(0,$marksep[1]/5,"test point (0,0)".'  ','red','right','middle'));
+$gr[4]->lb( new Label(0,-$marksep[1]/5,"test point (0,0)".'  ','red','center','top'));
 
 $gr[4]->stamps( closed_circle($x1,$y1,'red') );
 $gr[4]->stamps( closed_circle($x2,$y2,'red') );

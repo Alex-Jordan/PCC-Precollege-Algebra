@@ -31,7 +31,7 @@ loadMacros(
   "MathObjects.pl",
   "PGML.pl",
   "parserRadioButtons.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PCCgraphMacros.pl",
   "PGcourse.pl",
 );
@@ -56,11 +56,12 @@ for my $i (0..3) {
 $scramble{4} = 4;
 $inverse{4} = 4;
 
-
 ($min[0], $max[0], $min[1], $max[1], $ticknum[0], $ticknum[1], $xticks_ref, $yticks_ref, $marksep[0], $marksep[1]) = NiceGraphParameters([0,3],[0,12],centerOrigin=>1);
 
 @xticks = @$xticks_ref;
 @yticks = @$yticks_ref;
+
+@ypoints = map {$_ * $marksep[0]} @ar_m;
 
 for my $i (0..4) {
   $gr[$i] = init_graph($min[0],$min[1],$max[0],$max[1],
@@ -80,9 +81,12 @@ for my $i (0..4) {
   }
    $gr[$i]->lb( new Label($min[0]+$marksep[0]/8, $max[1]-$marksep[1]/8, $ALPHABET[$inverse{$i}], 'black', 'left', 'top')) unless ($i==4);
    add_functions($gr[$i], "$ar_m[$i]*x for x in <$min[0],$max[0]> using color:blue and weight:1");
+
+   $ALTtags[$i]="Graph $ALPHABET[$inverse{$i}]: graph of a line passing through the origin; it also passes through ($marksep[0], $ypoints[$i])";
 }
 
-
+pop(@ALTtags);
+push(@ALTtags,"graph of a line passing through the origin; it also passes through ($marksep[0], $ypoints[4])");
 
 
 $radio = RadioButtons(
@@ -91,7 +95,7 @@ $radio = RadioButtons(
   order => ["A","B","C","D"],
 );
 
-@ypoints = map {$_ * $marksep[0]} @ar_m;
+
 
 ##############################################
 
@@ -104,16 +108,12 @@ BEGIN_TEXT
 $PAR
 $BCENTER
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
-
-AlignedRow(["\(x\)-value","\(y\)-value","location"], separation=>0).
-
-AlignedRow(["$SPACE","$SPACE", "$SPACE"], separation=>0).
-
-AlignedRow(["$SPACE","$SPACE", "$SPACE"], separation=>0).
-
-EndTable()
+DataTable([[{data=>"\(x\)-value",header=>"CH"},{data=>"\(y\)-value",header=>"CH"},{data=>"Ordered pairs",header=>"CH"},],
+["$SPACE","$SPACE","$SPACE"],
+["$SPACE","$SPACE","$SPACE"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption =>" Values of \(x\) and \(y\) satisfying the equation \( y=$m x \) ", captioncss =>"padding:4pt; text-decoration:none;");
 \}
+
 $ECENTER
 $PAR
 END_TEXT
@@ -128,22 +128,13 @@ END_PGML
 BEGIN_TEXT
 $BCENTER
 \{ 
-BeginTable(border=>0, tex_border=>"0pt", spacing=>0, padding=>20, center=>0).
+LayoutTable([[image( insertGraph($gr[$scramble{0}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{0}]" title = "$ALTtags[$scramble{0}]"'  ),
+image( insertGraph($gr[$scramble{1}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{1}]" title = "$ALTtags[$scramble{1}]"'  ),
+],
+[image( insertGraph($gr[$scramble{2}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{2}]" title = "$ALTtags[$scramble{2}]"'  ),
+image( insertGraph($gr[$scramble{3}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[$scramble{3}]" title = "$ALTtags[$scramble{3}]"'  )
+]], allcellcss => "padding:20pt;")
 
-AlignedRow([
-image( insertGraph($gr[$scramble{0}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "graph of a line passing through the origin; it also passes through ($marksep[0], $ypoints[$scramble{0}])" title = "graph of a line passing through the origin; it also passes through ($marksep[0], $ypoints[$scramble{0}])"'  ), 
-
-image( insertGraph($gr[$scramble{1}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "graph of a line passing through the origin; it also passes through ($marksep[0], $ypoints[$scramble{1}])" title = "graph of a line passing through the origin; it also passes through ($marksep[0], $ypoints[$scramble{1}])"'  ),
-], separation=>0).
-
-
-AlignedRow([
-image( insertGraph($gr[$scramble{2}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "graph of a line passing through the origin; it also passes through ($marksep[0], $ypoints[$scramble{2}])" title = "graph of a line passing through the origin; it also passes through ($marksep[0], $ypoints[$scramble{2}])"'  ), 
-
-image( insertGraph($gr[$scramble{3}]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "graph of a line passing through the origin; it also passes through ($marksep[0], $ypoints[$scramble{3}])" title = "graph of a line passing through the origin; it also passes through ($marksep[0], $ypoints[$scramble{3}])"'  ),
-], separation=>0).
-
-EndTable()
 \}
 $ECENTER
 $PAR
@@ -191,24 +182,21 @@ We need two points to graph a line. In this problem, the equation is given in sl
 $PAR
 $BCENTER
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"\(x\)-value",header=>"CH"},{data=>"\(y\)-value",header=>"CH"},{data=>"Location",header=>"CH"},],
+ ["\($x1\)","\($y1\)","\($pt1\)"],
+["\($x2\)","\($y2\)","\($pt2\)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center; width:60pt;", caption => "Values of \(x\) and \(y\) satisfying the equation \( y=$m x \)", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["\(x\)-value","\(y\)-value","location"], separation=>0).
-
-AlignedRow(["\($x1\)","\($y1\)", "\($pt1\)"], separation=>0).
-
-AlignedRow(["\($x2\)","\($y2\)", "\($pt2\)"], separation=>0).
-
-EndTable()
-\}
 $ECENTER
 $PAR
 
 Locating these two points in the coordinate system, we can see the correct answer is \{ $radio->correct_ans() \}.
 $PAR
 $BCENTER
-\{ image( insertGraph($gr[4]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "graph of a line passing through the origin; it also passes through ($marksep[0], $ypoints[4])" title = "graph of a line passing through the origin; it also passes through ($marksep[0], $ypoints[4])"'  ) \}
+\{ image( insertGraph($gr[4]), width=>xScreen(), height=>yScreen(), tex_size=>TeXscalar(), extra_html_tags=>'alt = "$ALTtags[4]" title = "$ALTtags[4]"'  ) \}
 $ECENTER
+
 
 END_SOLUTION
 Context()->normalStrings;

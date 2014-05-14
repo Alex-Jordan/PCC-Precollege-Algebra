@@ -27,7 +27,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "contextCurrency.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PGML.pl",
   "PCCmacros.pl",
   "PGcourse.pl",
@@ -76,16 +76,12 @@ Let's represent the unknown time by \(t\).  We use a table to organize the quant
 $PAR
 
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Time",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Distance",header=>"CH"},],
+["$nameA","\($r1\)","$SPACE","\(t\)","$SPACE","\($r1 t\)"],
+["$nameA","\($r2\)","$SPACE","\(t\)","$SPACE","\($r2 t\)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["","Rate","\(\times\)","Time","\(=\)","Distance"], align=>CENTER, separation=>0).
-
-AlignedRow(["$nameA", "\($r1\)", "$SPACE", "\(t\)", "$SPACE", "\($r1 t\)"], separation=>0).
-
-AlignedRow(["$nameB", "\($r2\)", "$SPACE", "\(t\)", "$SPACE", "\($r2 t\)"], separation=>0).
-
-EndTable()
-\}
 
 $PAR
 

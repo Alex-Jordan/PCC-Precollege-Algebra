@@ -27,7 +27,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PGML.pl",
   "PCCmacros.pl",
   "PGcourse.pl",
@@ -73,7 +73,7 @@ $showPartialCorrectAnswers=1;
 
 $s1 = $t2*$rDif;
 $s2 = $t1+$t2;
-$s3 = $d-$s1;
+$s3 = $d+$s1;
 
 BEGIN_SOLUTION
 
@@ -85,26 +85,22 @@ If we let \(x\) represent $name1's speed (in miles per hour) for the first leg o
 $PAR
 
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Time",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Distance",header=>"CH"},],
+["first part of the trip","\(x\)","$SPACE","\($t1\)","$SPACE","\($t1 x\)"],
+["second part of the trip","\(x-$rDif\)","$SPACE","\($t2\)","$SPACE","\($t2(x-$rDif)\)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["","Rate","\(\times\)","Time","\(=\)","Distance"], align=>CENTER, separation=>0).
-
-AlignedRow(["first part of the trip", "\(x\)", "$SPACE", "\($t1\)", "$SPACE", "\($t1 x\)"], separation=>0).
-
-AlignedRow(["second part of the trip", "\(x-$rDif\)", "$SPACE", "\($t2\)", "$SPACE", "\($t2(x-$rDif)\)"], separation=>0).
-
-EndTable()
-\}
 $PAR
 
 On the one hand the table shows us that the total distance that $name1 traveled is \($t1 x+$t2(x-$rDif)\) miles. But we also know that $name1 drove a total of  \($d\) miles. Now we can write an equation and solve it.
 
 \[
 \begin{aligned}[t]
-   $t1 x + $t2 (x+$rDif ) &= $d  \\
-   $t1 x + $t2 x+$t2  \cdot $rDif  &= $d  \\
-   $s2 x +$s1  &= $d  \\
-   $s2 x +$s1  -$s1  &= $d  -$s1  \\
+   $t1 x + $t2 (x-$rDif ) &= $d  \\
+   $t1 x + $t2 x-$t2  \cdot $rDif  &= $d  \\
+   $s2 x -$s1  &= $d  \\
+   $s2 x -$s1  +$s1  &= $d  +$s1  \\
    $s2 x &= $s3  \\
    \frac{$s2 x}{$s2 } &= \frac{$s3 }{$s2 } \\
    x &= $r1  \\

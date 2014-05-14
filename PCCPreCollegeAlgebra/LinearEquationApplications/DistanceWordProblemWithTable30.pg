@@ -27,7 +27,7 @@ DOCUMENT();
 loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PGML.pl",
   "PCCmacros.pl",
   "answerHints.pl",
@@ -71,16 +71,12 @@ Context()->texStrings;
 BEGIN_TEXT
 $PAR
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Time",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Distance",header=>"CH"},],
+["first leg of trip","\(x\)","$SPACE","\($t1\)","$SPACE",ans_rule(15)],
+["second leg of trip","\(x+$rDif\)","$SPACE","\($t2\)","$SPACE",ans_rule(15)],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["","Rate","\(\times\)","Time","\(=\)","Distance"], align=>CENTER, separation=>0).
-
-AlignedRow(["first leg of trip", "\(x\)", "$SPACE", "\($t1\)", "$SPACE", ans_rule(15)], separation=>0).
-
-AlignedRow(["second leg of trip", "\(x+$rDif\)", "$SPACE", "\($t2\)", "$SPACE", ans_rule(15)], separation=>0).
-
-EndTable()
-\}
 $PAR
 END_TEXT
 Context()->normalStrings;
@@ -132,16 +128,12 @@ $PAR
 Now the table looks like:
 $PAR
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Time",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Distance",header=>"CH"},],
+["first leg of trip","\(x\)","$SPACE","\($t1\)","$SPACE","\($t1 x\)"],
+["second leg of trip","\(x+$rDif\)","$SPACE","\($t2\)","$SPACE","\($t2(x+$rDif)\)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["","Rate","\(\times\)","Time","\(=\)","Distance"], align=>CENTER, separation=>0).
-
-AlignedRow(["first part of trip", "\(x\)", "$SPACE", "\($t1\)", "$SPACE", "\($t1 x\)"], separation=>0).
-
-AlignedRow(["second part of trip", "\(x+$rDif\)", "$SPACE", "\($t2\)", "$SPACE", "\($t2 (x+$rDif )\)"], separation=>0).
-
-EndTable()
-\}
 $PAR
 
 And the total distance traveled \($t1 x+$t2 (x+$rDif )\) miles.

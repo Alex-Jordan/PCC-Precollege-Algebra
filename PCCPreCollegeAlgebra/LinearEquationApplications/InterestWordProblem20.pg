@@ -29,7 +29,7 @@ loadMacros(
   "PGML.pl",
   "contextCurrency.pl",
   "PCCmacros.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PGcourse.pl",
 );
 
@@ -90,18 +90,13 @@ Let's organize the quantities (interest rate, principal investment, and interest
 
 $PAR
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Principal",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Interest",header=>"CH"},],
+["\($p1\)$PERCENT Investment","\($dp1\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
+["\($p2\)$PERCENT Investment","\($dp2\)","$SPACE","\($rInit-x\)","$SPACE","\($dp2($rInit-x)\)"],
+["Total","---","$SPACE","\($rInit\)","$SPACE","\($dp1 x+$dp2($rInit-x)\)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["","Rate","\(\times\)","Principal","\(=\)","Interest"], separation=>0).
-
-AlignedRow(["\($p1\)$PERCENT Investment","\($dp1\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"], separation=>0).
-
-AlignedRow(["\($p2\)$PERCENT Investment","\($dp2\)","$SPACE","\($rInit-x\)","$SPACE", "\($dp2($rInit-x)\)"], separation=>0).
-
-AlignedRow(["Total","---","$SPACE","\($rInit\)","$SPACE", "\($dp1 x+$dp2($rInit-x)\)"], separation=>0).
-
-EndTable()
-\}
 $PAR
 
 The table shows us that in total, $name earned \($dp1 x+$dp2($rInit-x)\) in interest. The introduction tells us that $pronoun earned a total of \($cTotalInt\) in interest from both accounts. Now we can write an equation and then solve it:

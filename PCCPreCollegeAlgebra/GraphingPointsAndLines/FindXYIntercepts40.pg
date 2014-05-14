@@ -27,7 +27,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "PGML.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "contextFraction.pl",
   "PGcourse.pl",
 );
@@ -77,16 +77,12 @@ Context()->texStrings;
 BEGIN_TEXT
 $PAR
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
-
-AlignedRow(["","\(x\)-value","\(y\)-value","location"], separation=>0).
-
-AlignedRow(["\(y\)-intercept",ans_rule(5),ans_rule(5),ans_rule(10)], separation=>0).
-
-AlignedRow(["\(x\)-intercept",ans_rule(5),ans_rule(5),ans_rule(10)], separation=>0).
-
-EndTable()
+DataTable([[{data=>"",header=>"CH"},{data=>"\(x\)-value",header=>"CH"},{data=>"\(y\)-value",header=>"CH"},{data=>"Location",header=>"CH"},],
+["\(y\)-intercept",ans_rule(5), ans_rule(5), ans_rule(10)],
+["\(x\)-intercept",ans_rule(5), ans_rule(5), ans_rule(10)],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "\(x\)-intercept and \(y\)-intercept of the line \( y=$func \)", captioncss =>"padding:4pt; text-decoration:none;");
 \}
+
 
 $PAR
 
@@ -142,16 +138,12 @@ The entries for the table are:
 $PAR
 
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
-
-AlignedRow(["","\(x\)-value","\(y\)-value","location"], separation=>0).
-
-AlignedRow(["\(y\)-intercept","\(0\)","\($b\)","\( (0,$b) \)"], separation=>0).
-
-AlignedRow(["\(x\)-intercept","\($xInt\)","\(0\)","\( ($xInt,0) \)"], separation=>0).
-
-EndTable()
+DataTable([[{data=>"",header=>"CH"},{data=>"\(x\)-value",header=>"CH"},{data=>"\(y\)-value",header=>"CH"},{data=>"Location",header=>"CH"},],
+["\(y\)-intercept","\(0\)","\($b\)","\( (0,$b) \)"],
+["\(x\)-intercept","\($xInt\)","\(0\)","\( ($xInt,0) \)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "\(x\)-intercept and \(y\)-intercept of the line \( y=$func \)", captioncss =>"padding:4pt; text-decoration:none;");
 \}
+
 
 END_SOLUTION
 Context()->normalStrings;

@@ -34,7 +34,7 @@ loadMacros(
   "PGcourse.pl",
   "contextFraction.pl",
   "contextPercent.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PCCmacros.pl",
 );
 
@@ -129,20 +129,14 @@ Context()->texStrings;
 BEGIN_TEXT
 $PAR
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"Fraction",header=>"CH"},{data=>"Decimal",header=>"CH"},{data=>"Percentage",header=>"CH"},],
+ ["\( \frac{1}{2} \)","\( 0.5 \)","\( 50 $PERCENT \)"],
+["\( $frac1 \)",ans_rule(15), ans_rule(15)],
+ [ans_rule(15),"\( $dec2 \)", ans_rule(15)],
+ [ans_rule(15),ans_rule(15), "\( $percent3Int $PERCENT \)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center; width:60pt;", caption => "Fraction/Decimal/Percent Conversions", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["Fraction","Decimal","Percentage"], align=>CENTER, separation=>0).
-
-AlignedRow(["\(\frac{1}{2}\)", "\(0.5\)", "\(50 $PERCENT\)"],separation=>0).
-
-AlignedRow(["\($frac1\)", ans_rule(15), ans_rule(15)],separation=>0).
-
-AlignedRow([ans_rule(15), "\($dec2\)", ans_rule(15)],separation=>0).
-
-AlignedRow([ans_rule(15), ans_rule(15), "\($percent3Int $PERCENT \)"],separation=>0).
-
-EndTable()
-\}
 $PAR
 END_TEXT
 Context()->normalStrings;

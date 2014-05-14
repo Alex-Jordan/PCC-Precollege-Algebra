@@ -28,7 +28,7 @@ loadMacros(
   "PGstandard.pl",
   "MathObjects.pl",
   "contextCurrency.pl",
-  "unionTables.pl",
+  "pccTables.pl",
   "PGML.pl",
   "PCCmacros.pl",
   "answerHints.pl",
@@ -69,16 +69,12 @@ Context()->texStrings;
 BEGIN_TEXT
 $PAR
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Time",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Distance",header=>"CH"},],
+["$name1","\($r1\)","$SPACE","\(t\)","$SPACE",ans_rule(10)],
+["$name2","\($r2\)","$SPACE","\(t\)","$SPACE",ans_rule(10)],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["","Rate","\(\times\)","Time","\(=\)","Distance"], align=>CENTER, separation=>0).
-
-AlignedRow([$name1, "\($r1\)", "$SPACE", "\(t\)", "$SPACE", ans_rule(15)], separation=>0).
-
-AlignedRow([$name2, "\($r2\)", "$SPACE", "\(t\)", "$SPACE", ans_rule(15)], separation=>0).
-
-EndTable()
-\}
 $PAR
 END_TEXT
 Context()->normalStrings;
@@ -120,34 +116,30 @@ The relevant formula is:
 
 If we let \(t\) represent the number of hours that $name1 and $name2 have been running, then after \(t\) hours: $PAR
 
-\(\small\bullet\) $name1 has run \($r1 x\) miles.  $BR
-\(\small\bullet\) $name2 has run \($r2 x\) miles.  $BR
+\(\small\bullet\) $name1 has run \($r1 t\) miles.  $BR
+\(\small\bullet\) $name2 has run \($r2 t\) miles.  $BR
 
 $PAR
 \{ 
-BeginTable(border=>1, tex_border=>"1pt", spacing=>0, padding=>4, center=>1).
+DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Time",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Distance",header=>"CH"},],
+["$name1","\($r1\)","$SPACE","\(t\)","$SPACE","\($r1 t\)"],
+["$name2","\($r2\)","$SPACE","\(t\)","$SPACE","\($r2 t\)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
+\}  
 
-AlignedRow(["","Rate","\(\times\)","Time","\(=\)","Distance"], align=>CENTER, separation=>0).
-
-AlignedRow([$name1, "\($r1\)", "$SPACE", "\(x\)", "$SPACE", "\($r1 x\)"], separation=>0).
-
-AlignedRow([$name2, "\($r2\)", "$SPACE", "\(x\)", "$SPACE", "\($r2 x\)"], separation=>0).
-
-EndTable()
-\}
 $PAR
 
-And the total separation between them is \($r1 x+$r2 x\) miles.
+And the total separation between them is \($r1 t+$r2 t\) miles.
 
 It is given in the introduction that they ran a total of \($d\) miles. Now we can write an equation and solve it:
 $PAR
 
 \[
 \begin{aligned}
-   $r1 x + $r2 x &= $d  \\
-   $s1 x &= $d  \\
-   \frac{$s1 x}{$s1 } &= \frac{$d}{$s1} \\
-   x &= $t
+   $r1 t + $r2 t &= $d  \\
+   $s1 t &= $d  \\
+   \frac{$s1 t}{$s1 } &= \frac{$d}{$s1} \\
+   t &= $t
 \end{aligned}
 \]
 $PAR
