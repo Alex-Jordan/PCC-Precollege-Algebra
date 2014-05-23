@@ -57,24 +57,28 @@ $factor2 = 100/$den2;
 $ans1Int = $factor1*$num1;
 $ans2Int = $factor2*$num2;
 
-Context("LimitedPercent-strict");
+
 if ($den1==8) {
+   Context("LimitedPercent-strict");
    Context()->flags->set(
       decimalPlaces => 1,
       tolerance => 0,
    );
    $ans1 = Compute("$ans1Int %");
+   Context("LimitedPercent-strict");
    Context()->flags->set(
       decimalPlaces => 2,
       tolerance => 0,
    );
    $ans2 = Compute("$ans2Int %");
 } else {
+   Context("LimitedPercent-strict");
    Context()->flags->set(
       decimalPlaces => 2,
       tolerance => 0,
    );
    $ans1 = Compute("$ans1Int %");
+   Context("LimitedPercent-strict");
    Context()->flags->set(
       decimalPlaces => 1,
       tolerance => 0,
