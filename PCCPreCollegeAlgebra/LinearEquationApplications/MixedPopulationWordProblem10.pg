@@ -62,7 +62,7 @@ $ethnicity = list_random("Asians", "native Americans", "African Americans", "His
 TEXT(beginproblem());
 BEGIN_PGML
 
-Town A and Town B were located close to each other, and recently merged into one city. Town A had a population with [`[$p1]`][$PERCENT] [$ethnicity]. Town B had a population with [`[$p2]`][$PERCENT] [$ethnicity]. After the merge, the new city has a total of [`[$s3]`] residents, with [`[$p3]`][$PERCENT] [$ethnicity]. How many residents did Town A and Town B used to have?
+Town A and Town B were located close to each other, and recently merged into one city. Town A had a population with [`[$p1]%`] [$ethnicity]. Town B had a population with [`[$p2]%`] [$ethnicity]. After the merge, the new city has a total of [`[$s3]`] residents, with [`[$p3]%`] [$ethnicity]. How many residents did Town A and Town B used to have?
 
     Town A used to have [__________]{$s1} residents, and Town B used to have [__________]{$s2} residents.
 
@@ -94,9 +94,9 @@ We can organize the information about each town into a table:
 $PAR
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"Percent of $ethnicity",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Total Number of Residents",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Number of $ethnicity",header=>"CH"},],
-["Town A","\($p1\)$PERCENT","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
-["Town B","\($p2\)$PERCENT","$SPACE","\($s3-x\)","$SPACE","\($dp2 ($s3-x)\)"],
-["Merged City","\($p3\)$PERCENT","$SPACE","\($s3\)","$SPACE","\($dp3 \cdot $s3\)"],
+["Town A","\($p1%\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
+["Town B","\($p2%\)","$SPACE","\($s3-x\)","$SPACE","\($dp2 ($s3-x)\)"],
+["Merged City","\($p3%\)","$SPACE","\($s3\)","$SPACE","\($dp3 \cdot $s3\)"],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 

@@ -61,9 +61,9 @@ $pure3 = $pure1+$pure2;
 TEXT(beginproblem());
 BEGIN_PGML
 
-You've poured [`[$s1]`] grams of a [`[$p1]`][$PERCENT] (by mass) alcohol solution into a large glass container. You have plenty of [`100`][$PERCENT] pure alcohol on hand. You need to make some [`[$p3]`][$PERCENT] alcohol solution. How many grams of pure alcohol do you have to add to the glass container to end up with a [`[$p3]`][$PERCENT] alcohol solution?
+You've poured [`[$s1]`] grams of a [`[$p1]%`] (by mass) alcohol solution into a large glass container. You have plenty of [`100%`] pure alcohol on hand. You need to make some [`[$p3]%`] alcohol solution. How many grams of pure alcohol do you have to add to the glass container to end up with a [`[$p3]%`] alcohol solution?
 
-    You need to add [__________]{$s2} grams of pure alcohol to end up with a [`[$p3]`][$PERCENT] alcohol solution.
+    You need to add [__________]{$s2} grams of pure alcohol to end up with a [`[$p3]%`] alcohol solution.
 
 END_PGML
 
@@ -83,16 +83,16 @@ The first solution has \($dp1  \cdot $s1  \) grams of pure alcohol.
 $PAR
 Since you will be adding pure alcohol, you will be adding \(x\) grams of pure alcohol.
 $PAR
-The mixture will be a \($p3\)$PERCENT solution and have a total mass of \($s1 + x\) grams. So it will have \($dp3($s1+x)\) grams of pure alcohol.
+The mixture will be a \($p3%\) solution and have a total mass of \($s1 + x\) grams. So it will have \($dp3($s1+x)\) grams of pure alcohol.
 $PAR
 
 This table helps to organize the information:
 $PAR
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"Percent of Alcohol",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Weight of Solution (in grams)",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Weight of Pure Alcohol (in grams)",header=>"CH"},],
-["Solution 1","\($p1\)$PERCENT","$SPACE","\($s1\)","$SPACE","\($dp1 \cdot $s1=$pure1\)"],
-["Solution 2","\($p2\)$PERCENT","$SPACE","\(x\)","$SPACE","\($dp2 x=x\)"],
-["Mixture","\($p3\)$PERCENT","$SPACE","\($s1+x\)","$SPACE","\($dp3 ($s1+x)\)"],
+["Solution 1","\($p1%\)","$SPACE","\($s1\)","$SPACE","\($dp1 \cdot $s1=$pure1\)"],
+["Solution 2","\($p2%\)","$SPACE","\(x\)","$SPACE","\($dp2 x=x\)"],
+["Mixture","\($p3%\)","$SPACE","\($s1+x\)","$SPACE","\($dp3 ($s1+x)\)"],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 

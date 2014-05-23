@@ -60,9 +60,9 @@ $p3 = $dp3*100;
 
 BEGIN_PGML
 
-You've poured some [`[$p1]`][$PERCENT] (by mass) alcohol solution and some [`[$p2]`][$PERCENT] alcohol solution into a large glass mixing container. Now you have [`[$s3]`] grams of [`[$p3]`][$PERCENT] alcohol solution.  How many grams of [`[$p1] `][$PERCENT] solution and how many grams of [`[$p2]`][$PERCENT] solution did you pour into the mixing container?
+You've poured some [`[$p1]%`] (by mass) alcohol solution and some [`[$p2]%`] alcohol solution into a large glass mixing container. Now you have [`[$s3]`] grams of [`[$p3]%`] alcohol solution.  How many grams of [`[$p1]%`] solution and how many grams of [`[$p2]%`] solution did you pour into the mixing container?
 
-    You poured [__________]{$s1} grams of [`[$p1]`][$PERCENT] solution and [__________]{$s2} grams of [`[$p2]`][$PERCENT] solution into the mixing container.
+    You poured [__________]{$s1} grams of [`[$p1]%`] solution and [__________]{$s2} grams of [`[$p2]%`] solution into the mixing container.
 
 END_PGML
 
@@ -77,21 +77,21 @@ $step4 = Real("$step3 - $step1");
 
 BEGIN_SOLUTION
 $PAR
-Let's let \(x\) represent the number of grams of \($p1\)$PERCENT solution that was used. Then since the final product has \($s3\) grams, there must be \($s3-x\) grams of the \($p2\)$PERCENT solution.
+Let's let \(x\) represent the number of grams of \($p1%\) solution that was used. Then since the final product has \($s3\) grams, there must be \($s3-x\) grams of the \($p2%\) solution.
 $PAR
 Solution 1 has \($dp1  \cdot x = $dp1 x\) grams of alcohol.
 $PAR
-Solution 2 has \($p2\)$PERCENT alcohol. By the percentage formula, Solution 2 has \($dp2 ($s3 -x)\) grams of alcohol.
+Solution 2 has \($p2%\) alcohol. By the percentage formula, Solution 2 has \($dp2 ($s3 -x)\) grams of alcohol.
 $PAR
-The mixture weighs \($s3\) grams, and has \( $p3\)$PERCENT of alcohol. By the percentage formula, the mixture has \( $dp3 \cdot $s3 \) grams of pure alcohol.
+The mixture weighs \($s3\) grams, and has \( $p3%\) of alcohol. By the percentage formula, the mixture has \( $dp3 \cdot $s3 \) grams of pure alcohol.
 $PAR
 Let's organize the information above into a table:
 $PAR
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"Percent of Alcohol",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Weight of Solution (in grams)",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Weight of Pure Alcohol (in grams)",header=>"CH"},],
-["Solution 1","\($p1\)$PERCENT","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
-["Solution 2","\($p2\)$PERCENT","$SPACE","\($s3-x\)","$SPACE","\($dp2 ($s3-x)\)"],
-["Mixture","\($p3\)$PERCENT","$SPACE","\($s3\)","$SPACE","\($dp3 \cdot $s3\)"],
+["Solution 1","\($p1%\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
+["Solution 2","\($p2%\)","$SPACE","\($s3-x\)","$SPACE","\($dp2 ($s3-x)\)"],
+["Mixture","\($p3%\)","$SPACE","\($s3\)","$SPACE","\($dp3 \cdot $s3\)"],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 
@@ -116,9 +116,9 @@ $PAR
 \end{aligned}
 \]
 $PAR
-So you poured \($s1\) grams of \($p1\)$PERCENT solution into the mixing container.
+So you poured \($s1\) grams of \($p1%\) solution into the mixing container.
 $PAR
-Thus, you must have poured \($s3 -$s1\), or \($s2 \) grams of \($p2\)$PERCENT solution into the mixing container.
+Thus, you must have poured \($s3 -$s1\), or \($s2 \) grams of \($p2%\) solution into the mixing container.
 $PAR
 END_SOLUTION
 

@@ -74,8 +74,8 @@ Context()->texStrings;
 BEGIN_TEXT
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Principal",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Interest",header=>"CH"},],
-["\($p1\)$PERCENT Investment","\($dp1\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
-["\($p2\)$PERCENT Investment","\($dp2\)","$SPACE","\($rInit-x\)","$SPACE",ans_rule(20)],
+["\($p1%\) Investment","\($dp1\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
+["\($p2%\) Investment","\($dp2\)","$SPACE","\($rInit-x\)","$SPACE",ans_rule(20)],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 
@@ -89,7 +89,7 @@ BEGIN_PGML
 
 Now set up and solve an equation to find how much [$name] invested in each account.
 
-    [$name] invested [_______] at [`[$p1]`][$PERCENT] and [_______] at [`[$p2]`][$PERCENT].
+    [$name] invested [_______] at [`[$p1]%`] and [_______] at [`[$p2]%`].
 
 
 
@@ -115,17 +115,17 @@ $s3=$rTotalInt-$s1;
 
 BEGIN_SOLUTION
 $PAR
-If we let \(x\) represent the number of dollars that $name invested in the \($p1 \)$PERCENT account, then $pronoun  must have invested \($rInit -x\) dollars in the \($p2 \)$PERCENT account.
+If we let \(x\) represent the number of dollars that $name invested in the \($p1%\) account, then $pronoun  must have invested \($rInit -x\) dollars in the \($p2%\) account.
 $PAR
-So $name  earned \($dp1  x\) dollars of interest from the \($p1 \)$PERCENT account, and \($dp2  ($rInit -x)\) dollars of interest from the \($p2\)$PERCENT account.
+So $name  earned \($dp1  x\) dollars of interest from the \($p1%\) account, and \($dp2  ($rInit -x)\) dollars of interest from the \($p2%\) account.
 
 $PAR
 We can organize the quantities (interest rate, principal investment, and interest amount) for the two accounts into the table:
 $PAR
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Principal",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Interest",header=>"CH"},],
-["\($p1\)$PERCENT Investment","\($dp1\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
-["\($p2\)$PERCENT Investment","\($dp2\)","$SPACE","\($rInit-x\)","$SPACE","\($dp2($rInit-x)\)"],
+["\($p1%\) Investment","\($dp1\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
+["\($p2%\) Investment","\($dp2\)","$SPACE","\($rInit-x\)","$SPACE","\($dp2($rInit-x)\)"],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 
@@ -145,7 +145,7 @@ $PAR
 \end{aligned}
 \]
 $PAR
-So $name invested \($cFund1 \) in the \($p1\)$PERCENT account, and $pronoun  must have invested \($cInit -$cFund1\), or \($cFund2 \) dollars in the \($p2\)$PERCENT account.
+So $name invested \($cFund1 \) in the \($p1%\) account, and $pronoun  must have invested \($cInit -$cFund1\), or \($cFund2 \) dollars in the \($p2%\) account.
 
 END_SOLUTION
 

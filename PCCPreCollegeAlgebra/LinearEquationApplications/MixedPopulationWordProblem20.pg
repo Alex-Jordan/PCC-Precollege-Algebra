@@ -63,7 +63,7 @@ TEXT(beginproblem());
 
 BEGIN_PGML
 
-Town A and Town B are located closed to each other, and recently merged into one city. Town A used to have [`[$s1]`] residents, with [`[$p1]`][$PERCENT] [$ethnicity]. Town B used to have [`[$p2]`][$PERCENT] [$ethnicity]. After the merge, the new city has [`[$p3]`][$PERCENT] [$ethnicity]. How many residents does the new city have now?
+Town A and Town B are located closed to each other, and recently merged into one city. Town A used to have [`[$s1]`] residents, with [`[$p1]%`] [$ethnicity]. Town B used to have [`[$p2]%`] [$ethnicity]. After the merge, the new city has [`[$p3]%`] [$ethnicity]. How many residents does the new city have now?
 
     The new city has [__________]{$s3} residents. 
 
@@ -94,9 +94,9 @@ We can organize this information into a table:
 $PAR
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"Percent of $ethnicity",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Total Number of Residents",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Number of $ethnicity",header=>"CH"},],
-["Town A","\($p1\)$PERCENT","$SPACE","\($s1\)","$SPACE","\($pure1\)"],
-["Town B","\($p2\)$PERCENT","$SPACE","\(x-$s1\)","$SPACE","\($dp2 (x-$s1)\)"],
-["Merged City","\($p3\)$PERCENT","$SPACE","\(x\)","$SPACE","\($dp3 x\)"],
+["Town A","\($p1%\)","$SPACE","\($s1\)","$SPACE","\($pure1\)"],
+["Town B","\($p2%\)","$SPACE","\(x-$s1\)","$SPACE","\($dp2 (x-$s1)\)"],
+["Merged City","\($p3%\)","$SPACE","\(x\)","$SPACE","\($dp3 x\)"],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 

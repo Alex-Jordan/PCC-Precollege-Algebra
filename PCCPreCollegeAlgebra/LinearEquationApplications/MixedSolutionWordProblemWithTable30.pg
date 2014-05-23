@@ -61,9 +61,9 @@ $p3 = $dp3*100;
 TEXT(beginproblem());
 BEGIN_PGML
 
-You have poured [`[$s1]`] grams of [`[$p1]`][$PERCENT] alcohol solution into a large mixing container. You have plenty of [`[$p2]`][$PERCENT] alcohol solution on hand. You need to mix up some [`[$p3]`][$PERCENT] alcohol solution. How much [`[$p2]`][$PERCENT] solution do you have to pour into the mixing container?
+You have poured [`[$s1]`] grams of [`[$p1]%`] alcohol solution into a large mixing container. You have plenty of [`[$p2]%`] alcohol solution on hand. You need to mix up some [`[$p3]%`] alcohol solution. How much [`[$p2]%`] solution do you have to pour into the mixing container?
 
-You can use a table to organize the data. Let's let [`x`] represent the number of grams of [`[$p2]`][$PERCENT] solution that you will use.
+You can use a table to organize the data. Let's let [`x`] represent the number of grams of [`[$p2]%`] solution that you will use.
 END_PGML
 
 Context()->texStrings;
@@ -77,9 +77,9 @@ DataTable([["",
 {data=>"Weight of Solution (in grams)",header=>"CH",texpre=>"\multicolumn{1}{p{0.17\linewidth}}{",texpost=>"}"},
 {data=>"\(=\)",header=>"CH"},
 {data=>"Weight of Pure Alcohol (in grams)",header=>"CH",texpre=>"\multicolumn{1}{p{0.21\linewidth}}{",texpost=>"}"},],
-["Solution 1","\($p1\)$PERCENT","$SPACE","\($s1\)","$SPACE","\($dp1 \cdot $s1=$pure1\)"],
-["Solution 2","\($p2\)$PERCENT","$SPACE","\(x\)","$SPACE","\($dp2 x\)"],
-["Mixture","\($p3\)$PERCENT","$SPACE","\($s1+x\)","$SPACE","\($dp3($s1+x)\)"],
+["Solution 1","\($p1%\)","$SPACE","\($s1\)","$SPACE","\($dp1 \cdot $s1=$pure1\)"],
+["Solution 2","\($p2%\)","$SPACE","\(x\)","$SPACE","\($dp2 x\)"],
+["Mixture","\($p3%\)","$SPACE","\($s1+x\)","$SPACE","\($dp3($s1+x)\)"],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 
@@ -89,9 +89,9 @@ END_TEXT
 Context()->normalStrings;
 
 BEGIN_PGML
-Use the entries of the table to find the amount of [`[$p2]`][$PERCENT] solution do you have to pour into the mixing container.
+Use the entries of the table to find the amount of [`[$p2]%`] solution do you have to pour into the mixing container.
 
-    You need to add [__________]{$s2} grams of [`[$p2]`][$PERCENT] solution.
+    You need to add [__________]{$s2} grams of [`[$p2]%`] solution.
 
 END_PGML
 
@@ -121,7 +121,7 @@ Since we are mixing the first two solutions together, the amount of pure alcohol
 \end{aligned}
     ``]
 
-So you need to pour [`[$s2]`] grams of [`[$p2]`][$PERCENT] solution into the mixer.
+So you need to pour [`[$s2]`] grams of [`[$p2]%`] solution into the mixer.
 
 END_PGML_SOLUTION
 

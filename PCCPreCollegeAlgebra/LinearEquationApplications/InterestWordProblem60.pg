@@ -70,11 +70,11 @@ TEXT(beginproblem());
 
 BEGIN_PGML
 
-[$name] invested a total of [`[$cInit]`] in two accounts. After a year, one account had lost [`[$p1]`][$PERCENT], while the other account gained [`[$p2]`][$PERCENT]. In total, [$name] lost [$cTotalInt]. How much money did [$name] invest in each account?
+[$name] invested a total of [`[$cInit]`] in two accounts. After a year, one account had lost [`[$p1]%`], while the other account gained [`[$p2]%`]. In total, [$name] lost [$cTotalInt]. How much money did [$name] invest in each account?
 
-    [$name] invested [__________]{$cFund1} in the account with [`[$p1]`][$PERCENT] loss.
+    [$name] invested [__________]{$cFund1} in the account with [`[$p1]%`] loss.
 
-    [$name] invested [__________]{$cFund2} in the account with [`[$p2]`][$PERCENT] gain.
+    [$name] invested [__________]{$cFund2} in the account with [`[$p2]%`] gain.
 
 END_PGML
 
@@ -86,7 +86,7 @@ $s3=-$rTotalInt-$s1;
 
 BEGIN_SOLUTION
 $PAR
-Let's let \(x\) represent the amount (in dollars) that $name had invested in the account with \($p1\)$PERCENT loss. Then $pronoun  must have invested \($rInit -x\) dollars in the account with \($p2\)$PERCENT gain.
+Let's let \(x\) represent the amount (in dollars) that $name had invested in the account with \($p1%\) loss. Then $pronoun  must have invested \($rInit -x\) dollars in the account with \($p2%\) gain.
 $PAR
 \{ucfirst($pronoun)\} lost \($dp1  x\) dollars from the first account, and gained \($dp2  ($rInit -x)\) dollars from the second account.
 $PAR
@@ -96,8 +96,8 @@ Let's organize the quantities (rate, principal investment, and net gain/loss) fo
 $PAR
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Principal",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Net Gain",header=>"CH"},],
-["\(-$p1\)$PERCENT Investment","\(-$dp1\)","$SPACE","\(x\)","$SPACE","\(-$dp1 x\)"],
-["\(+$p2\)$PERCENT Investment","\($dp2\)","$SPACE","\($rInit-x\)","$SPACE","\($dp2($rInit-x)\)"],
+["\(-$p1%\) Investment","\(-$dp1\)","$SPACE","\(x\)","$SPACE","\(-$dp1 x\)"],
+["\(+$p2%\) Investment","\($dp2\)","$SPACE","\($rInit-x\)","$SPACE","\($dp2($rInit-x)\)"],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 
@@ -120,7 +120,7 @@ $PAR
 \]
 
 $PAR
-So $name invested \($cFund1 \) in the account with \($p1\)$PERCENT loss, and $pronoun must have invested \($cInit -$cFund1\), or  \($cFund2 \) in the  account with \($p2\)$PERCENT gain.
+So $name invested \($cFund1 \) in the account with \($p1%\) loss, and $pronoun must have invested \($cInit -$cFund1\), or  \($cFund2 \) in the  account with \($p2%\) gain.
 $PAR
 
 END_SOLUTION
