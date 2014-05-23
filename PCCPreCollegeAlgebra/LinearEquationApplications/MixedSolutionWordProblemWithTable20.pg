@@ -69,9 +69,13 @@ Context()->texStrings;
 BEGIN_TEXT
 $PAR
  
-
 \{ 
-DataTable([[{data=>"",header=>"CH"},{data=>"Percent of Alcohol",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Weight of Solution (in grams)",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Weight of Pure Alcohol (in grams)",header=>"CH"},],
+DataTable([["",
+{data=>"Percent of Alcohol",header=>"CH",texpre=>"\multicolumn{1}{p{0.16\linewidth}}{",texpost=>"}"},
+{data=>" \(\times\)",header=>"CH"},
+{data=>"Weight of Solution (in grams)",header=>"CH",texpre=>"\multicolumn{1}{p{0.17\linewidth}}{",texpost=>"}"},
+{data=>"\(=\)",header=>"CH"},
+{data=>"Weight of Pure Alcohol (in grams)",header=>"CH",texpre=>"\multicolumn{1}{p{0.21\linewidth}}{",texpost=>"}"},],
 ["Solution 1","\($p1\)$PERCENT","$SPACE","\($s1\)","$SPACE","\($dp1 \cdot $s1=$pure1\)"],
 ["Solution 2","\($p2\)$PERCENT","$SPACE","\($s2\)","$SPACE","\($dp2 \cdot $s2=$pure2\)"],
  ["Mixture","\(x\)","$SPACE","\($s1+$s2\)","$SPACE","\(x ($s1+$s2)\)"],
