@@ -131,11 +131,11 @@ BEGIN_TEXT
 $PAR
 \{ 
 DataTable([[{data=>"Fraction",header=>"CH"},{data=>"Decimal",header=>"CH"},{data=>"Percentage",header=>"CH"},],
- ["\( \frac{1}{2} \)","\( 0.5 \)","\( 50 \) $PERCENT"],
+ ["\( \frac{1}{2} \)","\( 0.5 \)","\( 50 % \)"],
 ["\( $frac1 \)",ans_rule(15), ans_rule(15)],
  [ans_rule(15),"\( $dec2 \)", ans_rule(15)],
- [ans_rule(15),ans_rule(15), "\( $percent3Int \) $PERCENT"],
-], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Fraction/Decimal/Percent Conversions", captioncss =>"padding:4pt; text-decoration:none;");
+ [ans_rule(15),ans_rule(15), "\( $percent3Int % \)"],
+], allcellcss=>"border:1px solid;padding:4pt;text-align:center; width:60pt;", caption => "Fraction/Decimal/Percent Conversions", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 
 $PAR
