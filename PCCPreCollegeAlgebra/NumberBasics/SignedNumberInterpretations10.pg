@@ -8,17 +8,17 @@
 #
 # ENDDESCRIPTION
 
-## DBsubject('')
-## DBchapter('')
-## DBsection('')
-## KEYWORDS('')
+## DBsubject('Numbers')
+## DBchapter('Real numbers')
+## DBsection('Misc.')
+## KEYWORDS('operations with signed numbers')
 ## DBCCSS('')
 ## TitleText1('')
 ## EditionText1('')
 ## AuthorText1('')
 ## Section1('')
 ## Problem1('')
-## Author('Alex Jordan')
+## Author('Alex Jordan, Carl Yao, Chris Hughes')
 ## Institution('PCC')
 
 
