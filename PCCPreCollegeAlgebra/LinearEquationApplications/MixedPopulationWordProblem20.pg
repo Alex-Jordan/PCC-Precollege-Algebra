@@ -94,9 +94,9 @@ We can organize this information into a table:
 $PAR
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"Percent of $ethnicity",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Total Number of Residents",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Number of $ethnicity",header=>"CH"},],
-["Town A","\($p1%\)","$SPACE","\($s1\)","$SPACE","\($pure1\)"],
-["Town B","\($p2%\)","$SPACE","\(x-$s1\)","$SPACE","\($dp2 (x-$s1)\)"],
-["Merged City","\($p3%\)","$SPACE","\(x\)","$SPACE","\($dp3 x\)"],
+[{data=>"Town A",header=>"RH"},"\($p1%\)","$SPACE","\($s1\)","$SPACE","\($pure1\)"],
+[{data=>"Town B",header=>"RH"},"\($p2%\)","$SPACE","\(x-$s1\)","$SPACE","\($dp2 (x-$s1)\)"],
+[{data=>"Merged City",header=>"RH"},"\($p3%\)","$SPACE","\(x\)","$SPACE","\($dp3 x\)"],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 

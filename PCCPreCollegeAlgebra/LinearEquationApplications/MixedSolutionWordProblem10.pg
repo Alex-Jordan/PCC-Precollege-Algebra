@@ -91,9 +91,9 @@ This table helps to organize the data:
 $PAR
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"Percent of Alcohol",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Weight of Solution (in grams)",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Weight of Pure Alcohol (in grams)",header=>"CH"},],
-["Solution 1","\($p1%\)","$SPACE","\($s1\)","$SPACE","\($dp1 \cdot $s1=$pure1\)"],
-["Solution 2","\($p2%\)","$SPACE","\(x\)","$SPACE","\($dp2 x\)"],
- ["Mixture","\($p3%\)","$SPACE","\($s1+x\)","$SPACE","\($dp3 ($s1+x)\)"],
+[{data=>"Solution 1",header=>"RH"},"\($p1%\)","$SPACE","\($s1\)","$SPACE","\($dp1 \cdot $s1=$pure1\)"],
+[{data=>"Solution 2",header=>"RH"},"\($p2%\)","$SPACE","\(x\)","$SPACE","\($dp2 x\)"],
+ [{data=>"Mixture",header=>"RH"},"\($p3%\)","$SPACE","\($s1+x\)","$SPACE","\($dp3 ($s1+x)\)"],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 

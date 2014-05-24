@@ -81,8 +81,8 @@ $PAR
 
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Time",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Distance",header=>"CH"},],
-["$nameA","\(x\)","$SPACE","\($t\)","$SPACE","\($t x\)"],
-["$nameB","\(x+$rDif\)","$SPACE","\($t\)","$SPACE","\($t(x+$rDif)\)"],
+[{data=>"$nameA",header=>"RH"},"\(x\)","$SPACE","\($t\)","$SPACE","\($t x\)"],
+[{data=>"$nameB",header=>"RH"},"\(x+$rDif\)","$SPACE","\($t\)","$SPACE","\($t(x+$rDif)\)"],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 

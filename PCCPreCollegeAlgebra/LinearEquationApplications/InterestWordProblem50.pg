@@ -95,8 +95,8 @@ Let's organize the quantities (rate, principal investment, and net gain/loss) fo
 $PAR
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Principal",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Net Gain",header=>"CH"},],
-["\(+$p1%\) Investment","\($dp1\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
-["\(-$p2%\) Investment","\(-$dp2\)","$SPACE","\($rInit-x\)","$SPACE","\(-$dp2($rInit-x)\)"],
+[{data=>"\(+$p1%\) Investment",header=>"RH"},"\($dp1\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
+[{data=>"\(-$p2%\) Investment",header=>"RH"},"\(-$dp2\)","$SPACE","\($rInit-x\)","$SPACE","\(-$dp2($rInit-x)\)"],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 

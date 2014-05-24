@@ -94,9 +94,9 @@ We can organize the information about each town into a table:
 $PAR
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"Percent of $ethnicity",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Total Number of Residents",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Number of $ethnicity",header=>"CH"},],
-["Town A","\($p1%\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
-["Town B","\($p2%\)","$SPACE","\($s3-x\)","$SPACE","\($dp2 ($s3-x)\)"],
-["Merged City","\($p3%\)","$SPACE","\($s3\)","$SPACE","\($dp3 \cdot $s3\)"],
+[{data=>"Town A",header=>"RH"},"\($p1%\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
+[{data=>"Town B",header=>"RH"},"\($p2%\)","$SPACE","\($s3-x\)","$SPACE","\($dp2 ($s3-x)\)"],
+[{data=>"Merged City",header=>"RH"},"\($p3%\)","$SPACE","\($s3\)","$SPACE","\($dp3 \cdot $s3\)"],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 

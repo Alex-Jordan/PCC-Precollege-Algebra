@@ -89,9 +89,9 @@ Let's organize the information above into a table:
 $PAR
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"Percent of Alcohol",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Weight of Solution (in grams)",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Weight of Pure Alcohol (in grams)",header=>"CH"},],
-["Solution 1","\($p1%\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
-["Solution 2","\($p2%\)","$SPACE","\($s3-x\)","$SPACE","\($dp2 ($s3-x)\)"],
-["Mixture","\($p3%\)","$SPACE","\($s3\)","$SPACE","\($dp3 \cdot $s3\)"],
+[{data=>"Solution 1",header=>"RH"},"\($p1%\)","$SPACE","\(x\)","$SPACE","\($dp1 x\)"],
+[{data=>"Solution 2",header=>"RH"},"\($p2%\)","$SPACE","\($s3-x\)","$SPACE","\($dp2 ($s3-x)\)"],
+[{data=>"Mixture",header=>"RH"},"\($p3%\)","$SPACE","\($s3\)","$SPACE","\($dp3 \cdot $s3\)"],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 

@@ -70,8 +70,8 @@ BEGIN_TEXT
 $PAR
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Time",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Distance",header=>"CH"},],
-["$name1","\($r1\)","$SPACE","\(t\)","$SPACE",ans_rule(10)],
-["$name2","\($r2\)","$SPACE","\(t\)","$SPACE",ans_rule(10)],
+[{data=>"$name1",header=>"RH"},"\($r1\)","$SPACE","\(t\)","$SPACE",ans_rule(10)],
+[{data=>"$name2",header=>"RH"},"\($r2\)","$SPACE","\(t\)","$SPACE",ans_rule(10)],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 
@@ -122,8 +122,8 @@ If we let \(t\) represent the number of hours that $name1 and $name2 have been r
 $PAR
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Time",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Distance",header=>"CH"},],
-["$name1","\($r1\)","$SPACE","\(t\)","$SPACE","\($r1 t\)"],
-["$name2","\($r2\)","$SPACE","\(t\)","$SPACE","\($r2 t\)"],
+[{data=>"$name1",header=>"RH"},"\($r1\)","$SPACE","\(t\)","$SPACE","\($r1 t\)"],
+[{data=>"$name2",header=>"RH"},"\($r2\)","$SPACE","\(t\)","$SPACE","\($r2 t\)"],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 

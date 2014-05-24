@@ -79,9 +79,9 @@ DataTable([["",
 {data=>"Weight of Solution (in grams)",header=>"CH",texpre=>"\multicolumn{1}{p{0.17\linewidth}}{",texpost=>"}"},
 {data=>"\(=\)",header=>"CH"},
 {data=>"Weight of Pure Alcohol (in grams)",header=>"CH",texpre=>"\multicolumn{1}{p{0.21\linewidth}}{",texpost=>"}"},],
-["Solution 1","\($p1%\)","$SPACE","\($s1\)","$SPACE","\($dp1 \cdot $s1=$pure1\)"],
-["Solution 2","\($p2%\)","$SPACE","\(x\)","$SPACE","\($dp2 x\)"],
-["Mixture","\($p3%\)","$SPACE",ans_rule(15),"$SPACE",ans_rule(15)],
+[{data=>"Solution 1",header=>"RH"},"\($p1%\)","$SPACE","\($s1\)","$SPACE","\($dp1 \cdot $s1=$pure1\)"],
+[{data=>"Solution 1",header=>"RH"},"\($p2%\)","$SPACE","\(x\)","$SPACE","\($dp2 x\)"],
+[{data=>"Mixture",header=>"RH"},"\($p3%\)","$SPACE",ans_rule(15),"$SPACE",ans_rule(15)],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 

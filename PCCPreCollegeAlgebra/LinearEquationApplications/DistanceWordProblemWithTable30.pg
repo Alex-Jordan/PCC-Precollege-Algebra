@@ -72,8 +72,8 @@ BEGIN_TEXT
 $PAR
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Time",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Distance",header=>"CH"},],
-["first leg of trip","\(x\)","$SPACE","\($t1\)","$SPACE",ans_rule(15)],
-["second leg of trip","\(x+$rDif\)","$SPACE","\($t2\)","$SPACE",ans_rule(15)],
+[{data=>"first leg of trip",header=>"RH"},"\(x\)","$SPACE","\($t1\)","$SPACE",ans_rule(15)],
+[{data=>"second leg of trip",header=>"RH"},"\(x+$rDif\)","$SPACE","\($t2\)","$SPACE",ans_rule(15)],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 
@@ -129,8 +129,8 @@ Now the table looks like:
 $PAR
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"Rate",header=>"CH"},{data=>" \(\times\)",header=>"CH"},{data=>"Time",header=>"CH"},{data=>"\(=\)",header=>"CH"},{data=>"Distance",header=>"CH"},],
-["first leg of trip","\(x\)","$SPACE","\($t1\)","$SPACE","\($t1 x\)"],
-["second leg of trip","\(x+$rDif\)","$SPACE","\($t2\)","$SPACE","\($t2(x+$rDif)\)"],
+[{data=>"first leg of trip",header=>"RH"},"\(x\)","$SPACE","\($t1\)","$SPACE","\($t1 x\)"],
+[{data=>"second leg of trip",header=>"RH"},"\(x+$rDif\)","$SPACE","\($t2\)","$SPACE","\($t2(x+$rDif)\)"],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "Organize data with a table", captioncss =>"padding:4pt; text-decoration:none;");
 \}  
 

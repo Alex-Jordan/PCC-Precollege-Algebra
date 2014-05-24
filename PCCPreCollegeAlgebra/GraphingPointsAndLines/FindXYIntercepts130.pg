@@ -70,8 +70,8 @@ BEGIN_TEXT
 $PAR
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"\(x\)-value",header=>"CH"},{data=>"\(y\)-value",header=>"CH"},{data=>"Location",header=>"CH"},],
-["\(y\)-intercept",ans_rule(5), ans_rule(5), ans_rule(10)],
-["\(x\)-intercept",ans_rule(5), ans_rule(5), ans_rule(10)],
+[{data=>"\(y\)-intercept",header=>"RH"},ans_rule(5), ans_rule(5), ans_rule(10)],
+[{data=>"\(x\)-intercept",header=>"RH"},ans_rule(5), ans_rule(5), ans_rule(10)],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "\(x\)-intercept and \(y\)-intercept of the line \( x=$a \)", captioncss =>"padding:4pt; text-decoration:none;");
 \}
 
@@ -105,8 +105,8 @@ $PAR
 
 \{ 
 DataTable([[{data=>"",header=>"CH"},{data=>"\(x\)-value",header=>"CH"},{data=>"\(y\)-value",header=>"CH"},{data=>"Location",header=>"CH"},],
-["\(y\)-intercept","\($yInt\)","\($yInt\)","\( $yInt \)"],
-["\(x\)-intercept","\($xInt\)","\(0\)","\( ($xInt,0) \)"],
+[{data=>"\(y\)-intercept",header=>"RH"},"\($yInt\)","\($yInt\)","\( $yInt \)"],
+[{data=>"\(x\)-intercept",header=>"RH"},"\($xInt\)","\(0\)","\( ($xInt,0) \)"],
 ], allcellcss=>"border:1px solid;padding:4pt;text-align:center;", caption => "\(x\)-intercept and \(y\)-intercept of the line \( x=$a \)", captioncss =>"padding:4pt; text-decoration:none;");
 \}
 
